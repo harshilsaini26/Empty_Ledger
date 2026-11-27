@@ -3,6 +3,9 @@ import { useEffect, useRef, useState } from "react";
 import type { BankCompany } from "@/lib/game/bank";
 import { randomDrill, rng, type Question } from "@/lib/game/questions";
 import { useProgress } from "@/lib/game/progress";
+import { Confetti, CountUp, FloatXp, Stamp, useChoiceKeys } from "../fx";
+import { Givens } from "../QuizCard";
+import { IconFlame } from "../icons";
 
 const SECONDS = 90;
 
@@ -16,6 +19,7 @@ export function RatioRush({ bank }: { bank: BankCompany[] }) {
   const [xp, setXp] = useState(0);
   const [flash, setFlash] = useState<null | { ok: boolean; i: number }>(null);
   const [misses, setMisses] = useState<Question[]>([]);
+  const [lastGain, setLastGain] = useState({ amount: 0, id: 0 });
   const r = useRef(rng());
 
   useEffect(() => {
@@ -53,6 +57,7 @@ export function RatioRush({ bank }: { bank: BankCompany[] }) {
       setScore((s) => s + 1);
       setStreak((s) => s + 1);
       setXp((x) => x + gained);
+      setLastGain((g) => ({ amount: gained, id: g.id + 1 }));
     } else {
       setStreak(0);
       setMisses((m) => [...m, q]);
@@ -64,32 +69,54 @@ export function RatioRush({ bank }: { bank: BankCompany[] }) {
     }, ok ? 450 : 1100);
   };
 
+  useChoiceKeys(q?.choices.length ?? 0, state === "play" && !flash, choose);
+
   if (state === "idle")
     return (
-      <div className="card p-6 text-center">
-        <p className="text-muted">You get the statement lines; pick the right ratio. Correct answers in a row multiply XP (2x after 2, 3x after 5).</p>
-        <p className="mt-2 text-sm">Personal best: <b>{p.games["ratio-rush"] ?? 0}</b></p>
-        <button className="btn btn-primary mt-4" onClick={start}>Start ({SECONDS}s)</button>
+      <div className="card ledger-paper overflow-hidden p-8 pl-14 text-center">
+        <div aria-hidden className="text-6xl">⚡</div>
+        <p className="mx-auto mt-3 max-w-md text-muted">
+          You get the statement lines; pick the right ratio. Answers in a row multiply XP: <b className="text-ink">2x</b> after 2, <b className="text-ink">3x</b> after 5.
+        </p>
+        <p className="mt-3 text-sm">
+          Personal best: <span className="rounded-full bg-hi px-2 py-0.5 font-mono font-extrabold text-[#12201a]">{p.games["ratio-rush"] ?? 0}</span>
+        </p>
+        <button className="btn btn-primary mt-6 text-base" onClick={start} autoFocus>
+          Start the clock · {SECONDS}s
+        </button>
+        <p className="mt-3 hidden text-xs text-muted sm:block">Keys 1–4 answer, so you never have to leave the keyboard.</p>
       </div>
     );
 
-  if (state === "over")
+  if (state === "over") {
+    const best = Math.max(score, p.games["ratio-rush"] ?? 0);
+    const record = score > 0 && score >= (p.games["ratio-rush"] ?? 0);
     return (
-      <div className="card pop p-6">
-        <div className="text-center">
-          <div className="text-5xl">⏱️</div>
-          <h2 className="mt-2 text-2xl font-extrabold">{score} correct</h2>
-          <p className="text-muted">+{xp} XP · best {Math.max(score, p.games["ratio-rush"] ?? 0)}</p>
-          <button className="btn btn-primary mt-4" onClick={start}>Play again</button>
+      <div className="card pop relative p-6">
+        <Confetti fire={record ? 1 : 0} />
+        <div className="relative text-center">
+          {record && <Stamp large className="top-0 right-0" tilt={8} sub="personal best">Record</Stamp>}
+          <div className="font-mono text-xs font-extrabold tracking-widest text-muted uppercase">Time&apos;s up</div>
+          <h2 className="mt-2 font-display text-6xl font-extrabold">
+            <CountUp value={score} duration={900} />
+          </h2>
+          <p className="text-muted">
+            correct · <b className="text-ink">+{xp} XP</b> · best {best}
+          </p>
+          <button className="btn btn-primary mt-5" onClick={start} autoFocus>
+            Play again
+          </button>
         </div>
         {misses.length > 0 && (
-          <div className="mt-6">
-            <h3 className="font-bold">Review your misses</h3>
-            <ul className="mt-2 grid gap-2 text-sm">
+          <div className="mt-8">
+            <h3 className="font-display text-lg font-extrabold">Review your misses</h3>
+            <ul className="rise mt-3 grid gap-2 text-sm">
               {misses.map((m, i) => (
-                <li key={i} className="rounded-lg bg-panel-2 p-3">
-                  <div className="font-medium">{m.prompt}</div>
-                  <div className="mt-1 text-muted">Answer: <b className="text-ink">{m.choices[m.answer]}</b>. {m.explain}</div>
+                <li key={i} className="rounded-2xl bg-panel-2 p-3" style={{ ["--i" as string]: i }}>
+                  <div className="font-semibold">{m.prompt}</div>
+                  <div className="mt-1 text-muted">
+                    Answer: <b className="text-ink">{m.choices[m.answer]}</b>. {m.explain}
+                  </div>
                 </li>
               ))}
             </ul>
@@ -97,40 +124,49 @@ export function RatioRush({ bank }: { bank: BankCompany[] }) {
         )}
       </div>
     );
+  }
 
+  const mult = streak >= 5 ? 3 : streak >= 2 ? 2 : 1;
+  const low = left <= 10;
   return (
     <div>
       <div className="mb-3 flex items-center justify-between">
-        <div className="num text-2xl font-extrabold">{left}s</div>
+        <div className={`num font-display text-4xl font-extrabold ${low ? "timer-low text-bad" : ""}`} aria-live="off">
+          {left}
+          <span className="text-lg text-muted">s</span>
+        </div>
         <div className="flex items-center gap-3 text-sm">
-          <span>Score <b>{score}</b></span>
-          <span className={`chip ${streak >= 2 ? "bg-gold-soft text-gold" : ""}`}>🔥 {streak} {streak >= 5 ? "· 3x" : streak >= 2 ? "· 2x" : ""}</span>
+          <span className="relative rounded-full border border-line bg-panel px-3 py-1">
+            Score <b className="num"><CountUp value={score} duration={250} /></b>
+            <FloatXp amount={lastGain.amount} id={lastGain.id} />
+          </span>
+          <span key={mult} className={`flex items-center gap-1 rounded-full px-3 py-1 font-extrabold ${mult > 1 ? "bump bg-hi text-[#12201a]" : "bg-panel-2 text-muted"}`}>
+            <IconFlame className="h-4 w-4" /> {streak}
+            {mult > 1 && <span className="font-mono">· {mult}x</span>}
+          </span>
         </div>
       </div>
-      <div className="mb-3 h-1.5 rounded-full bg-panel-2">
-        <div className="h-full rounded-full bg-accent transition-all" style={{ width: `${(left / SECONDS) * 100}%` }} />
+      <div className="hatch mb-4 h-3 overflow-hidden rounded-full" aria-hidden>
+        <div
+          className={`h-full rounded-full ${low ? "bg-bad" : left <= 30 ? "bg-hi" : "bg-accent"}`}
+          style={{ width: `${(left / SECONDS) * 100}%`, transition: "width 1s linear, background 300ms" }}
+        />
       </div>
       {q && (
-        <div className={`card p-5 ${flash && !flash.ok ? "shake" : ""}`}>
-          <p className="text-lg font-semibold">{q.prompt}</p>
-          <div className="mt-3 grid gap-2 sm:grid-cols-3">
-            {q.givens?.map((g) => (
-              <div key={g.label} className="rounded-lg bg-panel-2 px-3 py-2">
-                <div className="text-xs text-muted">{g.label}</div>
-                <div className="num font-semibold">{g.value}</div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-4 grid grid-cols-2 gap-2">
+        <div key={q.prompt + score + misses.length} className={`card p-5 sm:p-6 ${flash && !flash.ok ? "shake" : "pop"}`}>
+          {flash && (flash.ok ? <Stamp className="-top-5 right-5" tilt={-8}>Tied out</Stamp> : <Stamp bad className="-top-5 right-5" tilt={6}>Miss</Stamp>)}
+          <p className="pr-6 font-display text-lg font-bold sm:text-xl">{q.prompt}</p>
+          {q.givens && <Givens givens={q.givens} />}
+          <div className="mt-5 grid grid-cols-2 gap-3">
             {q.choices.map((c, i) => (
               <button
                 key={c + i}
                 onClick={() => choose(i)}
-                className={`num rounded-xl border px-4 py-3 font-semibold ${
-                  flash && i === q.answer ? "border-good bg-accent-soft text-good" : flash && flash.i === i ? "border-bad bg-bad-soft text-bad" : "border-line hover:border-accent"
-                }`}
+                disabled={!!flash}
+                className={`choice num ${flash && i === q.answer ? "is-right" : flash && flash.i === i ? "is-wrong" : flash ? "is-dim" : ""}`}
               >
-                {c}
+                <span className="key-cap">{i + 1}</span>
+                <span>{c}</span>
               </button>
             ))}
           </div>

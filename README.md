@@ -61,8 +61,10 @@ cd pipeline && python -m unittest discover -s tests
 
 ## Deploy on Vercel
 
-Import the repository in Vercel. The defaults work (framework: Next.js, root directory: `/`).
-No environment variables are needed.
+1. Go to vercel.com/new and choose **Import Git Repository**, then pick `harshilsaini26/Empty_Ledger` (connect your GitHub account to Vercel if asked, and allow access to this repo).
+2. Keep the defaults: `vercel.json` already sets the framework (Next.js), install and build commands. No environment variables are needed.
+3. Click **Deploy**. Every push to `main` becomes a production deploy, and every other branch or PR gets a preview URL.
+4. When the "Refresh SEC data" workflow commits new data, Vercel redeploys automatically.
 
 ## Data and disclaimers
 

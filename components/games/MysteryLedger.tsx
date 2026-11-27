@@ -4,6 +4,7 @@ import type { BankCompany } from "@/lib/game/bank";
 import { pick, rng, shuffle } from "@/lib/game/questions";
 import { fmtUnit } from "@/lib/format";
 import { useProgress } from "@/lib/game/progress";
+import { Stamp, useChoiceKeys } from "../fx";
 
 const ROWS: { key: string; label: string; kind: "cs" | "ratio"; unit: "pct" | "x" | "days" }[] = [
   { key: "gross_profit", label: "Gross profit (% of revenue)", kind: "cs", unit: "pct" },
@@ -64,6 +65,10 @@ export function MysteryLedger({ bank }: { bank: BankCompany[] }) {
     return m;
   }, [bank]);
 
+  useChoiceKeys(round?.options.length ?? 0, !!round && chosen === null, (i) => {
+    if (round) choose(round.options[i].t);
+  });
+
   if (!round) return <div className="card p-6 text-sm text-muted">Loading…</div>;
   const { target, options } = round;
   const rows = ROWS.filter((row) => val(target, row) !== undefined);
@@ -90,10 +95,16 @@ export function MysteryLedger({ bank }: { bank: BankCompany[] }) {
   return (
     <div className="grid gap-4">
       <div className="flex items-center justify-between text-sm">
-        <span className="chip bg-gold-soft text-gold">Streak {streak} · best {p.games["mystery-ledger"] ?? 0}</span>
+        <span key={streak} className={`chip font-mono ${streak ? "bump bg-hi text-[#12201a]" : ""}`}>Streak {streak} · best {p.games["mystery-ledger"] ?? 0}</span>
         <span className="text-muted">FY{target.years[target.years.length - 1]} figures</span>
       </div>
-      <div className="card overflow-x-auto p-4">
+      <div className="card relative overflow-hidden">
+        <div className="flex items-center justify-between border-b border-line bg-blue-soft px-4 py-2">
+          <span className="font-mono text-xs font-extrabold tracking-[0.2em] text-blue uppercase">Case file · name redacted</span>
+          <span aria-hidden className="h-3 w-24 rounded-sm bg-ink" />
+        </div>
+        {done && (ok ? <Stamp className="top-12 right-4" sub="identified">Solved</Stamp> : <Stamp bad className="top-12 right-4" tilt={6} sub={target.t}>Wrong suspect</Stamp>)}
+        <div className="overflow-x-auto p-4">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-line text-xs uppercase tracking-wide text-muted">
@@ -112,41 +123,44 @@ export function MysteryLedger({ bank }: { bank: BankCompany[] }) {
             ))}
           </tbody>
         </table>
+        </div>
       </div>
       <div className="flex items-center justify-between">
         <span className="text-sm font-semibold">Which company is it?</span>
         {!done && !hint && (
-          <button className="text-sm font-semibold text-accent" onClick={() => setHint(true)}>Use a hint (halves XP)</button>
+          <button className="btn btn-sm btn-ghost" onClick={() => setHint(true)}>Use a hint (halves XP)</button>
         )}
       </div>
       {hint && !done && (
-        <p className="rounded-lg bg-panel-2 px-3 py-2 text-sm">
+        <p className="pop rounded-2xl bg-hi-soft px-4 py-2.5 text-sm">
           Hint: the biggest differences from a typical company are {telltales.map((t) => t.row.label.toLowerCase()).join(", ")}.
         </p>
       )}
       <div className="grid gap-2 sm:grid-cols-2">
-        {options.map((o) => (
+        {options.map((o, i) => (
           <button
             key={o.t}
             disabled={done}
             onClick={() => choose(o.t)}
-            className={`rounded-xl border px-4 py-3 text-left ${
-              done && o.t === target.t ? "border-good bg-accent-soft" : done && o.t === chosen ? "border-bad bg-bad-soft" : "border-line hover:border-accent"
-            }`}
+            className={`choice ${done && o.t === target.t ? "is-right" : done && o.t === chosen ? "is-wrong" : done ? "is-dim" : ""}`}
           >
-            <div className="font-semibold">{o.name}</div>
-            <div className="text-xs text-muted">{o.sector}</div>
+            <span className="key-cap">{i + 1}</span>
+            <span>
+              <span className="block">{o.name}</span>
+              <span className="block text-xs font-semibold opacity-70">{o.sector}</span>
+            </span>
           </button>
         ))}
       </div>
       {done && (
-        <div className="card pop p-4 text-sm">
+        <div className={`pop rounded-2xl p-4 text-sm leading-relaxed ${ok ? "bg-accent-soft/60" : "bg-bad-soft/70"}`} role="status">
           <b className={ok ? "text-good" : "text-bad"}>{ok ? "Correct!" : `It was ${target.name}.`}</b>{" "}
           The telltales: {telltales.map((t) => `${t.row.label.toLowerCase()} ${fmtUnit(t.v, t.row.unit)} vs typical ${fmtUnit(t.m, t.row.unit)}`).join("; ")}.
           {target.template === "bank" && " Banks show tiny asset turnover and almost no PP&E because loans and securities dominate the balance sheet."}
           <div className="mt-3 text-right">
             <button
               className="btn btn-primary"
+              autoFocus
               onClick={() => {
                 setChosen(null);
                 setHint(false);

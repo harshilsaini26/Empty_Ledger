@@ -4,6 +4,7 @@ import type { BankCompany } from "@/lib/game/bank";
 import { pick, rng, shuffle } from "@/lib/game/questions";
 import { fmtUnit, money } from "@/lib/format";
 import { useProgress } from "@/lib/game/progress";
+import { Stamp } from "../fx";
 
 // The twelve rules in pipeline/finlab/models.py red_flags().
 const ALL_FLAGS = [
@@ -113,9 +114,11 @@ export function RedFlagHunt({ bank }: { bank: BankCompany[] }) {
         <span>
           <b>{c.name}</b> <span className="text-muted">· {c.sector}</span>
         </span>
-        <span className="chip bg-gold-soft text-gold">Best {p.games["red-flag-hunt"] ?? 0} pts</span>
+        <span className="chip bg-hi font-mono text-[#12201a]">Best {p.games["red-flag-hunt"] ?? 0} pts</span>
       </div>
-      <div className="card overflow-x-auto p-4">
+      <div className="card relative overflow-hidden">
+        {checked && (wrong === 0 && missed === 0 ? <Stamp className="top-3 right-4" sub="all flags found">Clean audit</Stamp> : <Stamp bad className="top-3 right-4" tilt={6} sub={`${hits}/${truth.size} found`}>Qualified</Stamp>)}
+        <div className="overflow-x-auto p-4">
         <table className="w-full min-w-[520px] text-sm">
           <thead>
             <tr className="border-b border-line text-xs uppercase tracking-wide text-muted">
@@ -137,20 +140,27 @@ export function RedFlagHunt({ bank }: { bank: BankCompany[] }) {
             ))}
           </tbody>
         </table>
+        </div>
       </div>
       <p className="text-sm font-semibold">Which warning signs fire in FY{year}? Select all that apply (it may be none).</p>
       <div className="grid gap-2 sm:grid-cols-2">
         {options.map((t) => {
           const on = sel.has(t);
           const isTrue = truth.has(t);
-          const cls = !checked
-            ? on ? "border-accent bg-accent-soft" : "border-line hover:border-accent"
-            : isTrue ? "border-good bg-accent-soft" : on ? "border-bad bg-bad-soft" : "border-line opacity-60";
+          const cls = !checked ? (on ? "!border-bad" : "") : isTrue ? "is-right" : on ? "is-wrong" : "is-dim";
           return (
-            <button key={t} onClick={() => toggle(t)} className={`rounded-xl border px-3 py-2 text-left text-sm ${cls}`}>
-              <span className="mr-1">{checked ? (isTrue ? "🚩" : on ? "✗" : "·") : on ? "☑" : "☐"}</span>
-              {t}
-              {checked && isTrue && <div className="num mt-1 text-xs text-muted">{evidence[t]}</div>}
+            <button key={t} onClick={() => toggle(t)} aria-pressed={on} disabled={checked} className={`choice items-start text-sm ${cls}`}>
+              <span
+                aria-hidden
+                className={`key-cap transition-transform duration-200 ${on && !checked ? "!border-bad !bg-bad -rotate-6 scale-110 !text-white" : ""}`}
+                style={{ transitionTimingFunction: "var(--ease-pop)" }}
+              >
+                {checked ? (isTrue ? "🚩" : on ? "✗" : "·") : on ? "🚩" : ""}
+              </span>
+              <span>
+                {t}
+                {checked && isTrue && <span className="num mt-1 block text-xs font-semibold text-muted">{evidence[t]}</span>}
+              </span>
             </button>
           );
         })}
@@ -160,13 +170,13 @@ export function RedFlagHunt({ bank }: { bank: BankCompany[] }) {
           <button className="btn btn-primary" onClick={submit}>{sel.size ? "Check my flags" : "Nothing wrong here"}</button>
         </div>
       ) : (
-        <div className="card pop flex flex-wrap items-center justify-between gap-3 p-4 text-sm">
+        <div className="card pop flex flex-wrap items-center justify-between gap-3 p-4 text-sm" role="status">
           <span>
             Found <b>{hits}</b> of {truth.size}
             {wrong > 0 && <>, {wrong} false alarm{wrong > 1 ? "s" : ""}</>}
             {truth.size === 0 && wrong === 0 && " · Clean year, well spotted."} · {points} pts
           </span>
-          <button className="btn btn-primary" onClick={() => setSeed((s) => s + 1)}>Next case →</button>
+          <button className="btn btn-primary" autoFocus onClick={() => setSeed((s) => s + 1)}>Next case →</button>
         </div>
       )}
     </div>

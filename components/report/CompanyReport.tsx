@@ -9,6 +9,7 @@ import { RatiosTab } from "./Ratios";
 import { DuPontTab } from "./DuPont";
 import { QualityTab } from "./Quality";
 import { ForecastTab } from "./Forecast";
+import { Segmented } from "../fx";
 
 export interface ReportProps {
   rec: CompanyRecord;
@@ -56,13 +57,13 @@ export function CompanyReport(props: ReportProps) {
       <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
         <div>
           <div className="flex flex-wrap items-center gap-2">
-            {!rec.uploaded && <span className="chip font-mono">{rec.ticker}</span>}
+            {!rec.uploaded && <span className="chip border border-ink/15 bg-panel font-mono text-ink">{rec.ticker}</span>}
             <span className="chip">{rec.sector}</span>
             {rec.practice && <span className="chip bg-gold-soft text-gold">Fictional training company</span>}
             {rec.uploaded && <span className="chip bg-accent-soft text-accent">Your upload</span>}
             {rec.template !== "standard" && <span className="chip">{rec.template === "bank" ? "Bank layout" : "Insurer layout"}</span>}
           </div>
-          <h1 className="mt-2 text-3xl font-extrabold tracking-tight">{rec.name}</h1>
+          <h1 className="mt-2 text-4xl font-extrabold tracking-tight">{rec.name}</h1>
           <p className="mt-1 text-sm text-muted">
             FY{y0} to FY{y1} · {rec.source}
           </p>
@@ -70,20 +71,8 @@ export function CompanyReport(props: ReportProps) {
         </div>
       </div>
 
-      <div className="mb-6 flex gap-1 overflow-x-auto border-b border-line" role="tablist">
-        {TABS.map((t) => (
-          <button
-            key={t.id}
-            role="tab"
-            aria-selected={tab === t.id}
-            onClick={() => select(t.id)}
-            className={`-mb-px whitespace-nowrap border-b-2 px-3 py-2 text-sm font-semibold ${
-              tab === t.id ? "border-accent text-ink" : "border-transparent text-muted hover:text-ink"
-            }`}
-          >
-            {t.label}
-          </button>
-        ))}
+      <div className="mb-6">
+        <Segmented items={TABS} value={tab} onChange={select} label="Report sections" />
       </div>
 
       {tab === "overview" && <Overview {...props} meta={meta} />}

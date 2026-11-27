@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getCatalog, getIndex, getPeers } from "@/lib/data";
 import { UploadLab } from "@/components/UploadLab";
 import type { PeersFile } from "@/lib/engine/types";
+import { PageHead } from "@/components/PageHead";
 
 export const metadata: Metadata = { title: "Analyze a file" };
 
@@ -14,11 +15,10 @@ export default function UploadPage() {
   const sectors = [...new Set([...getIndex().map((r) => r.sector), "Utilities", "Real Estate", "Materials", "Energy", "Industrials"])].sort();
   return (
     <div>
-      <h1 className="text-3xl font-extrabold tracking-tight">Analyze any financial statement</h1>
-      <p className="mt-1 max-w-2xl text-muted">
+      <PageHead eyebrow="Runs in your browser · never uploaded" title={<>Analyze <span className="highlight">any</span> statement</>}>
         Upload a CSV or Excel file with one column per fiscal year: the app&apos;s template, or statements copied from a 10-K or annual
         report. Everything runs in your browser; the file is never sent anywhere.
-      </p>
+      </PageHead>
       <UploadLab catalog={getCatalog()} peers={bench} sectors={sectors} />
     </div>
   );
