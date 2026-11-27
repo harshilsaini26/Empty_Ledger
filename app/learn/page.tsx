@@ -23,6 +23,17 @@ export default function LearnPage() {
         </div>
         <span className="btn btn-primary">Open the desk →</span>
       </Link>
+      <Link
+        href="/bogleheads"
+        className="card card-hover ledger-paper mt-4 flex flex-wrap items-center justify-between gap-4 p-5 pl-14"
+      >
+        <div>
+          <div className="font-mono text-[11px] font-bold tracking-widest text-muted uppercase">Beyond the path · Bogleheads</div>
+          <div className="mt-1 font-display text-xl font-extrabold">The Bogleheads philosophy: save a lot, buy the market cheaply, stay the course</div>
+          <p className="mt-1 text-sm text-muted">Ten principles · start-up kit · Bogle&apos;s humble arithmetic · saving rate · saving early · comparing investments</p>
+        </div>
+        <span className="btn btn-primary">Start reading →</span>
+      </Link>
     </div>
   );
 }

@@ -14,7 +14,7 @@ export interface PaperQ {
   explain: string;
 }
 export interface Paper {
-  id: "enhanced-portfolio-optimization" | "buffetts-alpha" | "retirement-income";
+  id: string;
   short: string;
   title: string;
   authors: string;
@@ -29,6 +29,7 @@ export interface Paper {
   learnings: { title: string; body: string }[];
   formulas: Formula[];
   forAnalysts: string[]; // how it links to the financial statement analysis in the rest of the app
+  sources?: { label: string; href: string }[]; // links to the original material
   quiz: PaperQ[];
 }
 

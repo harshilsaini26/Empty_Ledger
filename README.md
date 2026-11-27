@@ -16,7 +16,8 @@ you upload.
 | **Companies** (`/companies`) | Full reports: statements (as reported, common-size, trend), 70+ ratios with peer percentiles, DuPont, Altman Z'', Beneish M, Piotroski F, red flags, a durable-business checklist and simple projections. |
 | **Analyze a file** (`/upload`) | Upload CSV or Excel. Rows are matched to line items by label ("Net sales", "Total current assets"...), you can fix the mapping, and the full report runs in the browser. Nothing is uploaded to a server. |
 | **Research** (`/research`) | Three seminal Financial Analysts Journal papers (Enhanced Portfolio Optimization, Buffett's Alpha, the goal completion score for retirement income) with plain-English summaries, key learnings, the math rendered with KaTeX, an interactive lab for each model and a short quiz. |
-| **Progress** | XP, a nine-step career ladder, daily question, streaks and 14 badges. Stored in the browser's localStorage, so no accounts or database are needed. |
+| **Bogleheads** (`/bogleheads`) | The Bogleheads investment philosophy in six chapters: the ten principles, the start-up kit, Bogle's "Relentless Rules of Humble Arithmetic" (FAJ 2005), saving rate, saving early and comparing investments. Each has the math, a calculator and a quiz. |
+| **Progress** | XP, a nine-step career ladder, daily question, streaks and 15 badges. Stored in the browser's localStorage, so no accounts or database are needed. |
 
 ## How it fits together
 
@@ -30,6 +31,7 @@ lib/engine/          TypeScript port of finlab for uploads; tests/parity.test.ts
 lib/game/            XP, badges, question generators
 lib/learn/           lesson content
 lib/research/        paper content and the models behind the research labs
+lib/bogleheads/      Bogleheads chapters and their calculators
 ```
 
 The site is fully static: pages are generated from `pipeline/data` at build time, which keeps it

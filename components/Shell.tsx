@@ -14,12 +14,13 @@ const NAV = [
   { href: "/companies", label: "Companies", short: "Explore", Icon: IconCompanies },
   { href: "/upload", label: "Analyze a file", short: "Analyze", Icon: IconUpload },
   { href: "/research", label: "Research", short: "Research", Icon: IconLearn, desktopOnly: true },
+  { href: "/bogleheads", label: "Bogleheads", short: "Bogleheads", Icon: IconLearn, desktopOnly: true },
 ];
 
 const isActive = (path: string | null, href: string) =>
   href === "/" ? path === "/" : !!path?.startsWith(href) || (href === "/companies" && !!path?.startsWith("/company/"));
-// On phones the tab bar has five slots, so Research lives under Learn there.
-const isActiveTab = (path: string | null, href: string) => isActive(path, href) || (href === "/learn" && !!path?.startsWith("/research"));
+// On phones the tab bar has five slots, so Research and Bogleheads live under Learn there.
+const isActiveTab = (path: string | null, href: string) => isActive(path, href) || (href === "/learn" && (!!path?.startsWith("/research") || !!path?.startsWith("/bogleheads")));
 
 export function XpBar({ compact = false }: { compact?: boolean }) {
   const { p, ready } = useProgress();
