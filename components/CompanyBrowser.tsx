@@ -4,18 +4,19 @@ import { useMemo, useState } from "react";
 import type { IndexRow } from "@/lib/engine/types";
 import { money, pct } from "@/lib/format";
 import { useProgress } from "@/lib/game/progress";
+import { spot } from "./fx";
 
 function Card({ r, seen }: { r: IndexRow; seen: boolean }) {
   return (
-    <Link href={`/company/${r.ticker}`} className="card group flex flex-col p-4 transition hover:-translate-y-0.5 hover:shadow-md">
+    <Link href={`/company/${r.ticker}`} onPointerMove={spot} className="card card-hover spotlight group flex flex-col p-4">
       <div className="flex items-center justify-between">
-        <span className="chip font-mono">{r.ticker}</span>
-        {seen && <span className="text-xs text-muted" title="You have opened this report">✓ seen</span>}
+        <span className="chip border border-ink/15 bg-panel font-mono text-ink">{r.ticker}</span>
+        {seen && <span className="chip bg-accent-soft text-accent" title="You have opened this report">✓ Seen</span>}
       </div>
-      <div className="mt-2 font-bold leading-tight group-hover:text-accent">{r.name}</div>
+      <div className="mt-3 font-display text-lg leading-tight font-extrabold transition-colors group-hover:text-accent">{r.name}</div>
       <div className="text-xs text-muted">{r.sector}</div>
       {r.blurb && <p className="mt-2 line-clamp-3 text-xs text-muted">{r.blurb}</p>}
-      <div className="mt-auto grid grid-cols-3 gap-2 pt-3 text-xs">
+      <div className="mt-auto grid grid-cols-3 gap-2 border-t border-dashed border-line pt-3 text-xs">
         <div><div className="text-muted">Revenue</div><div className="num font-semibold">{money(r.latest.revenue)}</div></div>
         <div><div className="text-muted">Net margin</div><div className="num font-semibold">{pct(r.latest.net_margin)}</div></div>
         <div><div className="text-muted">ROE</div><div className="num font-semibold">{pct(r.latest.roe)}</div></div>
@@ -37,18 +38,18 @@ export function CompanyBrowser({ sec, practice }: { sec: IndexRow[]; practice: I
   return (
     <div className="mt-6 grid gap-8">
       <section>
-        <h2 className="mb-1 text-lg font-bold">🎯 Training grounds</h2>
+        <h2 className="mb-1 text-2xl font-extrabold">Training grounds</h2>
         <p className="mb-3 text-sm text-muted">Fictional companies with clean, tied-out statements. Each one teaches a pattern.</p>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-          {practice.map((r) => <Card key={r.ticker} r={r} seen={p.viewed.includes(r.ticker)} />)}
+        <div className="rise grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+          {practice.map((r, i) => <div key={r.ticker} className="grid" style={{ ["--i" as string]: i }}><Card r={r} seen={p.viewed.includes(r.ticker)} /></div>)}
         </div>
       </section>
       <section>
         <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
-          <h2 className="text-lg font-bold">S&amp;P 500 top 50</h2>
+          <h2 className="text-2xl font-extrabold">S&amp;P 500 top 50</h2>
           <div className="flex flex-wrap gap-2">
-            <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search name or ticker" className="rounded-lg border border-line bg-panel px-3 py-2 text-sm" />
-            <select value={sector} onChange={(e) => setSector(e.target.value)} className="rounded-lg border border-line bg-panel px-3 py-2 text-sm">
+            <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search name or ticker" aria-label="Search companies" className="min-h-11 rounded-full border border-line bg-panel px-4 py-2 text-sm shadow-[0_3px_0_var(--line)]" />
+            <select value={sector} onChange={(e) => setSector(e.target.value)} aria-label="Sector" className="min-h-11 rounded-full border border-line bg-panel px-4 py-2 text-sm font-semibold shadow-[0_3px_0_var(--line)]">
               {sectors.map((s) => <option key={s}>{s}</option>)}
             </select>
           </div>
@@ -62,8 +63,8 @@ export function CompanyBrowser({ sec, practice }: { sec: IndexRow[]; practice: I
             </p>
           </div>
         ) : (
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {shown.map((r) => <Card key={r.ticker} r={r} seen={p.viewed.includes(r.ticker)} />)}
+          <div className="rise grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {shown.map((r, i) => <div key={r.ticker} className="grid" style={{ ["--i" as string]: i }}><Card r={r} seen={p.viewed.includes(r.ticker)} /></div>)}
           </div>
         )}
       </section>
