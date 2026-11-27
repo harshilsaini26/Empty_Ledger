@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 // @ts-expect-error plain ES module script without type declarations
-import { pickDeletions } from "../scripts/prune-vercel-deployments.mjs";
+import { chooseProject, pickDeletions } from "../scripts/prune-vercel-deployments.mjs";
 
 const d = (uid: string, created: number, state = "READY") => ({ uid, created, state });
 
@@ -19,5 +19,12 @@ describe("pruning Vercel deployments", () => {
   });
   it("deletes nothing when there are fewer deployments than it keeps", () => {
     expect(pickDeletions([d("live", 1), d("x", 2)], "live", 3)).toEqual([]);
+  });
+  it("finds the project linked to the repo, or the only one", () => {
+    const a = { name: "ledger-web", link: { repo: "Empty_Ledger" } };
+    const b = { name: "design-bucket", link: { repo: "Web-Design-Bucket" } };
+    expect(chooseProject([b, a], "owner/Empty_Ledger")).toBe(a);
+    expect(chooseProject([{ name: "solo" }], "x/Empty_Ledger")?.name).toBe("solo");
+    expect(chooseProject([{ name: "one" }, { name: "two" }], "x/Empty_Ledger")).toBeNull();
   });
 });

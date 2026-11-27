@@ -3,7 +3,8 @@
 //
 //   VERCEL_TOKEN=...  VERCEL_PROJECT=empty-ledger  node scripts/prune-vercel-deployments.mjs [--dry-run]
 //
-// Env: VERCEL_TOKEN (required, from vercel.com/account/tokens), VERCEL_PROJECT (project name or id),
+// Env: VERCEL_TOKEN (required, from vercel.com/account/tokens), VERCEL_PROJECT (project name or id;
+//      if unset, the project linked to GITHUB_REPOSITORY, or the account's only project, is used),
 //      VERCEL_TEAM_ID (only for team accounts), KEEP (newest deployments to keep, default 3).
 // Deleting a deployment is permanent and removes it as an instant-rollback target.
 
@@ -15,6 +16,15 @@ export function pickDeletions(deployments, productionId, keep) {
   const done = deployments.filter((d) => !["BUILDING", "QUEUED", "INITIALIZING"].includes(d.state));
   const newest = [...deployments].sort((a, b) => b.created - a.created).slice(0, keep).map((d) => d.uid);
   return done.filter((d) => d.uid !== productionId && !newest.includes(d.uid)).sort((a, b) => a.created - b.created);
+}
+
+/** Pick the project: the one linked to this GitHub repo, else the only one on the account. */
+export function chooseProject(projects, repo) {
+  const name = repo?.split("/")[1]?.toLowerCase();
+  const linked = projects.filter((p) => p.link?.repo?.toLowerCase() === name);
+  if (linked.length === 1) return linked[0];
+  if (projects.length === 1) return projects[0];
+  return null;
 }
 
 async function api(path, { method = "GET", token, team } = {}) {
@@ -31,10 +41,20 @@ async function main() {
   const team = process.env.VERCEL_TEAM_ID || undefined;
   const keep = Number(process.env.KEEP ?? 3);
   const dry = process.argv.includes("--dry-run") || process.env.DRY_RUN === "true";
-  if (!token || !project) throw new Error("Set VERCEL_TOKEN and VERCEL_PROJECT.");
+  if (!token) throw new Error("Set VERCEL_TOKEN.");
   if (!Number.isInteger(keep) || keep < 1) throw new Error("KEEP must be a whole number of at least 1.");
 
-  const proj = await api(`/v9/projects/${encodeURIComponent(project)}`, { token, team });
+  let proj;
+  if (project) proj = await api(`/v9/projects/${encodeURIComponent(project)}`, { token, team });
+  else {
+    const { projects } = await api("/v9/projects?limit=100", { token, team });
+    proj = chooseProject(projects, process.env.GITHUB_REPOSITORY);
+    if (!proj) {
+      const names = projects.map((p) => p.name).join(", ") || "none";
+      throw new Error(`Could not tell which Vercel project to prune. Set the VERCEL_PROJECT variable to one of: ${names}`);
+    }
+  }
+  console.log(`Project: ${proj.name}`);
   const productionId = proj.targets?.production?.id;
   if (!productionId) throw new Error("Could not find the live production deployment; deleting nothing.");
 
