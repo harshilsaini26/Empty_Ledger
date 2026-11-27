@@ -1,0 +1,36 @@
+name: Prune old Vercel deployments
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Only list what would be deleted"
+        type: boolean
+        default: true
+  schedule:
+    - cron: "0 8 * * 1"   # Mondays 08:00 UTC, after the data refresh has deployed
+
+permissions:
+  contents: read
+
+jobs:
+  prune:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Delete all but the live and the newest 3 deployments
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_PROJECT: ${{ vars.VERCEL_PROJECT || 'empty-ledger' }}
+          VERCEL_TEAM_ID: ${{ vars.VERCEL_TEAM_ID }}
+          KEEP: ${{ vars.VERCEL_KEEP || '3' }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: |
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo "::error::Add a repository secret named VERCEL_TOKEN (vercel.com/account/tokens)."
+            exit 1
+          fi
+          node scripts/prune-vercel-deployments.mjs
