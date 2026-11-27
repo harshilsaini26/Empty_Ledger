@@ -673,3 +673,35 @@ h2,
     display: none;
   }
 }
+
+/* Range sliders in the research labs: chunky thumb, filled track. */
+.lab-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent) 0 var(--fill, 50%), var(--panel-2) var(--fill, 50%) 100%);
+  border: 1px solid var(--line);
+  cursor: pointer;
+}
+.lab-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--panel);
+  border: 3px solid var(--ink);
+  box-shadow: 0 3px 0 var(--ink);
+  transition: transform 160ms var(--ease-pop);
+}
+.lab-range::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: var(--panel);
+  border: 3px solid var(--ink);
+  box-shadow: 0 3px 0 var(--ink);
+}
+.lab-range:active::-webkit-slider-thumb {
+  transform: scale(1.15);
+}

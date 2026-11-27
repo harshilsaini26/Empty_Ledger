@@ -13,10 +13,13 @@ const NAV = [
   { href: "/play", label: "Play", short: "Play", Icon: IconPlay },
   { href: "/companies", label: "Companies", short: "Explore", Icon: IconCompanies },
   { href: "/upload", label: "Analyze a file", short: "Analyze", Icon: IconUpload },
+  { href: "/research", label: "Research", short: "Research", Icon: IconLearn, desktopOnly: true },
 ];
 
 const isActive = (path: string | null, href: string) =>
   href === "/" ? path === "/" : !!path?.startsWith(href) || (href === "/companies" && !!path?.startsWith("/company/"));
+// On phones the tab bar has five slots, so Research lives under Learn there.
+const isActiveTab = (path: string | null, href: string) => isActive(path, href) || (href === "/learn" && !!path?.startsWith("/research"));
 
 export function XpBar({ compact = false }: { compact?: boolean }) {
   const { p, ready } = useProgress();
@@ -130,8 +133,8 @@ function TabBar() {
       className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-bg/85 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl md:hidden"
     >
       <ul className="mx-auto grid max-w-lg grid-cols-5">
-        {NAV.map((n) => {
-          const on = isActive(path, n.href);
+        {NAV.filter((n) => !n.desktopOnly).map((n) => {
+          const on = isActiveTab(path, n.href);
           return (
             <li key={n.href}>
               <Link href={n.href} aria-current={on ? "page" : undefined} className={`flex min-h-14 flex-col items-center justify-center gap-0.5 text-[11px] font-bold ${on ? "text-accent" : "text-muted"}`}>

@@ -15,7 +15,8 @@ you upload.
 | **Play** (`/play`) | Ratio Rush (90-second ratio sprint), Mystery Ledger (name the company from its common-size statements), Red Flag Hunt (forensic accounting) and Higher or Lower (ratio intuition). |
 | **Companies** (`/companies`) | Full reports: statements (as reported, common-size, trend), 70+ ratios with peer percentiles, DuPont, Altman Z'', Beneish M, Piotroski F, red flags, a durable-business checklist and simple projections. |
 | **Analyze a file** (`/upload`) | Upload CSV or Excel. Rows are matched to line items by label ("Net sales", "Total current assets"...), you can fix the mapping, and the full report runs in the browser. Nothing is uploaded to a server. |
-| **Progress** | XP, a nine-step career ladder, daily question, streaks and 13 badges. Stored in the browser's localStorage, so no accounts or database are needed. |
+| **Research** (`/research`) | Three seminal Financial Analysts Journal papers (Enhanced Portfolio Optimization, Buffett's Alpha, the goal completion score for retirement income) with plain-English summaries, key learnings, the math rendered with KaTeX, an interactive lab for each model and a short quiz. |
+| **Progress** | XP, a nine-step career ladder, daily question, streaks and 14 badges. Stored in the browser's localStorage, so no accounts or database are needed. |
 
 ## How it fits together
 
@@ -28,6 +29,7 @@ app/, components/    Next.js (App Router), every page pre-rendered at build time
 lib/engine/          TypeScript port of finlab for uploads; tests/parity.test.ts keeps it identical
 lib/game/            XP, badges, question generators
 lib/learn/           lesson content
+lib/research/        paper content and the models behind the research labs
 ```
 
 The site is fully static: pages are generated from `pipeline/data` at build time, which keeps it
