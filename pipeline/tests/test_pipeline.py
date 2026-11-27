@@ -229,6 +229,14 @@ class UniverseTests(unittest.TestCase):
             self.assertTrue(c.company_facts(1, latest_accn="k24")["new"])  # new 10-K: download
             self.assertEqual(len(calls), 1)
 
+    def test_user_agent_is_cleaned(self):
+        from finlab.sec import SecClient
+        with tempfile.TemporaryDirectory() as tmp:
+            c = SecClient('"Jane Doe  jane@example.com"\r\n', tmp)
+            self.assertEqual(c.user_agent, "Jane Doe jane@example.com")
+            with self.assertRaises(SystemExit):
+                SecClient("no email here\n", tmp)
+
     def test_build_universe_offline(self):
         import build_universe
         with tempfile.TemporaryDirectory() as tmp:

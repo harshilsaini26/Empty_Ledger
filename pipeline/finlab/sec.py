@@ -21,6 +21,9 @@ MIN_INTERVAL = 0.15  # seconds between requests (~6.6 req/s)
 
 class SecClient:
     def __init__(self, user_agent, cache_dir, refresh=False, offline=False):
+        # Secrets pasted into a settings page often carry a trailing newline or quotes, which
+        # http.client rejects as an invalid header. Clean them up rather than fail.
+        user_agent = " ".join((user_agent or "").replace('"', " ").replace("'", " ").split())
         if not offline and (not user_agent or "@" not in user_agent):
             raise SystemExit(
                 "SEC requires a User-Agent with a name and email, e.g.\n"
