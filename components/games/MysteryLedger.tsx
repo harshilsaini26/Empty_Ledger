@@ -153,7 +153,7 @@ export function MysteryLedger({ bank }: { bank: BankCompany[] }) {
         ))}
       </div>
       {done && (
-        <div className={`pop rounded-2xl border-l-4 p-4 text-sm leading-relaxed ${ok ? "border-good bg-accent-soft/60" : "border-bad bg-bad-soft/70"}`} role="status">
+        <div className={`pop rounded-2xl p-4 text-sm leading-relaxed ${ok ? "bg-accent-soft/60" : "bg-bad-soft/70"}`} role="status">
           <b className={ok ? "text-good" : "text-bad"}>{ok ? "Correct!" : `It was ${target.name}.`}</b>{" "}
           The telltales: {telltales.map((t) => `${t.row.label.toLowerCase()} ${fmtUnit(t.v, t.row.unit)} vs typical ${fmtUnit(t.m, t.row.unit)}`).join("; ")}.
           {target.template === "bank" && " Banks show tiny asset turnover and almost no PP&E because loans and securities dominate the balance sheet."}

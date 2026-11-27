@@ -75,7 +75,7 @@ export function QuizCard({
         ))}
       </div>
       {done && (
-        <div className={`pop mt-5 rounded-2xl border-l-4 p-4 text-sm leading-relaxed ${ok ? "border-good bg-accent-soft/60" : "border-bad bg-bad-soft/70"}`} role="status">
+        <div className={`pop mt-5 rounded-2xl p-4 text-sm leading-relaxed ${ok ? "bg-accent-soft/60" : "bg-bad-soft/70"}`} role="status">
           <b className={ok ? "text-good" : "text-bad"}>{ok ? "Correct." : "Not quite."}</b> {item.explain}
         </div>
       )}

@@ -112,7 +112,7 @@ export function RatioRush({ bank }: { bank: BankCompany[] }) {
             <h3 className="font-display text-lg font-extrabold">Review your misses</h3>
             <ul className="rise mt-3 grid gap-2 text-sm">
               {misses.map((m, i) => (
-                <li key={i} className="rounded-2xl border-l-4 border-bad bg-panel-2 p-3" style={{ ["--i" as string]: i }}>
+                <li key={i} className="rounded-2xl bg-panel-2 p-3" style={{ ["--i" as string]: i }}>
                   <div className="font-semibold">{m.prompt}</div>
                   <div className="mt-1 text-muted">
                     Answer: <b className="text-ink">{m.choices[m.answer]}</b>. {m.explain}
