@@ -24,7 +24,7 @@ jobs:
       - name: Delete all but the live and the newest 3 deployments
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_PROJECT: ${{ vars.VERCEL_PROJECT || 'empty-ledger' }}
+          VERCEL_PROJECT: ${{ vars.VERCEL_PROJECT }}   # empty: use the project linked to this repo
           VERCEL_TEAM_ID: ${{ vars.VERCEL_TEAM_ID }}
           KEEP: ${{ vars.VERCEL_KEEP || '3' }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
