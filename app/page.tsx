@@ -5,6 +5,7 @@ import { TAGLINE } from "@/lib/brand";
 import { HomeDashboard } from "@/components/HomeDashboard";
 import { FeatureCards } from "@/components/FeatureCards";
 import { Ticker } from "@/components/fx";
+import { BalanceScale } from "@/components/BalanceScale";
 
 const TAPE = [
   "ROE = Net margin × Asset turnover × Equity multiplier",
@@ -55,6 +56,20 @@ export default function Home() {
           )}
         </div>
         <HomeDashboard bank={bank} />
+      </section>
+
+      <section className="grid items-center gap-8 md:grid-cols-[1fr_1.1fr]">
+        <div>
+          <span className="font-mono text-[11px] font-bold tracking-widest text-muted uppercase">Try it now</span>
+          <h2 className="mt-2 font-display text-3xl font-extrabold tracking-tight md:text-4xl">
+            Every balance sheet has to <span className="highlight">balance</span>.
+          </h2>
+          <p className="mt-3 max-w-md text-muted">
+            Put each line item on the side it belongs to. Assets go on the left; what funds them, debt and equity, goes on the right. Get it right and the
+            scale levels out.
+          </p>
+        </div>
+        <BalanceScale />
       </section>
 
       <Ticker items={TAPE} />
