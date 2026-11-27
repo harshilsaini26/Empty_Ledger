@@ -1,0 +1,39 @@
+name: Refresh SEC data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * 1"   # every Monday 06:00 UTC (new 10-Ks get picked up automatically)
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Unit tests
+        working-directory: pipeline
+        run: python -m unittest discover -s tests
+      - name: Build dataset from SEC EDGAR
+        working-directory: pipeline
+        env:
+          # Set this repository secret to "Your Name your.email@example.com" (SEC fair-access rule)
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: |
+          if [ -z "$SEC_USER_AGENT" ]; then
+            echo "::error::Add a repository secret named SEC_USER_AGENT, e.g. 'Your Name you@example.com' (required by the SEC)."
+            exit 1
+          fi
+          python build_dataset.py --refresh
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
+          git add pipeline/data
+          git diff --cached --quiet || git commit -m "data: refresh SEC statements and ratios"
+          git push
