@@ -1,0 +1,1779 @@
+{
+ "ticker": "AAPL",
+ "name": "Apple Inc.",
+ "entity_name": "Apple Inc.",
+ "cik": 320193,
+ "sector": "Information Technology",
+ "template": "standard",
+ "peer_group": "Information Technology",
+ "fiscal_years": [
+  2022,
+  2023,
+  2024,
+  2025,
+  2026
+ ],
+ "prior_year": 2021,
+ "period_end": {
+  "2021": "2021-09-25",
+  "2022": "2022-09-24",
+  "2023": "2023-09-30",
+  "2024": "2024-09-28",
+  "2025": "2025-09-27",
+  "2026": "2026-09-26"
+ },
+ "units": "USD (per-share in USD, shares in units)",
+ "labels": {
+  "revenue": "Revenue",
+  "pretax_income": "Pre-tax income",
+  "income_tax": "Income tax expense",
+  "net_income": "Net income (to parent)",
+  "eps_diluted": "Diluted EPS",
+  "shares_diluted": "Diluted weighted avg. shares",
+  "cash": "Cash & equivalents",
+  "goodwill": "Goodwill",
+  "intangibles": "Other intangibles",
+  "total_assets": "Total assets",
+  "total_liabilities": "Total liabilities",
+  "equity": "Shareholders' equity (parent)",
+  "equity_incl_nci": "Total equity incl. NCI",
+  "retained_earnings": "Retained earnings",
+  "shares_outstanding": "Shares outstanding",
+  "cfo": "Cash from operations",
+  "cfi": "Cash from investing",
+  "cff": "Cash from financing",
+  "dividends_paid": "Dividends paid",
+  "buybacks": "Share repurchases",
+  "sbc": "Stock-based compensation",
+  "d_and_a": "Depreciation & amortization",
+  "cost_of_revenue": "Cost of revenue",
+  "gross_profit": "Gross profit",
+  "rnd": "R&D expense",
+  "sga": "SG&A expense",
+  "operating_income": "Operating income (EBIT)",
+  "interest_expense": "Interest expense",
+  "short_term_investments": "Short-term investments",
+  "receivables": "Accounts receivable",
+  "inventory": "Inventory",
+  "current_assets": "Total current assets",
+  "ppe": "PP&E, net",
+  "accounts_payable": "Accounts payable",
+  "current_liabilities": "Total current liabilities",
+  "short_term_debt": "Short-term debt",
+  "long_term_debt": "Long-term debt",
+  "capex": "Capital expenditure",
+  "ebit": "EBIT",
+  "ebitda": "EBITDA",
+  "total_debt": "Total debt",
+  "net_debt": "Net debt",
+  "fcf": "Free cash flow (CFO - capex)",
+  "working_capital": "Working capital",
+  "invested_capital": "Invested capital (debt + equity)",
+  "tangible_equity": "Tangible equity",
+  "effective_tax_rate": "Effective tax rate"
+ },
+ "statements": {
+  "income": {
+   "revenue": {
+    "2021": 365817000000,
+    "2022": 394328000000,
+    "2023": 383285000000,
+    "2024": 391035000000,
+    "2025": 416161000000,
+    "2026": 478834000000
+   },
+   "pretax_income": {
+    "2021": 109207000000,
+    "2022": 119103000000,
+    "2023": 113736000000,
+    "2024": 123485000000,
+    "2025": 132729000000,
+    "2026": 159237000000
+   },
+   "income_tax": {
+    "2021": 14527000000,
+    "2022": 19300000000,
+    "2023": 16741000000,
+    "2024": 29749000000,
+    "2025": 20719000000,
+    "2026": 27062000000
+   },
+   "net_income": {
+    "2021": 94680000000,
+    "2022": 99803000000,
+    "2023": 96995000000,
+    "2024": 93736000000,
+    "2025": 112010000000,
+    "2026": 132175000000
+   },
+   "eps_diluted": {
+    "2021": 5.61,
+    "2022": 6.11,
+    "2023": 6.13,
+    "2024": 6.08,
+    "2025": 7.46,
+    "2026": 8.98
+   },
+   "shares_diluted": {
+    "2021": 16864919000,
+    "2022": 16325819000,
+    "2023": 15812547000,
+    "2024": 15408095000,
+    "2025": 15004697000,
+    "2026": 14720306000
+   },
+   "cost_of_revenue": {
+    "2021": 212981000000,
+    "2022": 223546000000,
+    "2023": 214137000000,
+    "2024": 210352000000,
+    "2025": 220960000000,
+    "2026": 245232000000
+   },
+   "gross_profit": {
+    "2021": 152836000000,
+    "2022": 170782000000,
+    "2023": 169148000000,
+    "2024": 180683000000,
+    "2025": 195201000000,
+    "2026": 233602000000
+   },
+   "rnd": {
+    "2021": 21914000000,
+    "2022": 26251000000,
+    "2023": 29915000000,
+    "2024": 31370000000,
+    "2025": 34550000000,
+    "2026": 45765000000
+   },
+   "sga": {
+    "2021": 21973000000,
+    "2022": 25094000000,
+    "2023": 24932000000,
+    "2024": 26097000000,
+    "2025": 27601000000,
+    "2026": 29774000000
+   },
+   "operating_income": {
+    "2021": 108949000000,
+    "2022": 119437000000,
+    "2023": 114301000000,
+    "2024": 123216000000,
+    "2025": 133050000000,
+    "2026": 158063000000
+   },
+   "interest_expense": {
+    "2021": 2645000000,
+    "2022": 2931000000,
+    "2023": 3933000000
+   },
+   "ebit": {
+    "2021": 108949000000,
+    "2022": 119437000000,
+    "2023": 114301000000,
+    "2024": 123216000000,
+    "2025": 133050000000,
+    "2026": 158063000000
+   },
+   "ebitda": {
+    "2021": 120233000000,
+    "2022": 130541000000,
+    "2023": 125820000000,
+    "2024": 134661000000,
+    "2025": 144748000000,
+    "2026": 171486000000
+   },
+   "effective_tax_rate": {
+    "2021": 0.13302260844085087,
+    "2022": 0.16204461684424407,
+    "2023": 0.14719174228036858,
+    "2024": 0.24091185164189982,
+    "2025": 0.15610002335586043,
+    "2026": 0.169947939235228
+   }
+  },
+  "balance": {
+   "cash": {
+    "2021": 34940000000,
+    "2022": 23646000000,
+    "2023": 29965000000,
+    "2024": 29943000000,
+    "2025": 35934000000,
+    "2026": 36305000000
+   },
+   "goodwill": {},
+   "intangibles": {
+    "2025": 13301000000,
+    "2026": 25700000000
+   },
+   "total_assets": {
+    "2021": 351002000000,
+    "2022": 352755000000,
+    "2023": 352583000000,
+    "2024": 364980000000,
+    "2025": 359241000000,
+    "2026": 404548000000
+   },
+   "total_liabilities": {
+    "2021": 287912000000,
+    "2022": 302083000000,
+    "2023": 290437000000,
+    "2024": 308030000000,
+    "2025": 285508000000,
+    "2026": 292455000000
+   },
+   "equity": {
+    "2021": 63090000000,
+    "2022": 50672000000,
+    "2023": 62146000000,
+    "2024": 56950000000,
+    "2025": 73733000000,
+    "2026": 112093000000
+   },
+   "equity_incl_nci": {},
+   "retained_earnings": {
+    "2021": 5562000000,
+    "2022": -3068000000,
+    "2023": -214000000,
+    "2024": -19154000000,
+    "2025": -14264000000,
+    "2026": 13700000000
+   },
+   "shares_outstanding": {
+    "2021": 16426786000,
+    "2022": 15943425000,
+    "2023": 15550061000,
+    "2024": 15116786000,
+    "2025": 14773260000,
+    "2026": 14532259000
+   },
+   "short_term_investments": {
+    "2021": 27699000000,
+    "2022": 24658000000,
+    "2023": 31590000000,
+    "2024": 35228000000,
+    "2025": 18763000000,
+    "2026": 20417000000
+   },
+   "receivables": {
+    "2021": 26278000000,
+    "2022": 28184000000,
+    "2023": 29508000000,
+    "2024": 33410000000,
+    "2025": 39777000000,
+    "2026": 43817000000
+   },
+   "inventory": {
+    "2021": 6580000000,
+    "2022": 4946000000,
+    "2023": 6331000000,
+    "2024": 7286000000,
+    "2025": 5718000000,
+    "2026": 14541000000
+   },
+   "current_assets": {
+    "2021": 134836000000,
+    "2022": 135405000000,
+    "2023": 143566000000,
+    "2024": 152987000000,
+    "2025": 147957000000,
+    "2026": 173857000000
+   },
+   "ppe": {
+    "2021": 39440000000,
+    "2022": 42117000000,
+    "2023": 43715000000,
+    "2024": 45680000000,
+    "2025": 49834000000,
+    "2026": 52084000000
+   },
+   "accounts_payable": {
+    "2021": 54763000000,
+    "2022": 64115000000,
+    "2023": 62611000000,
+    "2024": 68960000000,
+    "2025": 69860000000,
+    "2026": 82252000000
+   },
+   "current_liabilities": {
+    "2021": 125481000000,
+    "2022": 153982000000,
+    "2023": 145308000000,
+    "2024": 176392000000,
+    "2025": 165631000000,
+    "2026": 169915000000
+   },
+   "short_term_debt": {
+    "2021": 15613000000,
+    "2022": 21110000000,
+    "2023": 15807000000,
+    "2024": 20879000000,
+    "2025": 20329000000,
+    "2026": 11903000000
+   },
+   "long_term_debt": {
+    "2021": 109106000000,
+    "2022": 98959000000,
+    "2023": 95281000000,
+    "2024": 85750000000,
+    "2025": 78328000000,
+    "2026": 68208000000
+   },
+   "total_debt": {
+    "2021": 124719000000,
+    "2022": 120069000000,
+    "2023": 111088000000,
+    "2024": 106629000000,
+    "2025": 98657000000,
+    "2026": 80111000000
+   },
+   "net_debt": {
+    "2021": 62080000000,
+    "2022": 71765000000,
+    "2023": 49533000000,
+    "2024": 41458000000,
+    "2025": 43960000000,
+    "2026": 23389000000
+   },
+   "invested_capital": {
+    "2021": 187809000000,
+    "2022": 170741000000,
+    "2023": 173234000000,
+    "2024": 163579000000,
+    "2025": 172390000000,
+    "2026": 192204000000
+   },
+   "working_capital": {
+    "2021": 9355000000,
+    "2022": -18577000000,
+    "2023": -1742000000,
+    "2024": -23405000000,
+    "2025": -17674000000,
+    "2026": 3942000000
+   },
+   "tangible_equity": {
+    "2021": 63090000000,
+    "2022": 50672000000,
+    "2023": 62146000000,
+    "2024": 56950000000,
+    "2025": 60432000000,
+    "2026": 86393000000
+   }
+  },
+  "cashflow": {
+   "cfo": {
+    "2021": 104038000000,
+    "2022": 122151000000,
+    "2023": 110543000000,
+    "2024": 118254000000,
+    "2025": 111482000000,
+    "2026": 145097000000
+   },
+   "cfi": {
+    "2021": -14545000000,
+    "2022": -22354000000,
+    "2023": 3705000000,
+    "2024": 2935000000,
+    "2025": 15195000000,
+    "2026": -17280000000
+   },
+   "cff": {
+    "2021": -93353000000,
+    "2022": -110749000000,
+    "2023": -108488000000,
+    "2024": -121983000000,
+    "2025": -120686000000,
+    "2026": -127446000000
+   },
+   "dividends_paid": {
+    "2021": 14467000000,
+    "2022": 14841000000,
+    "2023": 15025000000,
+    "2024": 15234000000,
+    "2025": 15421000000,
+    "2026": 15721000000
+   },
+   "buybacks": {
+    "2021": 85971000000,
+    "2022": 89402000000,
+    "2023": 77550000000,
+    "2024": 94949000000,
+    "2025": 90711000000,
+    "2026": 86390000000
+   },
+   "sbc": {
+    "2021": 7906000000,
+    "2022": 9038000000,
+    "2023": 10833000000,
+    "2024": 11688000000,
+    "2025": 12863000000,
+    "2026": 13789000000
+   },
+   "d_and_a": {
+    "2021": 11284000000,
+    "2022": 11104000000,
+    "2023": 11519000000,
+    "2024": 11445000000,
+    "2025": 11698000000,
+    "2026": 13423000000
+   },
+   "capex": {
+    "2021": 11085000000,
+    "2022": 10708000000,
+    "2023": 10959000000,
+    "2024": 9447000000,
+    "2025": 12715000000,
+    "2026": 9041000000
+   },
+   "fcf": {
+    "2021": 92953000000,
+    "2022": 111443000000,
+    "2023": 99584000000,
+    "2024": 108807000000,
+    "2025": 98767000000,
+    "2026": 136056000000
+   }
+  }
+ },
+ "sources": {
+  "revenue": {
+   "2021": "RevenueFromContractWithCustomerExcludingAssessedTax",
+   "2022": "RevenueFromContractWithCustomerExcludingAssessedTax",
+   "2023": "RevenueFromContractWithCustomerExcludingAssessedTax",
+   "2024": "RevenueFromContractWithCustomerExcludingAssessedTax",
+   "2025": "RevenueFromContractWithCustomerExcludingAssessedTax",
+   "2026": "RevenueFromContractWithCustomerExcludingAssessedTax"
+  },
+  "pretax_income": {
+   "2021": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+   "2022": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+   "2023": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+   "2024": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+   "2025": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+   "2026": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+  },
+  "income_tax": {
+   "2021": "IncomeTaxExpenseBenefit",
+   "2022": "IncomeTaxExpenseBenefit",
+   "2023": "IncomeTaxExpenseBenefit",
+   "2024": "IncomeTaxExpenseBenefit",
+   "2025": "IncomeTaxExpenseBenefit",
+   "2026": "IncomeTaxExpenseBenefit"
+  },
+  "net_income": {
+   "2021": "NetIncomeLoss",
+   "2022": "NetIncomeLoss",
+   "2023": "NetIncomeLoss",
+   "2024": "NetIncomeLoss",
+   "2025": "NetIncomeLoss",
+   "2026": "NetIncomeLoss"
+  },
+  "eps_diluted": {
+   "2021": "EarningsPerShareDiluted",
+   "2022": "EarningsPerShareDiluted",
+   "2023": "EarningsPerShareDiluted",
+   "2024": "EarningsPerShareDiluted",
+   "2025": "EarningsPerShareDiluted",
+   "2026": "EarningsPerShareDiluted"
+  },
+  "shares_diluted": {
+   "2021": "WeightedAverageNumberOfDilutedSharesOutstanding",
+   "2022": "WeightedAverageNumberOfDilutedSharesOutstanding",
+   "2023": "WeightedAverageNumberOfDilutedSharesOutstanding",
+   "2024": "WeightedAverageNumberOfDilutedSharesOutstanding",
+   "2025": "WeightedAverageNumberOfDilutedSharesOutstanding",
+   "2026": "WeightedAverageNumberOfDilutedSharesOutstanding"
+  },
+  "cash": {
+   "2021": "CashAndCashEquivalentsAtCarryingValue",
+   "2022": "CashAndCashEquivalentsAtCarryingValue",
+   "2023": "CashAndCashEquivalentsAtCarryingValue",
+   "2024": "CashAndCashEquivalentsAtCarryingValue",
+   "2025": "CashAndCashEquivalentsAtCarryingValue",
+   "2026": "CashAndCashEquivalentsAtCarryingValue"
+  },
+  "goodwill": {},
+  "intangibles": {
+   "2025": "IntangibleAssetsNetExcludingGoodwill",
+   "2026": "IntangibleAssetsNetExcludingGoodwill"
+  },
+  "total_assets": {
+   "2021": "Assets",
+   "2022": "Assets",
+   "2023": "Assets",
+   "2024": "Assets",
+   "2025": "Assets",
+   "2026": "Assets"
+  },
+  "total_liabilities": {
+   "2021": "Liabilities",
+   "2022": "Liabilities",
+   "2023": "Liabilities",
+   "2024": "Liabilities",
+   "2025": "Liabilities",
+   "2026": "Liabilities"
+  },
+  "equity": {
+   "2021": "StockholdersEquity",
+   "2022": "StockholdersEquity",
+   "2023": "StockholdersEquity",
+   "2024": "StockholdersEquity",
+   "2025": "StockholdersEquity",
+   "2026": "StockholdersEquity"
+  },
+  "equity_incl_nci": {},
+  "retained_earnings": {
+   "2021": "RetainedEarningsAccumulatedDeficit",
+   "2022": "RetainedEarningsAccumulatedDeficit",
+   "2023": "RetainedEarningsAccumulatedDeficit",
+   "2024": "RetainedEarningsAccumulatedDeficit",
+   "2025": "RetainedEarningsAccumulatedDeficit",
+   "2026": "RetainedEarningsAccumulatedDeficit"
+  },
+  "shares_outstanding": {
+   "2021": "CommonStockSharesOutstanding",
+   "2022": "CommonStockSharesOutstanding",
+   "2023": "CommonStockSharesOutstanding",
+   "2024": "CommonStockSharesOutstanding",
+   "2025": "CommonStockSharesOutstanding",
+   "2026": "CommonStockSharesOutstanding"
+  },
+  "cfo": {
+   "2021": "NetCashProvidedByUsedInOperatingActivities",
+   "2022": "NetCashProvidedByUsedInOperatingActivities",
+   "2023": "NetCashProvidedByUsedInOperatingActivities",
+   "2024": "NetCashProvidedByUsedInOperatingActivities",
+   "2025": "NetCashProvidedByUsedInOperatingActivities",
+   "2026": "NetCashProvidedByUsedInOperatingActivities"
+  },
+  "cfi": {
+   "2021": "NetCashProvidedByUsedInInvestingActivities",
+   "2022": "NetCashProvidedByUsedInInvestingActivities",
+   "2023": "NetCashProvidedByUsedInInvestingActivities",
+   "2024": "NetCashProvidedByUsedInInvestingActivities",
+   "2025": "NetCashProvidedByUsedInInvestingActivities",
+   "2026": "NetCashProvidedByUsedInInvestingActivities"
+  },
+  "cff": {
+   "2021": "NetCashProvidedByUsedInFinancingActivities",
+   "2022": "NetCashProvidedByUsedInFinancingActivities",
+   "2023": "NetCashProvidedByUsedInFinancingActivities",
+   "2024": "NetCashProvidedByUsedInFinancingActivities",
+   "2025": "NetCashProvidedByUsedInFinancingActivities",
+   "2026": "NetCashProvidedByUsedInFinancingActivities"
+  },
+  "dividends_paid": {
+   "2021": "PaymentsOfDividends",
+   "2022": "PaymentsOfDividends",
+   "2023": "PaymentsOfDividends",
+   "2024": "PaymentsOfDividends",
+   "2025": "PaymentsOfDividends",
+   "2026": "PaymentsOfDividends"
+  },
+  "buybacks": {
+   "2021": "PaymentsForRepurchaseOfCommonStock",
+   "2022": "PaymentsForRepurchaseOfCommonStock",
+   "2023": "PaymentsForRepurchaseOfCommonStock",
+   "2024": "PaymentsForRepurchaseOfCommonStock",
+   "2025": "PaymentsForRepurchaseOfCommonStock",
+   "2026": "PaymentsForRepurchaseOfCommonStock"
+  },
+  "sbc": {
+   "2021": "ShareBasedCompensation",
+   "2022": "ShareBasedCompensation",
+   "2023": "ShareBasedCompensation",
+   "2024": "ShareBasedCompensation",
+   "2025": "ShareBasedCompensation",
+   "2026": "ShareBasedCompensation"
+  },
+  "d_and_a": {
+   "2021": "DepreciationDepletionAndAmortization",
+   "2022": "DepreciationDepletionAndAmortization",
+   "2023": "DepreciationDepletionAndAmortization",
+   "2024": "DepreciationDepletionAndAmortization",
+   "2025": "DepreciationDepletionAndAmortization",
+   "2026": "DepreciationDepletionAndAmortization"
+  },
+  "cost_of_revenue": {
+   "2021": "CostOfGoodsAndServicesSold",
+   "2022": "CostOfGoodsAndServicesSold",
+   "2023": "CostOfGoodsAndServicesSold",
+   "2024": "CostOfGoodsAndServicesSold",
+   "2025": "CostOfGoodsAndServicesSold",
+   "2026": "CostOfGoodsAndServicesSold"
+  },
+  "gross_profit": {
+   "2021": "GrossProfit",
+   "2022": "GrossProfit",
+   "2023": "GrossProfit",
+   "2024": "GrossProfit",
+   "2025": "GrossProfit",
+   "2026": "GrossProfit"
+  },
+  "rnd": {
+   "2021": "ResearchAndDevelopmentExpense",
+   "2022": "ResearchAndDevelopmentExpense",
+   "2023": "ResearchAndDevelopmentExpense",
+   "2024": "ResearchAndDevelopmentExpense",
+   "2025": "ResearchAndDevelopmentExpense",
+   "2026": "ResearchAndDevelopmentExpense"
+  },
+  "sga": {
+   "2021": "SellingGeneralAndAdministrativeExpense",
+   "2022": "SellingGeneralAndAdministrativeExpense",
+   "2023": "SellingGeneralAndAdministrativeExpense",
+   "2024": "SellingGeneralAndAdministrativeExpense",
+   "2025": "SellingGeneralAndAdministrativeExpense",
+   "2026": "SellingGeneralAndAdministrativeExpense"
+  },
+  "operating_income": {
+   "2021": "OperatingIncomeLoss",
+   "2022": "OperatingIncomeLoss",
+   "2023": "OperatingIncomeLoss",
+   "2024": "OperatingIncomeLoss",
+   "2025": "OperatingIncomeLoss",
+   "2026": "OperatingIncomeLoss"
+  },
+  "interest_expense": {
+   "2021": "InterestExpense",
+   "2022": "InterestExpense",
+   "2023": "InterestExpense"
+  },
+  "short_term_investments": {
+   "2021": "MarketableSecuritiesCurrent",
+   "2022": "MarketableSecuritiesCurrent",
+   "2023": "MarketableSecuritiesCurrent",
+   "2024": "MarketableSecuritiesCurrent",
+   "2025": "MarketableSecuritiesCurrent",
+   "2026": "MarketableSecuritiesCurrent"
+  },
+  "receivables": {
+   "2021": "AccountsReceivableNetCurrent",
+   "2022": "AccountsReceivableNetCurrent",
+   "2023": "AccountsReceivableNetCurrent",
+   "2024": "AccountsReceivableNetCurrent",
+   "2025": "AccountsReceivableNetCurrent",
+   "2026": "AccountsReceivableNetCurrent"
+  },
+  "inventory": {
+   "2021": "InventoryNet",
+   "2022": "InventoryNet",
+   "2023": "InventoryNet",
+   "2024": "InventoryNet",
+   "2025": "InventoryNet",
+   "2026": "InventoryNet"
+  },
+  "current_assets": {
+   "2021": "AssetsCurrent",
+   "2022": "AssetsCurrent",
+   "2023": "AssetsCurrent",
+   "2024": "AssetsCurrent",
+   "2025": "AssetsCurrent",
+   "2026": "AssetsCurrent"
+  },
+  "ppe": {
+   "2021": "PropertyPlantAndEquipmentNet",
+   "2022": "PropertyPlantAndEquipmentNet",
+   "2023": "PropertyPlantAndEquipmentNet",
+   "2024": "PropertyPlantAndEquipmentNet",
+   "2025": "PropertyPlantAndEquipmentNet",
+   "2026": "PropertyPlantAndEquipmentNet"
+  },
+  "accounts_payable": {
+   "2021": "AccountsPayableCurrent",
+   "2022": "AccountsPayableCurrent",
+   "2023": "AccountsPayableCurrent",
+   "2024": "AccountsPayableCurrent",
+   "2025": "AccountsPayableCurrent",
+   "2026": "AccountsPayableCurrent"
+  },
+  "current_liabilities": {
+   "2021": "LiabilitiesCurrent",
+   "2022": "LiabilitiesCurrent",
+   "2023": "LiabilitiesCurrent",
+   "2024": "LiabilitiesCurrent",
+   "2025": "LiabilitiesCurrent",
+   "2026": "LiabilitiesCurrent"
+  },
+  "short_term_debt": {
+   "2021": "LongTermDebtCurrent + CommercialPaper",
+   "2022": "LongTermDebtCurrent + CommercialPaper",
+   "2023": "LongTermDebtCurrent + CommercialPaper",
+   "2024": "LongTermDebtCurrent + CommercialPaper",
+   "2025": "LongTermDebtCurrent + CommercialPaper",
+   "2026": "LongTermDebtCurrent + CommercialPaper"
+  },
+  "long_term_debt": {
+   "2021": "LongTermDebtNoncurrent",
+   "2022": "LongTermDebtNoncurrent",
+   "2023": "LongTermDebtNoncurrent",
+   "2024": "LongTermDebtNoncurrent",
+   "2025": "LongTermDebtNoncurrent",
+   "2026": "LongTermDebtNoncurrent"
+  },
+  "capex": {
+   "2021": "PaymentsToAcquirePropertyPlantAndEquipment",
+   "2022": "PaymentsToAcquirePropertyPlantAndEquipment",
+   "2023": "PaymentsToAcquirePropertyPlantAndEquipment",
+   "2024": "PaymentsToAcquirePropertyPlantAndEquipment",
+   "2025": "PaymentsToAcquirePropertyPlantAndEquipment",
+   "2026": "PaymentsToAcquirePropertyPlantAndEquipment"
+  }
+ },
+ "ratios": {
+  "gross_margin": {
+   "2022": 0.433096,
+   "2023": 0.441311,
+   "2024": 0.462063,
+   "2025": 0.469052,
+   "2026": 0.487856
+  },
+  "operating_margin": {
+   "2022": 0.302887,
+   "2023": 0.298214,
+   "2024": 0.315102,
+   "2025": 0.319708,
+   "2026": 0.3301
+  },
+  "ebitda_margin": {
+   "2022": 0.331047,
+   "2023": 0.328267,
+   "2024": 0.344371,
+   "2025": 0.347817,
+   "2026": 0.358132
+  },
+  "pretax_margin": {
+   "2022": 0.30204,
+   "2023": 0.29674,
+   "2024": 0.31579,
+   "2025": 0.318937,
+   "2026": 0.332552
+  },
+  "net_margin": {
+   "2022": 0.253096,
+   "2023": 0.253062,
+   "2024": 0.239713,
+   "2025": 0.269151,
+   "2026": 0.276035
+  },
+  "rnd_intensity": {
+   "2022": 0.066571,
+   "2023": 0.078049,
+   "2024": 0.080223,
+   "2025": 0.083021,
+   "2026": 0.095576
+  },
+  "sga_ratio": {
+   "2022": 0.063637,
+   "2023": 0.065048,
+   "2024": 0.066738,
+   "2025": 0.066323,
+   "2026": 0.06218
+  },
+  "effective_tax_rate": {
+   "2022": 0.162045,
+   "2023": 0.147192,
+   "2024": 0.240912,
+   "2025": 0.1561,
+   "2026": 0.169948
+  },
+  "roa": {
+   "2022": 0.283629,
+   "2023": 0.275031,
+   "2024": 0.261262,
+   "2025": 0.309325,
+   "2026": 0.346103
+  },
+  "roe": {
+   "2022": 1.754593,
+   "2023": 1.719495,
+   "2024": 1.574125,
+   "2025": 1.714224,
+   "2026": 1.422567
+  },
+  "rote": {
+   "2022": 1.754593,
+   "2023": 1.719495,
+   "2024": 1.574125,
+   "2025": 1.90847,
+   "2026": 1.800443
+  },
+  "roic": {
+   "2022": 0.558265,
+   "2023": 0.566767,
+   "2024": 0.555393,
+   "2025": 0.6684,
+   "2026": 0.719708
+  },
+  "roce": {
+   "2022": 0.562992,
+   "2023": 0.562993,
+   "2024": 0.622518,
+   "2025": 0.696236,
+   "2026": 0.738193
+  },
+  "debt_to_equity": {
+   "2022": 2.369533,
+   "2023": 1.787533,
+   "2024": 1.872327,
+   "2025": 1.33803,
+   "2026": 0.714683
+  },
+  "debt_to_assets": {
+   "2022": 0.340375,
+   "2023": 0.315069,
+   "2024": 0.29215,
+   "2025": 0.274626,
+   "2026": 0.198026
+  },
+  "debt_to_capital": {
+   "2022": 0.703223,
+   "2023": 0.64126,
+   "2024": 0.65185,
+   "2025": 0.57229,
+   "2026": 0.416802
+  },
+  "liabilities_to_assets": {
+   "2022": 0.856354,
+   "2023": 0.823741,
+   "2024": 0.843964,
+   "2025": 0.794753,
+   "2026": 0.722918
+  },
+  "equity_multiplier": {
+   "2022": 6.186222,
+   "2023": 6.251999,
+   "2024": 6.025081,
+   "2025": 5.541815,
+   "2026": 4.110238
+  },
+  "net_debt_to_ebitda": {
+   "2022": 0.549751,
+   "2023": 0.393681,
+   "2024": 0.307869,
+   "2025": 0.3037,
+   "2026": 0.13639
+  },
+  "interest_coverage": {
+   "2022": 40.749574,
+   "2023": 29.062039
+  },
+  "cfo_to_debt": {
+   "2022": 1.01734,
+   "2023": 0.995094,
+   "2024": 1.109023,
+   "2025": 1.129996,
+   "2026": 1.811199
+  },
+  "current_ratio": {
+   "2022": 0.879356,
+   "2023": 0.988012,
+   "2024": 0.867313,
+   "2025": 0.893293,
+   "2026": 1.0232
+  },
+  "quick_ratio": {
+   "2022": 0.496733,
+   "2023": 0.62669,
+   "2024": 0.558875,
+   "2025": 0.570388,
+   "2026": 0.591702
+  },
+  "cash_ratio": {
+   "2022": 0.313699,
+   "2023": 0.423617,
+   "2024": 0.369467,
+   "2025": 0.330234,
+   "2026": 0.333826
+  },
+  "cfo_ratio": {
+   "2022": 0.793281,
+   "2023": 0.76075,
+   "2024": 0.670405,
+   "2025": 0.673074,
+   "2026": 0.853939
+  },
+  "asset_turnover": {
+   "2022": 1.120637,
+   "2023": 1.086812,
+   "2024": 1.089897,
+   "2025": 1.149265,
+   "2026": 1.253838
+  },
+  "fixed_asset_turnover": {
+   "2022": 9.669998,
+   "2023": 8.931051,
+   "2024": 8.748476,
+   "2025": 8.714136,
+   "2026": 9.396456
+  },
+  "receivables_turnover": {
+   "2022": 14.480849,
+   "2023": 13.287284,
+   "2024": 12.429988,
+   "2025": 11.372539,
+   "2026": 11.456181
+  },
+  "dso": {
+   "2022": 25.205704,
+   "2023": 27.469872,
+   "2024": 29.364469,
+   "2025": 32.094856,
+   "2026": 31.86053
+  },
+  "inventory_turnover": {
+   "2022": 38.789866,
+   "2023": 37.977654,
+   "2024": 30.895498,
+   "2025": 33.98339,
+   "2026": 24.209685
+  },
+  "dio": {
+   "2022": 9.409674,
+   "2023": 9.610915,
+   "2024": 11.814019,
+   "2025": 10.740541,
+   "2026": 15.076611
+  },
+  "payables_turnover": {
+   "2022": 3.760931,
+   "2023": 3.379527,
+   "2024": 3.197544,
+   "2025": 3.183403,
+   "2026": 3.224361
+  },
+  "dpo": {
+   "2022": 97.050428,
+   "2023": 108.003264,
+   "2024": 114.150127,
+   "2025": 114.657178,
+   "2026": 113.200724
+  },
+  "cash_conversion_cycle": {
+   "2022": -62.43505,
+   "2023": -70.922477,
+   "2024": -72.971639,
+   "2025": -71.82178,
+   "2026": -66.263583
+  },
+  "working_capital_turnover": {},
+  "fcf_margin": {
+   "2022": 0.282615,
+   "2023": 0.259817,
+   "2024": 0.278254,
+   "2025": 0.237329,
+   "2026": 0.28414
+  },
+  "cash_conversion": {
+   "2022": 1.223921,
+   "2023": 1.139677,
+   "2024": 1.261564,
+   "2025": 0.995286,
+   "2026": 1.097764
+  },
+  "capex_to_revenue": {
+   "2022": 0.027155,
+   "2023": 0.028592,
+   "2024": 0.024159,
+   "2025": 0.030553,
+   "2026": 0.018881
+  },
+  "capex_to_da": {
+   "2022": 0.964337,
+   "2023": 0.951385,
+   "2024": 0.825426,
+   "2025": 1.086938,
+   "2026": 0.673545
+  },
+  "sbc_to_revenue": {
+   "2022": 0.02292,
+   "2023": 0.028264,
+   "2024": 0.02989,
+   "2025": 0.030909,
+   "2026": 0.028797
+  },
+  "accruals_ratio": {
+   "2022": 1.7e-05,
+   "2023": -0.048921,
+   "2024": -0.076517,
+   "2025": -0.040504,
+   "2026": 0.011412
+  },
+  "revenue_growth": {
+   "2022": 0.077938,
+   "2023": -0.028005,
+   "2024": 0.02022,
+   "2025": 0.064255,
+   "2026": 0.150598
+  },
+  "net_income_growth": {
+   "2022": 0.054109,
+   "2023": -0.028135,
+   "2024": -0.0336,
+   "2025": 0.194952,
+   "2026": 0.180029
+  },
+  "eps_growth": {
+   "2022": 0.089127,
+   "2023": 0.003273,
+   "2024": -0.008157,
+   "2025": 0.226974,
+   "2026": 0.203753
+  },
+  "cfo_growth": {
+   "2022": 0.1741,
+   "2023": -0.09503,
+   "2024": 0.069756,
+   "2025": -0.057267,
+   "2026": 0.301528
+  },
+  "asset_growth": {
+   "2022": 0.004994,
+   "2023": -0.000488,
+   "2024": 0.035161,
+   "2025": -0.015724,
+   "2026": 0.126119
+  },
+  "payout_ratio": {
+   "2022": 0.148703,
+   "2023": 0.154905,
+   "2024": 0.16252,
+   "2025": 0.137675,
+   "2026": 0.118941
+  },
+  "total_payout_ratio": {
+   "2022": 1.044488,
+   "2023": 0.954431,
+   "2024": 1.175461,
+   "2025": 0.947523,
+   "2026": 0.772544
+  },
+  "retention_ratio": {
+   "2022": 0.851297,
+   "2023": 0.845095,
+   "2024": 0.83748,
+   "2025": 0.862325,
+   "2026": 0.881059
+  },
+  "sustainable_growth": {
+   "2022": 1.49368,
+   "2023": 1.453137,
+   "2024": 1.318298,
+   "2025": 1.478218,
+   "2026": 1.253366
+  },
+  "book_value_per_share": {
+   "2022": 3.178238,
+   "2023": 3.996512,
+   "2024": 3.767335,
+   "2025": 4.990977,
+   "2026": 7.713391
+  },
+  "share_count_change": {
+   "2022": -0.031966,
+   "2023": -0.031439,
+   "2024": -0.025578,
+   "2025": -0.026181,
+   "2026": -0.018953
+  },
+  "dupont_net_margin": {
+   "2022": 0.253096,
+   "2023": 0.253062,
+   "2024": 0.239713,
+   "2025": 0.269151,
+   "2026": 0.276035
+  },
+  "dupont_asset_turnover": {
+   "2022": 1.120637,
+   "2023": 1.086812,
+   "2024": 1.089897,
+   "2025": 1.149265,
+   "2026": 1.253838
+  },
+  "dupont_equity_multiplier": {
+   "2022": 6.186222,
+   "2023": 6.251999,
+   "2024": 6.025081,
+   "2025": 5.541815,
+   "2026": 4.110238
+  },
+  "dupont_tax_burden": {
+   "2022": 0.837955,
+   "2023": 0.852808,
+   "2024": 0.759088,
+   "2025": 0.8439,
+   "2026": 0.830052
+  },
+  "dupont_interest_burden": {
+   "2022": 0.997204,
+   "2023": 0.995057,
+   "2024": 1.002183,
+   "2025": 0.997587,
+   "2026": 1.007427
+  },
+  "dupont_ebit_margin": {
+   "2022": 0.302887,
+   "2023": 0.298214,
+   "2024": 0.315102,
+   "2025": 0.319708,
+   "2026": 0.3301
+  },
+  "dupont_roe_check": {
+   "2022": 1.75459,
+   "2023": 1.719492,
+   "2024": 1.574128,
+   "2025": 1.714226,
+   "2026": 1.422566
+  }
+ },
+ "ratios_used_ending_balance": [],
+ "models": {
+  "common_size": {
+   "income": {
+    "revenue": {
+     "2022": 1.0,
+     "2023": 1.0,
+     "2024": 1.0,
+     "2025": 1.0,
+     "2026": 1.0
+    },
+    "pretax_income": {
+     "2022": 0.30204,
+     "2023": 0.29674,
+     "2024": 0.31579,
+     "2025": 0.318937,
+     "2026": 0.332552
+    },
+    "income_tax": {
+     "2022": 0.048944,
+     "2023": 0.043678,
+     "2024": 0.076078,
+     "2025": 0.049786,
+     "2026": 0.056516
+    },
+    "net_income": {
+     "2022": 0.253096,
+     "2023": 0.253062,
+     "2024": 0.239713,
+     "2025": 0.269151,
+     "2026": 0.276035
+    },
+    "eps_diluted": {
+     "2022": 0.0,
+     "2023": 0.0,
+     "2024": 0.0,
+     "2025": 0.0,
+     "2026": 0.0
+    },
+    "shares_diluted": {
+     "2022": 0.041402,
+     "2023": 0.041255,
+     "2024": 0.039403,
+     "2025": 0.036055,
+     "2026": 0.030742
+    },
+    "cost_of_revenue": {
+     "2022": 0.566904,
+     "2023": 0.558689,
+     "2024": 0.537937,
+     "2025": 0.530948,
+     "2026": 0.512144
+    },
+    "gross_profit": {
+     "2022": 0.433096,
+     "2023": 0.441311,
+     "2024": 0.462063,
+     "2025": 0.469052,
+     "2026": 0.487856
+    },
+    "rnd": {
+     "2022": 0.066571,
+     "2023": 0.078049,
+     "2024": 0.080223,
+     "2025": 0.083021,
+     "2026": 0.095576
+    },
+    "sga": {
+     "2022": 0.063637,
+     "2023": 0.065048,
+     "2024": 0.066738,
+     "2025": 0.066323,
+     "2026": 0.06218
+    },
+    "operating_income": {
+     "2022": 0.302887,
+     "2023": 0.298214,
+     "2024": 0.315102,
+     "2025": 0.319708,
+     "2026": 0.3301
+    },
+    "interest_expense": {
+     "2022": 0.007433,
+     "2023": 0.010261
+    },
+    "ebit": {
+     "2022": 0.302887,
+     "2023": 0.298214,
+     "2024": 0.315102,
+     "2025": 0.319708,
+     "2026": 0.3301
+    },
+    "ebitda": {
+     "2022": 0.331047,
+     "2023": 0.328267,
+     "2024": 0.344371,
+     "2025": 0.347817,
+     "2026": 0.358132
+    }
+   },
+   "balance": {
+    "cash": {
+     "2022": 0.067032,
+     "2023": 0.084987,
+     "2024": 0.08204,
+     "2025": 0.100028,
+     "2026": 0.089742
+    },
+    "intangibles": {
+     "2025": 0.037025,
+     "2026": 0.063528
+    },
+    "total_assets": {
+     "2022": 1.0,
+     "2023": 1.0,
+     "2024": 1.0,
+     "2025": 1.0,
+     "2026": 1.0
+    },
+    "total_liabilities": {
+     "2022": 0.856354,
+     "2023": 0.823741,
+     "2024": 0.843964,
+     "2025": 0.794753,
+     "2026": 0.722918
+    },
+    "equity": {
+     "2022": 0.143646,
+     "2023": 0.176259,
+     "2024": 0.156036,
+     "2025": 0.205247,
+     "2026": 0.277082
+    },
+    "retained_earnings": {
+     "2022": -0.008697,
+     "2023": -0.000607,
+     "2024": -0.05248,
+     "2025": -0.039706,
+     "2026": 0.033865
+    },
+    "shares_outstanding": {
+     "2022": 0.045197,
+     "2023": 0.044103,
+     "2024": 0.041418,
+     "2025": 0.041124,
+     "2026": 0.035922
+    },
+    "short_term_investments": {
+     "2022": 0.069901,
+     "2023": 0.089596,
+     "2024": 0.09652,
+     "2025": 0.05223,
+     "2026": 0.050469
+    },
+    "receivables": {
+     "2022": 0.079897,
+     "2023": 0.083691,
+     "2024": 0.091539,
+     "2025": 0.110725,
+     "2026": 0.108311
+    },
+    "inventory": {
+     "2022": 0.014021,
+     "2023": 0.017956,
+     "2024": 0.019963,
+     "2025": 0.015917,
+     "2026": 0.035944
+    },
+    "current_assets": {
+     "2022": 0.38385,
+     "2023": 0.407184,
+     "2024": 0.419165,
+     "2025": 0.41186,
+     "2026": 0.429756
+    },
+    "ppe": {
+     "2022": 0.119394,
+     "2023": 0.123985,
+     "2024": 0.125158,
+     "2025": 0.13872,
+     "2026": 0.128746
+    },
+    "accounts_payable": {
+     "2022": 0.181755,
+     "2023": 0.177578,
+     "2024": 0.188942,
+     "2025": 0.194466,
+     "2026": 0.203318
+    },
+    "current_liabilities": {
+     "2022": 0.436513,
+     "2023": 0.412124,
+     "2024": 0.483292,
+     "2025": 0.461058,
+     "2026": 0.420012
+    },
+    "short_term_debt": {
+     "2022": 0.059843,
+     "2023": 0.044832,
+     "2024": 0.057206,
+     "2025": 0.056589,
+     "2026": 0.029423
+    },
+    "long_term_debt": {
+     "2022": 0.280532,
+     "2023": 0.270237,
+     "2024": 0.234944,
+     "2025": 0.218037,
+     "2026": 0.168603
+    },
+    "total_debt": {
+     "2022": 0.340375,
+     "2023": 0.315069,
+     "2024": 0.29215,
+     "2025": 0.274626,
+     "2026": 0.198026
+    },
+    "net_debt": {
+     "2022": 0.203441,
+     "2023": 0.140486,
+     "2024": 0.11359,
+     "2025": 0.122369,
+     "2026": 0.057815
+    },
+    "invested_capital": {
+     "2022": 0.484021,
+     "2023": 0.491328,
+     "2024": 0.448186,
+     "2025": 0.479873,
+     "2026": 0.475108
+    },
+    "working_capital": {
+     "2022": -0.052663,
+     "2023": -0.004941,
+     "2024": -0.064127,
+     "2025": -0.049198,
+     "2026": 0.009744
+    },
+    "tangible_equity": {
+     "2022": 0.143646,
+     "2023": 0.176259,
+     "2024": 0.156036,
+     "2025": 0.168221,
+     "2026": 0.213554
+    }
+   },
+   "cashflow": {
+    "cfo": {
+     "2022": 0.30977,
+     "2023": 0.288409,
+     "2024": 0.302413,
+     "2025": 0.267882,
+     "2026": 0.303022
+    },
+    "cfi": {
+     "2022": -0.056689,
+     "2023": 0.009666,
+     "2024": 0.007506,
+     "2025": 0.036512,
+     "2026": -0.036088
+    },
+    "cff": {
+     "2022": -0.280855,
+     "2023": -0.283048,
+     "2024": -0.311949,
+     "2025": -0.289998,
+     "2026": -0.266159
+    },
+    "dividends_paid": {
+     "2022": 0.037636,
+     "2023": 0.039201,
+     "2024": 0.038958,
+     "2025": 0.037055,
+     "2026": 0.032832
+    },
+    "buybacks": {
+     "2022": 0.22672,
+     "2023": 0.20233,
+     "2024": 0.242815,
+     "2025": 0.217971,
+     "2026": 0.180417
+    },
+    "sbc": {
+     "2022": 0.02292,
+     "2023": 0.028264,
+     "2024": 0.02989,
+     "2025": 0.030909,
+     "2026": 0.028797
+    },
+    "d_and_a": {
+     "2022": 0.028159,
+     "2023": 0.030053,
+     "2024": 0.029268,
+     "2025": 0.028109,
+     "2026": 0.028033
+    },
+    "capex": {
+     "2022": 0.027155,
+     "2023": 0.028592,
+     "2024": 0.024159,
+     "2025": 0.030553,
+     "2026": 0.018881
+    },
+    "fcf": {
+     "2022": 0.282615,
+     "2023": 0.259817,
+     "2024": 0.278254,
+     "2025": 0.237329,
+     "2026": 0.28414
+    }
+   }
+  },
+  "trend_index": {
+   "revenue": {
+    "2022": 100.0,
+    "2023": 97.2,
+    "2024": 99.16,
+    "2025": 105.54,
+    "2026": 121.43
+   },
+   "gross_profit": {
+    "2022": 100.0,
+    "2023": 99.04,
+    "2024": 105.8,
+    "2025": 114.3,
+    "2026": 136.78
+   },
+   "ebit": {
+    "2022": 100.0,
+    "2023": 95.7,
+    "2024": 103.16,
+    "2025": 111.4,
+    "2026": 132.34
+   },
+   "net_income": {
+    "2022": 100.0,
+    "2023": 97.19,
+    "2024": 93.92,
+    "2025": 112.23,
+    "2026": 132.44
+   },
+   "cfo": {
+    "2022": 100.0,
+    "2023": 90.5,
+    "2024": 96.81,
+    "2025": 91.27,
+    "2026": 118.78
+   },
+   "total_assets": {
+    "2022": 100.0,
+    "2023": 99.95,
+    "2024": 103.47,
+    "2025": 101.84,
+    "2026": 114.68
+   },
+   "equity": {
+    "2022": 100.0,
+    "2023": 122.64,
+    "2024": 112.39,
+    "2025": 145.51,
+    "2026": 221.21
+   },
+   "total_debt": {
+    "2022": 100.0,
+    "2023": 92.52,
+    "2024": 88.81,
+    "2025": 82.17,
+    "2026": 66.72
+   }
+  },
+  "cagr": {
+   "revenue": 0.04974,
+   "net_income": 0.072757,
+   "eps_diluted": 0.101054,
+   "cfo": 0.043976,
+   "fcf": 0.051154,
+   "total_assets": 0.034842,
+   "equity": 0.219558,
+   "dividends_paid": 0.014505
+  },
+  "red_flags": [
+   {
+    "year": 2023,
+    "type": "inventory",
+    "title": "Inventory built up faster than sales",
+    "evidence": "Inventory +28.0% vs revenue -2.8%"
+   },
+   {
+    "year": 2024,
+    "type": "revenue_recognition",
+    "title": "Receivables grew much faster than revenue",
+    "evidence": "AR +13.2% vs revenue +2.0%"
+   },
+   {
+    "year": 2025,
+    "type": "earnings_quality",
+    "title": "Net income rose while operating cash flow fell",
+    "evidence": "NI +19.5% vs CFO -5.7%"
+   },
+   {
+    "year": 2025,
+    "type": "revenue_recognition",
+    "title": "Receivables grew much faster than revenue",
+    "evidence": "AR +19.1% vs revenue +6.4%"
+   },
+   {
+    "year": 2026,
+    "type": "inventory",
+    "title": "Inventory built up faster than sales",
+    "evidence": "Inventory +154.3% vs revenue +15.1%"
+   }
+  ],
+  "forecast": {
+   "target_year": 2027,
+   "revenue_cagr": 0.04974,
+   "revenue_growth_volatility": 0.066765,
+   "revenue_next_cagr_method": 502651312977,
+   "revenue_next_linear_method": 473295000000,
+   "linear_trend_r2": 0.6728,
+   "avg_net_margin_3y": 0.261633,
+   "net_income_next": 131510170968,
+   "eps_next": 8.9339,
+   "sustainable_growth": 1.253366,
+   "disclaimer": "Mechanical extrapolation for learning only; not a forecast or advice."
+  },
+  "altman_z2": {
+   "2022": {
+    "z_score": 2.078,
+    "components": {
+     "X1_working_capital_to_assets": -0.0527,
+     "X2_retained_earnings_to_assets": -0.0087,
+     "X3_ebit_to_assets": 0.3386,
+     "X4_book_equity_to_liabilities": 0.1677
+    },
+    "zone": "grey"
+   },
+   "2023": {
+    "z_score": 2.369,
+    "components": {
+     "X1_working_capital_to_assets": -0.0049,
+     "X2_retained_earnings_to_assets": -0.0006,
+     "X3_ebit_to_assets": 0.3242,
+     "X4_book_equity_to_liabilities": 0.214
+    },
+    "zone": "grey"
+   },
+   "2024": {
+    "z_score": 1.871,
+    "components": {
+     "X1_working_capital_to_assets": -0.0641,
+     "X2_retained_earnings_to_assets": -0.0525,
+     "X3_ebit_to_assets": 0.3376,
+     "X4_book_equity_to_liabilities": 0.1849
+    },
+    "zone": "grey"
+   },
+   "2025": {
+    "z_score": 2.308,
+    "components": {
+     "X1_working_capital_to_assets": -0.0492,
+     "X2_retained_earnings_to_assets": -0.0397,
+     "X3_ebit_to_assets": 0.3704,
+     "X4_book_equity_to_liabilities": 0.2583
+    },
+    "zone": "grey"
+   },
+   "2026": {
+    "z_score": 3.202,
+    "components": {
+     "X1_working_capital_to_assets": 0.0097,
+     "X2_retained_earnings_to_assets": 0.0339,
+     "X3_ebit_to_assets": 0.3907,
+     "X4_book_equity_to_liabilities": 0.3833
+    },
+    "zone": "safe"
+   }
+  },
+  "beneish": {
+   "2022": {
+    "m_score": -2.762,
+    "components": {
+     "DSRI": 0.995,
+     "GMI": 0.9647,
+     "AQI": 0.9866,
+     "SGI": 1.0779,
+     "DEPI": 1.0662,
+     "SGAI": 1.0595,
+     "LVGI": 1.0729,
+     "TATA": -0.0634
+    },
+    "imputed": [],
+    "threshold": -1.78,
+    "zone": "unlikely manipulator"
+   },
+   "2023": {
+    "m_score": -2.634,
+    "components": {
+     "DSRI": 1.0771,
+     "GMI": 0.9814,
+     "AQI": 0.9438,
+     "SGI": 0.972,
+     "DEPI": 1.0004,
+     "SGAI": 1.0222,
+     "LVGI": 0.9516,
+     "TATA": -0.0384
+    },
+    "imputed": [],
+    "threshold": -1.78,
+    "zone": "unlikely manipulator"
+   },
+   "2024": {
+    "m_score": -2.727,
+    "components": {
+     "DSRI": 1.1098,
+     "GMI": 0.9551,
+     "AQI": 0.9719,
+     "SGI": 1.0202,
+     "DEPI": 1.0409,
+     "SGAI": 1.026,
+     "LVGI": 1.0526,
+     "TATA": -0.0672
+    },
+    "imputed": [],
+    "threshold": -1.78,
+    "zone": "unlikely manipulator"
+   },
+   "2025": {
+    "m_score": -2.295,
+    "components": {
+     "DSRI": 1.1187,
+     "GMI": 0.9851,
+     "AQI": 0.9863,
+     "SGI": 1.0643,
+     "DEPI": 1.0539,
+     "SGAI": 0.9938,
+     "LVGI": 0.9455,
+     "TATA": 0.0015
+    },
+    "imputed": [],
+    "threshold": -1.78,
+    "zone": "unlikely manipulator"
+   },
+   "2026": {
+    "m_score": -2.516,
+    "components": {
+     "DSRI": 0.9574,
+     "GMI": 0.9615,
+     "AQI": 0.9824,
+     "SGI": 1.1506,
+     "DEPI": 0.9278,
+     "SGAI": 0.9375,
+     "LVGI": 0.8668,
+     "TATA": -0.0319
+    },
+    "imputed": [],
+    "threshold": -1.78,
+    "zone": "unlikely manipulator"
+   }
+  },
+  "piotroski": {
+   "2022": {
+    "f_score": 8,
+    "max_possible": 9,
+    "tests": {
+     "positive_roa": true,
+     "positive_cfo": true,
+     "improving_roa": true,
+     "cfo_exceeds_net_income": true,
+     "lower_leverage": true,
+     "higher_current_ratio": false,
+     "no_dilution": true,
+     "higher_gross_margin": true,
+     "higher_asset_turnover": true
+    },
+    "zone": "strong"
+   },
+   "2023": {
+    "f_score": 7,
+    "max_possible": 9,
+    "tests": {
+     "positive_roa": true,
+     "positive_cfo": true,
+     "improving_roa": false,
+     "cfo_exceeds_net_income": true,
+     "lower_leverage": true,
+     "higher_current_ratio": true,
+     "no_dilution": true,
+     "higher_gross_margin": true,
+     "higher_asset_turnover": false
+    },
+    "zone": "strong"
+   },
+   "2024": {
+    "f_score": 7,
+    "max_possible": 9,
+    "tests": {
+     "positive_roa": true,
+     "positive_cfo": true,
+     "improving_roa": false,
+     "cfo_exceeds_net_income": true,
+     "lower_leverage": true,
+     "higher_current_ratio": false,
+     "no_dilution": true,
+     "higher_gross_margin": true,
+     "higher_asset_turnover": true
+    },
+    "zone": "strong"
+   },
+   "2025": {
+    "f_score": 8,
+    "max_possible": 9,
+    "tests": {
+     "positive_roa": true,
+     "positive_cfo": true,
+     "improving_roa": true,
+     "cfo_exceeds_net_income": false,
+     "lower_leverage": true,
+     "higher_current_ratio": true,
+     "no_dilution": true,
+     "higher_gross_margin": true,
+     "higher_asset_turnover": true
+    },
+    "zone": "strong"
+   },
+   "2026": {
+    "f_score": 9,
+    "max_possible": 9,
+    "tests": {
+     "positive_roa": true,
+     "positive_cfo": true,
+     "improving_roa": true,
+     "cfo_exceeds_net_income": true,
+     "lower_leverage": true,
+     "higher_current_ratio": true,
+     "no_dilution": true,
+     "higher_gross_margin": true,
+     "higher_asset_turnover": true
+    },
+    "zone": "strong"
+   }
+  }
+ },
+ "coverage": {
+  "filled_share": 0.916,
+  "missing_items": [
+   "goodwill",
+   "equity_incl_nci"
+  ]
+ },
+ "source": "SEC EDGAR XBRL companyfacts, CIK 0000320193"
+}

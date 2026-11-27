@@ -1,0 +1,813 @@
+{
+ "generated_at": "2026-11-27T17:22:27+00:00",
+ "method": "Largest public float (dei:EntityPublicFloat, latest 10-K) among universe_candidates.csv",
+ "size": 50,
+ "buffer": 5,
+ "joined": [
+  "MU",
+  "RTX",
+  "TXN"
+ ],
+ "left": [
+  "INTU",
+  "TMUS",
+  "XOM"
+ ],
+ "ranking": [
+  {
+   "rank": 1,
+   "ticker": "NVDA",
+   "cik": 1045810,
+   "public_float_usd": 4000000000000.0,
+   "as_of": "2025-07-25",
+   "in_list": true
+  },
+  {
+   "rank": 2,
+   "ticker": "AAPL",
+   "cik": 320193,
+   "public_float_usd": 3647099000000.0,
+   "as_of": "2026-03-27",
+   "in_list": true
+  },
+  {
+   "rank": 3,
+   "ticker": "MSFT",
+   "cik": 789019,
+   "public_float_usd": 3600000000000.0,
+   "as_of": "2025-12-31",
+   "in_list": true
+  },
+  {
+   "rank": 4,
+   "ticker": "AMZN",
+   "cik": 1018724,
+   "public_float_usd": 2118061430046.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 5,
+   "ticker": "GOOGL",
+   "cik": 1652044,
+   "public_float_usd": 1900000000000.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 6,
+   "ticker": "META",
+   "cik": 1326801,
+   "public_float_usd": 1600000000000.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 7,
+   "ticker": "AVGO",
+   "cik": 1730168,
+   "public_float_usd": 939200000000.0,
+   "as_of": "2025-05-02",
+   "in_list": true
+  },
+  {
+   "rank": 8,
+   "ticker": "BRK-B",
+   "cik": 1067983,
+   "public_float_usd": 902700000000.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 9,
+   "ticker": "TSLA",
+   "cik": 1318605,
+   "public_float_usd": 892930000000.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 10,
+   "ticker": "LLY",
+   "cik": 59478,
+   "public_float_usd": 807887000000.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 11,
+   "ticker": "JPM",
+   "cik": 19617,
+   "public_float_usd": 794433813496.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 12,
+   "ticker": "NFLX",
+   "cik": 1065280,
+   "public_float_usd": 565657747980.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 13,
+   "ticker": "MA",
+   "cik": 1141391,
+   "public_float_usd": 505000000000.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 14,
+   "ticker": "V",
+   "cik": 1403161,
+   "public_float_usd": 501700000000.0,
+   "as_of": "2026-03-31",
+   "in_list": true
+  },
+  {
+   "rank": 15,
+   "ticker": "COST",
+   "cik": 909832,
+   "public_float_usd": 451600000000.0,
+   "as_of": "2026-02-15",
+   "in_list": true
+  },
+  {
+   "rank": 16,
+   "ticker": "WMT",
+   "cik": 104169,
+   "public_float_usd": 391703475732.0,
+   "as_of": "2025-07-31",
+   "in_list": true
+  },
+  {
+   "rank": 17,
+   "ticker": "HD",
+   "cik": 354950,
+   "public_float_usd": 371800000000.0,
+   "as_of": "2025-08-01",
+   "in_list": true
+  },
+  {
+   "rank": 18,
+   "ticker": "MU",
+   "cik": 723125,
+   "public_float_usd": 368100000000.0,
+   "as_of": "2026-02-26",
+   "in_list": true
+  },
+  {
+   "rank": 19,
+   "ticker": "JNJ",
+   "cik": 200406,
+   "public_float_usd": 367000000000.0,
+   "as_of": "2025-06-29",
+   "in_list": true
+  },
+  {
+   "rank": 20,
+   "ticker": "BAC",
+   "cik": 70858,
+   "public_float_usd": 351903673230.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 21,
+   "ticker": "ORCL",
+   "cik": 1341439,
+   "public_float_usd": 346760150000.0,
+   "as_of": "2026-05-31",
+   "in_list": true
+  },
+  {
+   "rank": 22,
+   "ticker": "PG",
+   "cik": 80424,
+   "public_float_usd": 333000000000.0,
+   "as_of": "2025-12-31",
+   "in_list": true
+  },
+  {
+   "rank": 23,
+   "ticker": "ABBV",
+   "cik": 1551152,
+   "public_float_usd": 325061294916.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 24,
+   "ticker": "KO",
+   "cik": 21344,
+   "public_float_usd": 300552956545.0,
+   "as_of": "2025-06-27",
+   "in_list": true
+  },
+  {
+   "rank": 25,
+   "ticker": "PLTR",
+   "cik": 1321655,
+   "public_float_usd": 299300000000.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 26,
+   "ticker": "CSCO",
+   "cik": 858877,
+   "public_float_usd": 294500000000.0,
+   "as_of": "2026-01-23",
+   "in_list": true
+  },
+  {
+   "rank": 27,
+   "ticker": "PM",
+   "cik": 1413329,
+   "public_float_usd": 283000000000.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 28,
+   "ticker": "UNH",
+   "cik": 731766,
+   "public_float_usd": 281907836350.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 29,
+   "ticker": "IBM",
+   "cik": 51143,
+   "public_float_usd": 274500000000.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 30,
+   "ticker": "GE",
+   "cik": 40545,
+   "public_float_usd": 270200000000.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 31,
+   "ticker": "WFC",
+   "cik": 72971,
+   "public_float_usd": 257300000000.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 32,
+   "ticker": "CVX",
+   "cik": 93410,
+   "public_float_usd": 247400000000.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 33,
+   "ticker": "AMD",
+   "cik": 2488,
+   "public_float_usd": 232300000000.0,
+   "as_of": "2024-06-28",
+   "in_list": true
+  },
+  {
+   "rank": 34,
+   "ticker": "ABT",
+   "cik": 1800,
+   "public_float_usd": 232169255381.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 35,
+   "ticker": "AXP",
+   "cik": 4962,
+   "public_float_usd": 221800000000.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 36,
+   "ticker": "LIN",
+   "cik": 1707925,
+   "public_float_usd": 220000000000.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 37,
+   "ticker": "MS",
+   "cik": 895421,
+   "public_float_usd": 217968854713.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 38,
+   "ticker": "GS",
+   "cik": 886982,
+   "public_float_usd": 213200000000.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 39,
+   "ticker": "MCD",
+   "cik": 63908,
+   "public_float_usd": 208464334129.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 40,
+   "ticker": "T",
+   "cik": 732717,
+   "public_float_usd": 207000000000.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 41,
+   "ticker": "MRK",
+   "cik": 310158,
+   "public_float_usd": 198051000000.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 42,
+   "ticker": "RTX",
+   "cik": 101829,
+   "public_float_usd": 195405729090.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 43,
+   "ticker": "ISRG",
+   "cik": 1035267,
+   "public_float_usd": 193900000000.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 44,
+   "ticker": "CRM",
+   "cik": 1108524,
+   "public_float_usd": 191800000000.0,
+   "as_of": "2025-07-31",
+   "in_list": true
+  },
+  {
+   "rank": 45,
+   "ticker": "TXN",
+   "cik": 97476,
+   "public_float_usd": 188509303179.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 46,
+   "ticker": "UBER",
+   "cik": 1543151,
+   "public_float_usd": 187600000000.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 47,
+   "ticker": "BKNG",
+   "cik": 1075531,
+   "public_float_usd": 187400000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 48,
+   "ticker": "VZ",
+   "cik": 732712,
+   "public_float_usd": 182400000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 49,
+   "ticker": "CAT",
+   "cik": 18230,
+   "public_float_usd": 180900000000.0,
+   "as_of": "2025-12-31",
+   "in_list": true
+  },
+  {
+   "rank": 50,
+   "ticker": "PEP",
+   "cik": 77476,
+   "public_float_usd": 179000000000.0,
+   "as_of": "2025-06-13",
+   "in_list": true
+  },
+  {
+   "rank": 51,
+   "ticker": "LRCX",
+   "cik": 707549,
+   "public_float_usd": 178309002956.0,
+   "as_of": "2025-12-28",
+   "in_list": false
+  },
+  {
+   "rank": 52,
+   "ticker": "NOW",
+   "cik": 1373715,
+   "public_float_usd": 175700000000.0,
+   "as_of": "2025-06-30",
+   "in_list": true
+  },
+  {
+   "rank": 53,
+   "ticker": "ADI",
+   "cik": 6281,
+   "public_float_usd": 163454000000.0,
+   "as_of": "2026-05-02",
+   "in_list": false
+  },
+  {
+   "rank": 54,
+   "ticker": "DIS",
+   "cik": 1744489,
+   "public_float_usd": 161300000000.0,
+   "as_of": "2026-03-28",
+   "in_list": true
+  },
+  {
+   "rank": 55,
+   "ticker": "SPGI",
+   "cik": 64040,
+   "public_float_usd": 161000000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 56,
+   "ticker": "KLAC",
+   "cik": 319201,
+   "public_float_usd": 159300000000.0,
+   "as_of": "2025-12-31",
+   "in_list": false
+  },
+  {
+   "rank": 57,
+   "ticker": "BLK",
+   "cik": 2012383,
+   "public_float_usd": 159000000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 58,
+   "ticker": "BSX",
+   "cik": 885725,
+   "public_float_usd": 158700000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 59,
+   "ticker": "BA",
+   "cik": 12927,
+   "public_float_usd": 158300000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 60,
+   "ticker": "SCHW",
+   "cik": 316709,
+   "public_float_usd": 156300000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 61,
+   "ticker": "C",
+   "cik": 831001,
+   "public_float_usd": 156200000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 62,
+   "ticker": "PGR",
+   "cik": 80661,
+   "public_float_usd": 155911082530.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 63,
+   "ticker": "TMO",
+   "cik": 97745,
+   "public_float_usd": 154038987000.0,
+   "as_of": "2025-06-27",
+   "in_list": false
+  },
+  {
+   "rank": 64,
+   "ticker": "AMGN",
+   "cik": 318154,
+   "public_float_usd": 150100000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 65,
+   "ticker": "HON",
+   "cik": 773840,
+   "public_float_usd": 145300000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 66,
+   "ticker": "ADBE",
+   "cik": 796343,
+   "public_float_usd": 144940000000.0,
+   "as_of": "2025-05-30",
+   "in_list": false
+  },
+  {
+   "rank": 67,
+   "ticker": "SYK",
+   "cik": 310764,
+   "public_float_usd": 144306436547.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 68,
+   "ticker": "NEE",
+   "cik": 753308,
+   "public_float_usd": 142860484569.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 69,
+   "ticker": "TJX",
+   "cik": 109198,
+   "public_float_usd": 140000000000.0,
+   "as_of": "2025-08-02",
+   "in_list": false
+  },
+  {
+   "rank": 70,
+   "ticker": "ETN",
+   "cik": 1551182,
+   "public_float_usd": 139000000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 71,
+   "ticker": "PFE",
+   "cik": 78003,
+   "public_float_usd": 138000000000.0,
+   "as_of": "2025-06-29",
+   "in_list": false
+  },
+  {
+   "rank": 72,
+   "ticker": "UNP",
+   "cik": 100885,
+   "public_float_usd": 136100000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 73,
+   "ticker": "INTU",
+   "cik": 896878,
+   "public_float_usd": 135600000000.0,
+   "as_of": "2026-01-30",
+   "in_list": false
+  },
+  {
+   "rank": 74,
+   "ticker": "QCOM",
+   "cik": 804328,
+   "public_float_usd": 134000000000.0,
+   "as_of": "2026-03-27",
+   "in_list": false
+  },
+  {
+   "rank": 75,
+   "ticker": "CMCSA",
+   "cik": 1166691,
+   "public_float_usd": 130745000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 76,
+   "ticker": "ACN",
+   "cik": 1467373,
+   "public_float_usd": 128329638991.0,
+   "as_of": "2026-02-27",
+   "in_list": false
+  },
+  {
+   "rank": 77,
+   "ticker": "LOW",
+   "cik": 60667,
+   "public_float_usd": 126900000000.0,
+   "as_of": "2025-08-01",
+   "in_list": false
+  },
+  {
+   "rank": 78,
+   "ticker": "DHR",
+   "cik": 313616,
+   "public_float_usd": 125900000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 79,
+   "ticker": "DE",
+   "cik": 315189,
+   "public_float_usd": 124313866554.0,
+   "as_of": "2025-04-25",
+   "in_list": false
+  },
+  {
+   "rank": 80,
+   "ticker": "PANW",
+   "cik": 1327567,
+   "public_float_usd": 123400000000.0,
+   "as_of": "2026-01-31",
+   "in_list": false
+  },
+  {
+   "rank": 81,
+   "ticker": "AMAT",
+   "cik": 6951,
+   "public_float_usd": 121318219350.0,
+   "as_of": "2025-04-27",
+   "in_list": false
+  },
+  {
+   "rank": 82,
+   "ticker": "CB",
+   "cik": 896159,
+   "public_float_usd": 115000000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 83,
+   "ticker": "VRTX",
+   "cik": 875320,
+   "public_float_usd": 113400000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 84,
+   "ticker": "TMUS",
+   "cik": 1283699,
+   "public_float_usd": 112400000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 85,
+   "ticker": "COP",
+   "cik": 1163165,
+   "public_float_usd": 112000000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 86,
+   "ticker": "CRWD",
+   "cik": 1535527,
+   "public_float_usd": 109300000000.0,
+   "as_of": "2025-07-31",
+   "in_list": false
+  },
+  {
+   "rank": 87,
+   "ticker": "BX",
+   "cik": 1393818,
+   "public_float_usd": 108900000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 88,
+   "ticker": "LMT",
+   "cik": 936468,
+   "public_float_usd": 106500000000.0,
+   "as_of": "2025-06-27",
+   "in_list": false
+  },
+  {
+   "rank": 89,
+   "ticker": "APH",
+   "cik": 820313,
+   "public_float_usd": 106029000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 90,
+   "ticker": "ANET",
+   "cik": 1596532,
+   "public_float_usd": 105600000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 91,
+   "ticker": "AMT",
+   "cik": 1053507,
+   "public_float_usd": 103400000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 92,
+   "ticker": "GILD",
+   "cik": 882095,
+   "public_float_usd": 103200000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 93,
+   "ticker": "SO",
+   "cik": 92122,
+   "public_float_usd": 101000000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 94,
+   "ticker": "INTC",
+   "cik": 50863,
+   "public_float_usd": 99300000000.0,
+   "as_of": "2025-06-27",
+   "in_list": false
+  },
+  {
+   "rank": 95,
+   "ticker": "SBUX",
+   "cik": 829224,
+   "public_float_usd": 98900000000.0,
+   "as_of": "2026-03-29",
+   "in_list": false
+  },
+  {
+   "rank": 96,
+   "ticker": "MO",
+   "cik": 764180,
+   "public_float_usd": 98000000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 97,
+   "ticker": "PLD",
+   "cik": 1045609,
+   "public_float_usd": 97322102425.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 98,
+   "ticker": "MDLZ",
+   "cik": 1103982,
+   "public_float_usd": 87100000000.0,
+   "as_of": "2025-06-30",
+   "in_list": false
+  },
+  {
+   "rank": 99,
+   "ticker": "NKE",
+   "cik": 320187,
+   "public_float_usd": 80529120635.0,
+   "as_of": "2025-11-28",
+   "in_list": false
+  }
+ ],
+ "skipped": {
+  "XOM": "no public float on a 10-K cover page"
+ }
+}

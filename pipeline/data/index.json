@@ -1,0 +1,1107 @@
+{
+ "generated_at": "2026-11-27T17:22:39+00:00",
+ "source": "SEC EDGAR XBRL companyfacts (public domain US government data)",
+ "companies": [
+  {
+   "ticker": "AAPL",
+   "name": "Apple Inc.",
+   "sector": "Information Technology",
+   "template": "standard",
+   "peer_group": "Information Technology",
+   "fiscal_years": [
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+   ],
+   "latest": {
+    "revenue": 478834000000,
+    "net_income": 132175000000,
+    "total_assets": 404548000000,
+    "roe": 1.422567,
+    "net_margin": 0.276035
+   },
+   "coverage": 0.916
+  },
+  {
+   "ticker": "ABBV",
+   "name": "AbbVie Inc.",
+   "sector": "Health Care",
+   "template": "standard",
+   "peer_group": "Health Care",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 61160000000,
+    "net_income": 4226000000,
+    "total_assets": 133960000000,
+    "roe": 153.672727,
+    "net_margin": 0.069097
+   },
+   "coverage": 0.974
+  },
+  {
+   "ticker": "ABT",
+   "name": "Abbott Laboratories",
+   "sector": "Health Care",
+   "template": "standard",
+   "peer_group": "Health Care",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 44328000000,
+    "net_income": 6524000000,
+    "total_assets": 86713000000,
+    "roe": 0.130749,
+    "net_margin": 0.147176
+   },
+   "coverage": 0.947
+  },
+  {
+   "ticker": "AMD",
+   "name": "Advanced Micro Devices",
+   "sector": "Information Technology",
+   "template": "standard",
+   "peer_group": "Information Technology",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 34639000000,
+    "net_income": 4335000000,
+    "total_assets": 76926000000,
+    "roe": 0.07191,
+    "net_margin": 0.125148
+   },
+   "coverage": 0.947
+  },
+  {
+   "ticker": "AMZN",
+   "name": "Amazon.com Inc.",
+   "sector": "Consumer Discretionary",
+   "template": "standard",
+   "peer_group": "Consumer Discretionary",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 716924000000,
+    "net_income": 77670000000,
+    "total_assets": 818042000000,
+    "roe": 0.222858,
+    "net_margin": 0.108338
+   },
+   "coverage": 0.916
+  },
+  {
+   "ticker": "AVGO",
+   "name": "Broadcom Inc.",
+   "sector": "Information Technology",
+   "template": "standard",
+   "peer_group": "Information Technology",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 63887000000,
+    "net_income": 23126000000,
+    "total_assets": 171092000000,
+    "roe": null,
+    "net_margin": 0.361983
+   },
+   "coverage": 0.947
+  },
+  {
+   "ticker": "AXP",
+   "name": "American Express",
+   "sector": "Financials",
+   "template": "bank",
+   "peer_group": "Banks & Brokers",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 72229000000,
+    "net_income": 10833000000,
+    "total_assets": 300052000000,
+    "roe": 0.339923,
+    "net_margin": 0.149981
+   },
+   "coverage": 0.879
+  },
+  {
+   "ticker": "BAC",
+   "name": "Bank of America",
+   "sector": "Financials",
+   "template": "bank",
+   "peer_group": "Banks & Brokers",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 113097000000,
+    "net_income": 30509000000,
+    "total_assets": 3411738000000,
+    "roe": 0.102172,
+    "net_margin": 0.26976
+   },
+   "coverage": 0.909
+  },
+  {
+   "ticker": "BRK-B",
+   "name": "Berkshire Hathaway",
+   "sector": "Financials",
+   "template": "insurer",
+   "peer_group": "Insurance & Conglomerates",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 247244000000,
+    "net_income": 66968000000,
+    "total_assets": 1222176000000,
+    "roe": 0.097993,
+    "net_margin": 0.270858
+   },
+   "coverage": 0.471
+  },
+  {
+   "ticker": "CAT",
+   "name": "Caterpillar Inc.",
+   "sector": "Industrials",
+   "template": "standard",
+   "peer_group": "Industrials",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 67589000000,
+    "net_income": 8884000000,
+    "total_assets": 98585000000,
+    "roe": null,
+    "net_margin": 0.131442
+   },
+   "coverage": 0.921
+  },
+  {
+   "ticker": "COST",
+   "name": "Costco Wholesale",
+   "sector": "Consumer Staples",
+   "template": "standard",
+   "peer_group": "Consumer Staples",
+   "fiscal_years": [
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+   ],
+   "latest": {
+    "revenue": 303154000000,
+    "net_income": 9226000000,
+    "total_assets": 89045000000,
+    "roe": 0.284021,
+    "net_margin": 0.030433
+   },
+   "coverage": 0.942
+  },
+  {
+   "ticker": "CRM",
+   "name": "Salesforce Inc.",
+   "sector": "Information Technology",
+   "template": "standard",
+   "peer_group": "Information Technology",
+   "fiscal_years": [
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+   ],
+   "latest": {
+    "revenue": 41525000000,
+    "net_income": 7457000000,
+    "total_assets": 112305000000,
+    "roe": 0.123958,
+    "net_margin": 0.179579
+   },
+   "coverage": 0.916
+  },
+  {
+   "ticker": "CSCO",
+   "name": "Cisco Systems",
+   "sector": "Information Technology",
+   "template": "standard",
+   "peer_group": "Information Technology",
+   "fiscal_years": [
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+   ],
+   "latest": {
+    "revenue": 63325000000,
+    "net_income": 13267000000,
+    "total_assets": 129637000000,
+    "roe": 0.273186,
+    "net_margin": 0.209507
+   },
+   "coverage": 0.974
+  },
+  {
+   "ticker": "CVX",
+   "name": "Chevron Corp.",
+   "sector": "Energy",
+   "template": "standard",
+   "peer_group": "Energy",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 184432000000,
+    "net_income": 12299000000,
+    "total_assets": 324012000000,
+    "roe": 0.07261,
+    "net_margin": 0.066686
+   },
+   "coverage": 0.895
+  },
+  {
+   "ticker": "DIS",
+   "name": "Walt Disney Co.",
+   "sector": "Communication Services",
+   "template": "standard",
+   "peer_group": "Communication Services",
+   "fiscal_years": [
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+   ],
+   "latest": {
+    "revenue": 102344000000,
+    "net_income": 9899000000,
+    "total_assets": 206138000000,
+    "roe": 0.089394,
+    "net_margin": 0.096723
+   },
+   "coverage": 0.895
+  },
+  {
+   "ticker": "GE",
+   "name": "GE Aerospace",
+   "sector": "Industrials",
+   "template": "standard",
+   "peer_group": "Industrials",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 45855000000,
+    "net_income": 8704000000,
+    "total_assets": 130169000000,
+    "roe": 0.457876,
+    "net_margin": 0.189816
+   },
+   "coverage": 0.805
+  },
+  {
+   "ticker": "GOOGL",
+   "name": "Alphabet Inc.",
+   "sector": "Communication Services",
+   "template": "standard",
+   "peer_group": "Communication Services",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 402836000000,
+    "net_income": 132170000000,
+    "total_assets": 595281000000,
+    "roe": 0.357048,
+    "net_margin": 0.328099
+   },
+   "coverage": 0.932
+  },
+  {
+   "ticker": "GS",
+   "name": "Goldman Sachs",
+   "sector": "Financials",
+   "template": "bank",
+   "peer_group": "Banks & Brokers",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 58283000000,
+    "net_income": 17176000000,
+    "total_assets": 1809320000000,
+    "roe": 0.139095,
+    "net_margin": 0.2947
+   },
+   "coverage": 0.933
+  },
+  {
+   "ticker": "HD",
+   "name": "Home Depot",
+   "sector": "Consumer Discretionary",
+   "template": "standard",
+   "peer_group": "Consumer Discretionary",
+   "fiscal_years": [
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+   ],
+   "latest": {
+    "revenue": 164683000000,
+    "net_income": 14156000000,
+    "total_assets": 105095000000,
+    "roe": 1.455405,
+    "net_margin": 0.085959
+   },
+   "coverage": 0.921
+  },
+  {
+   "ticker": "IBM",
+   "name": "International Business Machines",
+   "sector": "Information Technology",
+   "template": "standard",
+   "peer_group": "Information Technology",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 67535000000,
+    "net_income": 10593000000,
+    "total_assets": 151880000000,
+    "roe": 0.353365,
+    "net_margin": 0.156852
+   },
+   "coverage": 0.921
+  },
+  {
+   "ticker": "ISRG",
+   "name": "Intuitive Surgical",
+   "sector": "Health Care",
+   "template": "standard",
+   "peer_group": "Health Care",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 10064700000,
+    "net_income": 2856000000,
+    "total_assets": 20458700000,
+    "roe": 0.166736,
+    "net_margin": 0.283764
+   },
+   "coverage": 0.895
+  },
+  {
+   "ticker": "JNJ",
+   "name": "Johnson & Johnson",
+   "sector": "Health Care",
+   "template": "standard",
+   "peer_group": "Health Care",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 94193000000,
+    "net_income": 26804000000,
+    "total_assets": 199210000000,
+    "roe": null,
+    "net_margin": 0.284565
+   },
+   "coverage": 0.895
+  },
+  {
+   "ticker": "JPM",
+   "name": "JPMorgan Chase",
+   "sector": "Financials",
+   "template": "bank",
+   "peer_group": "Banks & Brokers",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 182447000000,
+    "net_income": 57048000000,
+    "total_assets": 4424900000000,
+    "roe": 0.161336,
+    "net_margin": 0.312683
+   },
+   "coverage": 0.933
+  },
+  {
+   "ticker": "KO",
+   "name": "Coca-Cola Co.",
+   "sector": "Consumer Staples",
+   "template": "standard",
+   "peer_group": "Consumer Staples",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 47941000000,
+    "net_income": 13107000000,
+    "total_assets": 104816000000,
+    "roe": 0.459693,
+    "net_margin": 0.273399
+   },
+   "coverage": 0.911
+  },
+  {
+   "ticker": "LIN",
+   "name": "Linde plc",
+   "sector": "Materials",
+   "template": "standard",
+   "peer_group": "Materials",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 33986000000,
+    "net_income": 6898000000,
+    "total_assets": 86817000000,
+    "roe": 0.180725,
+    "net_margin": 0.202966
+   },
+   "coverage": 0.953
+  },
+  {
+   "ticker": "LLY",
+   "name": "Eli Lilly and Co.",
+   "sector": "Health Care",
+   "template": "standard",
+   "peer_group": "Health Care",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 65179000000,
+    "net_income": 20640000000,
+    "total_assets": 112476000000,
+    "roe": 1.011591,
+    "net_margin": 0.316666
+   },
+   "coverage": 0.911
+  },
+  {
+   "ticker": "MA",
+   "name": "Mastercard Inc.",
+   "sector": "Financials",
+   "template": "standard",
+   "peer_group": "Payments & Financial Services",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 32791000000,
+    "net_income": 14968000000,
+    "total_assets": 54157000000,
+    "roe": 2.104908,
+    "net_margin": 0.456467
+   },
+   "coverage": 0.842
+  },
+  {
+   "ticker": "MCD",
+   "name": "McDonald's Corp.",
+   "sector": "Consumer Discretionary",
+   "template": "standard",
+   "peer_group": "Consumer Discretionary",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 26885000000,
+    "net_income": 8563000000,
+    "total_assets": 59515000000,
+    "roe": null,
+    "net_margin": 0.318505
+   },
+   "coverage": 0.811
+  },
+  {
+   "ticker": "META",
+   "name": "Meta Platforms",
+   "sector": "Communication Services",
+   "template": "standard",
+   "peer_group": "Communication Services",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 200966000000,
+    "net_income": 60458000000,
+    "total_assets": 366021000000,
+    "roe": 0.302381,
+    "net_margin": 0.300837
+   },
+   "coverage": 0.863
+  },
+  {
+   "ticker": "MRK",
+   "name": "Merck & Co.",
+   "sector": "Health Care",
+   "template": "standard",
+   "peer_group": "Health Care",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 65011000000,
+    "net_income": 18254000000,
+    "total_assets": 136866000000,
+    "roe": 0.36907,
+    "net_margin": 0.280783
+   },
+   "coverage": 0.947
+  },
+  {
+   "ticker": "MS",
+   "name": "Morgan Stanley",
+   "sector": "Financials",
+   "template": "bank",
+   "peer_group": "Banks & Brokers",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 70645000000,
+    "net_income": 16861000000,
+    "total_assets": 1420270000000,
+    "roe": 0.156017,
+    "net_margin": 0.238672
+   },
+   "coverage": 0.915
+  },
+  {
+   "ticker": "MSFT",
+   "name": "Microsoft Corp.",
+   "sector": "Information Technology",
+   "template": "standard",
+   "peer_group": "Information Technology",
+   "fiscal_years": [
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+   ],
+   "latest": {
+    "revenue": 331839000000,
+    "net_income": 133749000000,
+    "total_assets": 758376000000,
+    "roe": 0.340386,
+    "net_margin": 0.403054
+   },
+   "coverage": 0.974
+  },
+  {
+   "ticker": "MU",
+   "name": "Micron Technology Inc.",
+   "sector": "Information Technology",
+   "template": "standard",
+   "peer_group": "Information Technology",
+   "fiscal_years": [
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+   ],
+   "latest": {
+    "revenue": 133188000000,
+    "net_income": 84969000000,
+    "total_assets": 195888000000,
+    "roe": 0.882598,
+    "net_margin": 0.637963
+   },
+   "coverage": 0.968
+  },
+  {
+   "ticker": "NFLX",
+   "name": "Netflix Inc.",
+   "sector": "Communication Services",
+   "template": "standard",
+   "peer_group": "Communication Services",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 45183036000,
+    "net_income": 10981201000,
+    "total_assets": 55596993000,
+    "roe": 0.427625,
+    "net_margin": 0.243038
+   },
+   "coverage": 0.853
+  },
+  {
+   "ticker": "NOW",
+   "name": "ServiceNow Inc.",
+   "sector": "Information Technology",
+   "template": "standard",
+   "peer_group": "Information Technology",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 13278000000,
+    "net_income": 1748000000,
+    "total_assets": 26038000000,
+    "roe": 0.154875,
+    "net_margin": 0.131646
+   },
+   "coverage": 0.863
+  },
+  {
+   "ticker": "NVDA",
+   "name": "NVIDIA Corp.",
+   "sector": "Information Technology",
+   "template": "standard",
+   "peer_group": "Information Technology",
+   "fiscal_years": [
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+   ],
+   "latest": {
+    "revenue": 215938000000,
+    "net_income": 120067000000,
+    "total_assets": 206803000000,
+    "roe": 1.014851,
+    "net_margin": 0.556025
+   },
+   "coverage": 0.968
+  },
+  {
+   "ticker": "ORCL",
+   "name": "Oracle Corp.",
+   "sector": "Information Technology",
+   "template": "standard",
+   "peer_group": "Information Technology",
+   "fiscal_years": [
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+   ],
+   "latest": {
+    "revenue": 67357000000,
+    "net_income": 17087000000,
+    "total_assets": 261759000000,
+    "roe": 0.542798,
+    "net_margin": 0.253678
+   },
+   "coverage": 0.916
+  },
+  {
+   "ticker": "PEP",
+   "name": "PepsiCo Inc.",
+   "sector": "Consumer Staples",
+   "template": "standard",
+   "peer_group": "Consumer Staples",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 93925000000,
+    "net_income": 8240000000,
+    "total_assets": 107399000000,
+    "roe": 0.428642,
+    "net_margin": 0.08773
+   },
+   "coverage": 0.974
+  },
+  {
+   "ticker": "PG",
+   "name": "Procter & Gamble",
+   "sector": "Consumer Staples",
+   "template": "standard",
+   "peer_group": "Consumer Staples",
+   "fiscal_years": [
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+   ],
+   "latest": {
+    "revenue": 87032000000,
+    "net_income": 16046000000,
+    "total_assets": 126521000000,
+    "roe": null,
+    "net_margin": 0.184369
+   },
+   "coverage": 0.921
+  },
+  {
+   "ticker": "PLTR",
+   "name": "Palantir Technologies",
+   "sector": "Information Technology",
+   "template": "standard",
+   "peer_group": "Information Technology",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 4475446000,
+    "net_income": 1625033000,
+    "total_assets": 8900392000,
+    "roe": 0.262302,
+    "net_margin": 0.3631
+   },
+   "coverage": 0.868
+  },
+  {
+   "ticker": "PM",
+   "name": "Philip Morris International",
+   "sector": "Consumer Staples",
+   "template": "standard",
+   "peer_group": "Consumer Staples",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 40648000000,
+    "net_income": 11348000000,
+    "total_assets": 69185000000,
+    "roe": null,
+    "net_margin": 0.279177
+   },
+   "coverage": 0.889
+  },
+  {
+   "ticker": "RTX",
+   "name": "RTX Corp.",
+   "sector": "Industrials",
+   "template": "standard",
+   "peer_group": "Industrials",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 88603000000,
+    "net_income": 6732000000,
+    "total_assets": 171079000000,
+    "roe": 0.107368,
+    "net_margin": 0.075979
+   },
+   "coverage": 0.916
+  },
+  {
+   "ticker": "T",
+   "name": "AT&T Inc.",
+   "sector": "Communication Services",
+   "template": "standard",
+   "peer_group": "Communication Services",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 125648000000,
+    "net_income": 21953000000,
+    "total_assets": 420198000000,
+    "roe": null,
+    "net_margin": 0.174718
+   },
+   "coverage": 0.789
+  },
+  {
+   "ticker": "TSLA",
+   "name": "Tesla Inc.",
+   "sector": "Consumer Discretionary",
+   "template": "standard",
+   "peer_group": "Consumer Discretionary",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 94827000000,
+    "net_income": 3794000000,
+    "total_assets": 137806000000,
+    "roe": 0.048939,
+    "net_margin": 0.04001
+   },
+   "coverage": 0.921
+  },
+  {
+   "ticker": "TXN",
+   "name": "Texas Instruments Inc.",
+   "sector": "Information Technology",
+   "template": "standard",
+   "peer_group": "Information Technology",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 17682000000,
+    "net_income": 5001000000,
+    "total_assets": 34585000000,
+    "roe": 0.301483,
+    "net_margin": 0.28283
+   },
+   "coverage": 0.921
+  },
+  {
+   "ticker": "UBER",
+   "name": "Uber Technologies",
+   "sector": "Industrials",
+   "template": "standard",
+   "peer_group": "Industrials",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 52017000000,
+    "net_income": 10053000000,
+    "total_assets": 61802000000,
+    "roe": 0.413712,
+    "net_margin": 0.193264
+   },
+   "coverage": 0.942
+  },
+  {
+   "ticker": "UNH",
+   "name": "UnitedHealth Group",
+   "sector": "Health Care",
+   "template": "standard",
+   "peer_group": "Health Care",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 447567000000,
+    "net_income": 12056000000,
+    "total_assets": 309581000000,
+    "roe": null,
+    "net_margin": 0.026937
+   },
+   "coverage": 0.947
+  },
+  {
+   "ticker": "V",
+   "name": "Visa Inc.",
+   "sector": "Financials",
+   "template": "standard",
+   "peer_group": "Payments & Financial Services",
+   "fiscal_years": [
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+   ],
+   "latest": {
+    "revenue": 45903000000,
+    "net_income": 23504000000,
+    "total_assets": 94360000000,
+    "roe": null,
+    "net_margin": 0.512036
+   },
+   "coverage": 0.763
+  },
+  {
+   "ticker": "WFC",
+   "name": "Wells Fargo",
+   "sector": "Financials",
+   "template": "bank",
+   "peer_group": "Banks & Brokers",
+   "fiscal_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "latest": {
+    "revenue": 83699000000,
+    "net_income": 21338000000,
+    "total_assets": 2148631000000,
+    "roe": 0.118466,
+    "net_margin": 0.254937
+   },
+   "coverage": 0.927
+  },
+  {
+   "ticker": "WMT",
+   "name": "Walmart Inc.",
+   "sector": "Consumer Staples",
+   "template": "standard",
+   "peer_group": "Consumer Staples",
+   "fiscal_years": [
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+   ],
+   "latest": {
+    "revenue": 706413000000,
+    "net_income": 21893000000,
+    "total_assets": 284668000000,
+    "roe": 0.229691,
+    "net_margin": 0.030992
+   },
+   "coverage": 0.895
+  }
+ ],
+ "failed": {}
+}

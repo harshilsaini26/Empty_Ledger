@@ -1,51 +1,51 @@
 ticker,name,sector,template
+NVDA,NVIDIA Corp.,Information Technology,standard
 AAPL,Apple Inc.,Information Technology,standard
 MSFT,Microsoft Corp.,Information Technology,standard
-NVDA,NVIDIA Corp.,Information Technology,standard
-AVGO,Broadcom Inc.,Information Technology,standard
-ORCL,Oracle Corp.,Information Technology,standard
-CRM,Salesforce Inc.,Information Technology,standard
-AMD,Advanced Micro Devices,Information Technology,standard
-CSCO,Cisco Systems,Information Technology,standard
-IBM,International Business Machines,Information Technology,standard
-PLTR,Palantir Technologies,Information Technology,standard
-INTU,Intuit Inc.,Information Technology,standard
-NOW,ServiceNow Inc.,Information Technology,standard
+AMZN,Amazon.com Inc.,Consumer Discretionary,standard
 GOOGL,Alphabet Inc.,Communication Services,standard
 META,Meta Platforms,Communication Services,standard
-NFLX,Netflix Inc.,Communication Services,standard
-TMUS,T-Mobile US,Communication Services,standard
-DIS,Walt Disney Co.,Communication Services,standard
-T,AT&T Inc.,Communication Services,standard
-AMZN,Amazon.com Inc.,Consumer Discretionary,standard
-TSLA,Tesla Inc.,Consumer Discretionary,standard
-HD,Home Depot,Consumer Discretionary,standard
-MCD,McDonald's Corp.,Consumer Discretionary,standard
-WMT,Walmart Inc.,Consumer Staples,standard
-COST,Costco Wholesale,Consumer Staples,standard
-PG,Procter & Gamble,Consumer Staples,standard
-KO,Coca-Cola Co.,Consumer Staples,standard
-PEP,PepsiCo Inc.,Consumer Staples,standard
-PM,Philip Morris International,Consumer Staples,standard
-LLY,Eli Lilly and Co.,Health Care,standard
-UNH,UnitedHealth Group,Health Care,standard
-JNJ,Johnson & Johnson,Health Care,standard
-ABBV,AbbVie Inc.,Health Care,standard
-MRK,Merck & Co.,Health Care,standard
-ABT,Abbott Laboratories,Health Care,standard
-ISRG,Intuitive Surgical,Health Care,standard
+AVGO,Broadcom Inc.,Information Technology,standard
 BRK-B,Berkshire Hathaway,Financials,insurer
+TSLA,Tesla Inc.,Consumer Discretionary,standard
+LLY,Eli Lilly and Co.,Health Care,standard
 JPM,JPMorgan Chase,Financials,bank
-V,Visa Inc.,Financials,standard
+NFLX,Netflix Inc.,Communication Services,standard
 MA,Mastercard Inc.,Financials,standard
+V,Visa Inc.,Financials,standard
+COST,Costco Wholesale,Consumer Staples,standard
+WMT,Walmart Inc.,Consumer Staples,standard
+HD,Home Depot,Consumer Discretionary,standard
+MU,Micron Technology Inc.,Information Technology,standard
+JNJ,Johnson & Johnson,Health Care,standard
 BAC,Bank of America,Financials,bank
+ORCL,Oracle Corp.,Information Technology,standard
+PG,Procter & Gamble,Consumer Staples,standard
+ABBV,AbbVie Inc.,Health Care,standard
+KO,Coca-Cola Co.,Consumer Staples,standard
+PLTR,Palantir Technologies,Information Technology,standard
+CSCO,Cisco Systems,Information Technology,standard
+PM,Philip Morris International,Consumer Staples,standard
+UNH,UnitedHealth Group,Health Care,standard
+IBM,International Business Machines,Information Technology,standard
+GE,GE Aerospace,Industrials,standard
 WFC,Wells Fargo,Financials,bank
+CVX,Chevron Corp.,Energy,standard
+AMD,Advanced Micro Devices,Information Technology,standard
+ABT,Abbott Laboratories,Health Care,standard
+AXP,American Express,Financials,bank
+LIN,Linde plc,Materials,standard
 MS,Morgan Stanley,Financials,bank
 GS,Goldman Sachs,Financials,bank
-AXP,American Express,Financials,bank
-XOM,Exxon Mobil,Energy,standard
-CVX,Chevron Corp.,Energy,standard
-GE,GE Aerospace,Industrials,standard
-CAT,Caterpillar Inc.,Industrials,standard
+MCD,McDonald's Corp.,Consumer Discretionary,standard
+T,AT&T Inc.,Communication Services,standard
+MRK,Merck & Co.,Health Care,standard
+RTX,RTX Corp.,Industrials,standard
+ISRG,Intuitive Surgical,Health Care,standard
+CRM,Salesforce Inc.,Information Technology,standard
+TXN,Texas Instruments Inc.,Information Technology,standard
 UBER,Uber Technologies,Industrials,standard
-LIN,Linde plc,Materials,standard
+CAT,Caterpillar Inc.,Industrials,standard
+PEP,PepsiCo Inc.,Consumer Staples,standard
+NOW,ServiceNow Inc.,Information Technology,standard
+DIS,Walt Disney Co.,Communication Services,standard
