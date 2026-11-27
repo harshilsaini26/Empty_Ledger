@@ -1,0 +1,101 @@
+ticker,name,sector,template
+AAPL,Apple Inc.,Information Technology,standard
+MSFT,Microsoft Corp.,Information Technology,standard
+NVDA,NVIDIA Corp.,Information Technology,standard
+AVGO,Broadcom Inc.,Information Technology,standard
+ORCL,Oracle Corp.,Information Technology,standard
+CRM,Salesforce Inc.,Information Technology,standard
+AMD,Advanced Micro Devices,Information Technology,standard
+CSCO,Cisco Systems,Information Technology,standard
+IBM,International Business Machines,Information Technology,standard
+PLTR,Palantir Technologies,Information Technology,standard
+INTU,Intuit Inc.,Information Technology,standard
+NOW,ServiceNow Inc.,Information Technology,standard
+GOOGL,Alphabet Inc.,Communication Services,standard
+META,Meta Platforms,Communication Services,standard
+NFLX,Netflix Inc.,Communication Services,standard
+TMUS,T-Mobile US,Communication Services,standard
+DIS,Walt Disney Co.,Communication Services,standard
+T,AT&T Inc.,Communication Services,standard
+AMZN,Amazon.com Inc.,Consumer Discretionary,standard
+TSLA,Tesla Inc.,Consumer Discretionary,standard
+HD,Home Depot,Consumer Discretionary,standard
+MCD,McDonald's Corp.,Consumer Discretionary,standard
+WMT,Walmart Inc.,Consumer Staples,standard
+COST,Costco Wholesale,Consumer Staples,standard
+PG,Procter & Gamble,Consumer Staples,standard
+KO,Coca-Cola Co.,Consumer Staples,standard
+PEP,PepsiCo Inc.,Consumer Staples,standard
+PM,Philip Morris International,Consumer Staples,standard
+LLY,Eli Lilly and Co.,Health Care,standard
+UNH,UnitedHealth Group,Health Care,standard
+JNJ,Johnson & Johnson,Health Care,standard
+ABBV,AbbVie Inc.,Health Care,standard
+MRK,Merck & Co.,Health Care,standard
+ABT,Abbott Laboratories,Health Care,standard
+ISRG,Intuitive Surgical,Health Care,standard
+BRK-B,Berkshire Hathaway,Financials,insurer
+JPM,JPMorgan Chase,Financials,bank
+V,Visa Inc.,Financials,standard
+MA,Mastercard Inc.,Financials,standard
+BAC,Bank of America,Financials,bank
+WFC,Wells Fargo,Financials,bank
+MS,Morgan Stanley,Financials,bank
+GS,Goldman Sachs,Financials,bank
+AXP,American Express,Financials,bank
+XOM,Exxon Mobil,Energy,standard
+CVX,Chevron Corp.,Energy,standard
+GE,GE Aerospace,Industrials,standard
+CAT,Caterpillar Inc.,Industrials,standard
+UBER,Uber Technologies,Industrials,standard
+LIN,Linde plc,Materials,standard
+ADBE,Adobe Inc.,Information Technology,standard
+QCOM,Qualcomm Inc.,Information Technology,standard
+TXN,Texas Instruments Inc.,Information Technology,standard
+AMAT,Applied Materials Inc.,Information Technology,standard
+MU,Micron Technology Inc.,Information Technology,standard
+LRCX,Lam Research Corp.,Information Technology,standard
+KLAC,KLA Corp.,Information Technology,standard
+ADI,Analog Devices Inc.,Information Technology,standard
+ANET,Arista Networks Inc.,Information Technology,standard
+ACN,Accenture plc,Information Technology,standard
+INTC,Intel Corp.,Information Technology,standard
+APH,Amphenol Corp.,Information Technology,standard
+PANW,Palo Alto Networks Inc.,Information Technology,standard
+CRWD,CrowdStrike Holdings Inc.,Information Technology,standard
+VZ,Verizon Communications Inc.,Communication Services,standard
+CMCSA,Comcast Corp.,Communication Services,standard
+BKNG,Booking Holdings Inc.,Consumer Discretionary,standard
+LOW,Lowe's Companies Inc.,Consumer Discretionary,standard
+TJX,TJX Companies Inc.,Consumer Discretionary,standard
+NKE,Nike Inc.,Consumer Discretionary,standard
+SBUX,Starbucks Corp.,Consumer Discretionary,standard
+MO,Altria Group Inc.,Consumer Staples,standard
+MDLZ,Mondelez International Inc.,Consumer Staples,standard
+TMO,Thermo Fisher Scientific Inc.,Health Care,standard
+DHR,Danaher Corp.,Health Care,standard
+AMGN,Amgen Inc.,Health Care,standard
+PFE,Pfizer Inc.,Health Care,standard
+GILD,Gilead Sciences Inc.,Health Care,standard
+BSX,Boston Scientific Corp.,Health Care,standard
+SYK,Stryker Corp.,Health Care,standard
+VRTX,Vertex Pharmaceuticals Inc.,Health Care,standard
+C,Citigroup Inc.,Financials,bank
+SCHW,Charles Schwab Corp.,Financials,bank
+BLK,BlackRock Inc.,Financials,standard
+SPGI,S&P Global Inc.,Financials,standard
+PGR,Progressive Corp.,Financials,insurer
+CB,Chubb Ltd.,Financials,insurer
+BX,Blackstone Inc.,Financials,standard
+COP,ConocoPhillips,Energy,standard
+HON,Honeywell International Inc.,Industrials,standard
+RTX,RTX Corp.,Industrials,standard
+BA,Boeing Co.,Industrials,standard
+UNP,Union Pacific Corp.,Industrials,standard
+DE,Deere & Co.,Industrials,standard
+ETN,Eaton Corp. plc,Industrials,standard
+LMT,Lockheed Martin Corp.,Industrials,standard
+NEE,NextEra Energy Inc.,Utilities,standard
+SO,Southern Co.,Utilities,standard
+PLD,Prologis Inc.,Real Estate,standard
+AMT,American Tower Corp.,Real Estate,standard
