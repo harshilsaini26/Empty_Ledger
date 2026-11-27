@@ -29,6 +29,8 @@ export const BADGES: Record<string, { name: string; desc: string; icon: string }
   oracle: { name: "Oracle", desc: "Get 10 'Call it' predictions right", icon: "🔮" },
   streak3: { name: "On a Roll", desc: "Practice 3 days in a row", icon: "🔥" },
   streak7: { name: "Habit Formed", desc: "Practice 7 days in a row", icon: "🏆" },
+  scholar: { name: "Scholar", desc: "Master all three research papers", icon: "📜" },
+  boglehead: { name: "Boglehead", desc: "Master all six Bogleheads chapters", icon: "⛵" },
   graduate: { name: "Path Complete", desc: "Pass every lesson on the learning path", icon: "🎓" },
 };
 

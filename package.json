@@ -11,6 +11,7 @@
     "data:practice": "cd pipeline && python3 build_practice.py"
   },
   "dependencies": {
+    "katex": "^0.16.47",
     "next": "^16.4.6",
     "papaparse": "^5.7.1",
     "react": "^19.3.1",

@@ -2,11 +2,20 @@ name: Refresh SEC data
 
 on:
   workflow_dispatch:
+    inputs:
+      full:
+        description: "Re-download every company, not only those with a new 10-K"
+        type: boolean
+        default: false
   schedule:
-    - cron: "0 6 * * 1"   # every Monday 06:00 UTC (new 10-Ks get picked up automatically)
+    - cron: "0 6 * * 1"   # every Monday 06:00 UTC
 
 permissions:
   contents: write
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -19,8 +28,13 @@ jobs:
       - name: Unit tests
         working-directory: pipeline
         run: python -m unittest discover -s tests
-      - name: Build dataset from SEC EDGAR
-        working-directory: pipeline
+      # Keep downloaded SEC files between runs, so a weekly run only fetches companies with a new 10-K.
+      - uses: actions/cache@v4
+        with:
+          path: pipeline/.cache/sec
+          key: sec-${{ github.run_id }}
+          restore-keys: sec-
+      - name: Check the SEC contact
         env:
           # Set this repository secret to "Your Name your.email@example.com" (SEC fair-access rule)
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
@@ -29,11 +43,33 @@ jobs:
             echo "::error::Add a repository secret named SEC_USER_AGENT, e.g. 'Your Name you@example.com' (required by the SEC)."
             exit 1
           fi
-          python build_dataset.py --refresh
+      - name: Pick the top 50
+        working-directory: pipeline
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: python build_universe.py
+      - name: Build statements and ratios
+        working-directory: pipeline
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: python build_dataset.py ${{ inputs.full && '--refresh' || '' }}
+      - name: Summary
+        working-directory: pipeline
+        run: |
+          python - <<'EOF' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          u = json.load(open("data/universe.json")); i = json.load(open("data/index.json"))
+          print(f"**{len(i['companies'])} companies built**, {len(i['failed'])} failed.")
+          print(f"Joined the top 50: {', '.join(u['joined']) or 'none'}. Left: {', '.join(u['left']) or 'none'}.")
+          for t, e in i["failed"].items():
+              print(f"- {t}: {e}")
+          EOF
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
-          git add pipeline/data
-          git diff --cached --quiet || git commit -m "data: refresh SEC statements and ratios"
+          git add pipeline/data pipeline/companies.csv
+          git diff --cached --quiet && exit 0
+          git commit -m "data: refresh the S&P top 50 from SEC EDGAR"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
           git push

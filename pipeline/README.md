@@ -10,11 +10,34 @@ for the web app.
 ```bash
 cd pipeline
 export SEC_USER_AGENT="Your Name your.email@example.com"   # required by the SEC
+python build_universe.py                # rank candidates, rewrite companies.csv with the top 50
 python build_dataset.py                 # ~50 companies, about 1-2 minutes
 python -m unittest discover -s tests    # offline tests
 ```
 
 Windows PowerShell: `$env:SEC_USER_AGENT="Your Name your.email@example.com"`.
+
+## Keeping the top 50 current
+
+`build_universe.py` decides which companies are in `companies.csv`. It ranks every row of
+`universe_candidates.csv` (about 100 large S&P 500 members, each with its GICS sector and statement
+layout) by **public float**: `dei:EntityPublicFloat` from the cover page of the latest 10-K, the market
+value of shares held by non-affiliates. That number comes from the SEC like everything else, so no
+price feed is needed. It differs from market cap: insiders' shares are left out (this matters for
+companies such as META, TSLA and BRK) and it is measured at the end of the second fiscal quarter.
+
+To avoid churn at the cut-off, a current member stays while it ranks inside the top 50 + 5
+(`--buffer`). Who joined and who left, and every candidate's rank, go to `data/universe.json`.
+Add a row to `universe_candidates.csv` when a company grows into contention.
+
+`build_dataset.py` is incremental. For each company it reads the small SEC filing index
+(`submissions`) and downloads the large XBRL facts file only when a 10-K has been filed since the
+cached copy. `--refresh` forces a full download. A company that leaves `companies.csv` is removed from
+`data/companies/`; one that fails to download keeps its last good file.
+
+The **Refresh SEC data** GitHub Action runs both scripts every Monday and commits the result. It needs
+a repository secret `SEC_USER_AGENT` ("Your Name you@example.com"), and like every scheduled workflow
+it only runs from the default branch.
 
 ## Data source
 

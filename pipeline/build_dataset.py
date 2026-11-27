@@ -7,6 +7,9 @@ Usage
     python build_dataset.py                       # all companies, last 5 fiscal years
     python build_dataset.py --only AAPL JPM BRK-B # a subset
     python build_dataset.py --offline             # rebuild from the local cache only
+    python build_dataset.py --refresh             # re-download every company, not only those with a new 10-K
+
+Run build_universe.py first to refresh companies.csv with the current top 50.
 
 Output (default ./data):
     companies/<TICKER>.json   statements, ratios, DuPont, models, red flags, sources
@@ -31,7 +34,7 @@ from finlab.extract import extract_company, labels, coverage  # noqa: E402
 from finlab.models import run_models  # noqa: E402
 from finlab.peers import build_peers, peer_group  # noqa: E402
 from finlab.ratios import compute_ratios, catalog, RATIOS  # noqa: E402
-from finlab.sec import SecClient, default_user_agent  # noqa: E402
+from finlab.sec import SecClient, default_user_agent, latest_annual_accession  # noqa: E402
 
 
 def load_companies(path):
@@ -47,7 +50,9 @@ def analyze(data, template, n_years):
 
 
 def build_one(client, cik, row, n_years):
-    facts = client.company_facts(cik)
+    # Online, ask the filing index for the latest 10-K and re-download facts only if the cache lacks it.
+    accn = None if client.offline or client.refresh else latest_annual_accession(client.submissions(cik))
+    facts = client.company_facts(cik, latest_accn=accn)
     if not facts:
         raise RuntimeError("no companyfacts returned")
     template = row["template"]
@@ -77,7 +82,7 @@ def main(argv=None):
     ap.add_argument("--years", type=int, default=5)
     ap.add_argument("--only", nargs="*", help="tickers to (re)build")
     ap.add_argument("--user-agent", default=default_user_agent())
-    ap.add_argument("--refresh", action="store_true", help="re-download even if cached")
+    ap.add_argument("--refresh", action="store_true", help="re-download every company even if cached")
     ap.add_argument("--offline", action="store_true", help="use the cache only, no network")
     a = ap.parse_args(argv)
 
@@ -110,10 +115,17 @@ def main(argv=None):
         built[t] = rec
         print(f"ok  FY{rec['fiscal_years'][0]}-{rec['fiscal_years'][-1]}  coverage {rec['coverage']['filled_share']:.0%}")
 
-    # When building a subset, merge with companies already on disk so peers stay complete.
+    # A company that left companies.csv is removed. One that failed this run keeps its last good file.
+    # When building a subset, companies already on disk are merged in so peers stay complete.
+    listed = {r["ticker"].upper() for r in load_companies(a.companies)}
     for p in (out / "companies").glob("*.json"):
-        if p.stem not in built:
-            built[p.stem] = json.loads(p.read_text())
+        if p.stem in built:
+            continue
+        if p.stem not in listed:
+            p.unlink()
+            print(f"removed {p.stem} (no longer in {Path(a.companies).name})")
+            continue
+        built[p.stem] = json.loads(p.read_text())
 
     write_outputs(out, built, failed)
     print(f"\nDone: {len(built)} companies in {out}  ({len(failed)} failed)")

@@ -165,6 +165,8 @@ class EndToEndTests(unittest.TestCase):
                 for t, s in rows + [("ZZZ", "Tech")]:
                     w.writerow([t, t + " Inc", s, "standard"])
             out = tmp / "data"
+            (out / "companies").mkdir(parents=True)
+            (out / "companies" / "OLD.json").write_text("{}")  # left the list since the last build
             res = subprocess.run([sys.executable, str(ROOT / "build_dataset.py"), "--offline",
                                   "--companies", str(comp), "--cache", str(cache), "--out", str(out)],
                                  capture_output=True, text=True)
@@ -172,6 +174,7 @@ class EndToEndTests(unittest.TestCase):
             idx = json.loads((out / "index.json").read_text())
             self.assertEqual(len(idx["companies"]), 4)
             self.assertIn("ZZZ", idx["failed"])
+            self.assertFalse((out / "companies" / "OLD.json").exists())
             peers = json.loads((out / "peers.json").read_text())
             self.assertEqual(peers["companies"]["DDD"]["benchmark"], "Universe (peer group too small)")
             rec = json.loads((out / "companies" / "AAA.json").read_text())
@@ -183,6 +186,81 @@ class EndToEndTests(unittest.TestCase):
                                  capture_output=True, text=True)
             self.assertEqual(res.returncode, 0, res.stderr)
             self.assertIn("Return on equity", res.stdout)
+
+
+class UniverseTests(unittest.TestCase):
+    """Choosing and maintaining the top-N list."""
+
+    def test_select_keeps_members_inside_the_buffer(self):
+        from build_universe import select
+        ranked = list("ABCDEFGH")
+        # E is a member ranked 5th: inside top 3 + buffer 2, so it stays and newcomer C waits.
+        self.assertEqual(select(ranked, {"A", "B", "E"}, 3, 2), ["A", "B", "E"])
+        # F ranks 6th, outside the buffer, so the largest non-member (C) replaces it.
+        self.assertEqual(select(ranked, {"A", "B", "F"}, 3, 2), ["A", "B", "C"])
+        # A brand-new list is simply the top N.
+        self.assertEqual(select(ranked, set(), 3, 2), ["A", "B", "C"])
+
+    def test_sec_helpers(self):
+        from finlab.sec import filed_accessions, latest_annual_accession, public_float
+        sub = {"filings": {"recent": {"form": ["10-Q", "10-K", "8-K", "10-K/A"],
+                                      "accessionNumber": ["q1", "k24", "e1", "k23a"],
+                                      "filingDate": ["2025-05-01", "2025-02-01", "2025-03-01", "2024-06-01"]}}}
+        self.assertEqual(latest_annual_accession(sub), "k24")
+        self.assertIsNone(latest_annual_accession({}))
+        facts = {"facts": {"dei": {"EntityPublicFloat": {"units": {"USD": [
+            {"val": 5e11, "end": "2023-06-30", "form": "10-K", "filed": "2024-02-01", "accn": "a"},
+            {"val": 7e11, "end": "2024-06-30", "form": "10-K", "filed": "2025-02-01", "accn": "b"},
+            {"val": 9e11, "end": "2025-06-30", "form": "10-Q", "filed": "2025-08-01", "accn": "c"}]}}}}}
+        self.assertEqual(public_float(facts), (7e11, "2024-06-30"))
+        self.assertEqual(filed_accessions(facts), {"a", "b", "c"})
+        self.assertEqual(public_float({}), (None, None))
+
+    def test_facts_are_refetched_only_when_a_new_10k_exists(self):
+        from finlab.sec import SecClient
+        with tempfile.TemporaryDirectory() as tmp:
+            c = SecClient("Test test@example.com", tmp)
+            old = {"facts": {"us-gaap": {"Assets": {"units": {"USD": [{"val": 1, "accn": "k23"}]}}}}}
+            (Path(tmp) / "CIK0000000001.json").write_text(json.dumps(old))
+            calls = []
+            c._get = lambda url: calls.append(url) or {"facts": {}, "new": True}
+            self.assertEqual(c.company_facts(1, latest_accn="k23"), old)  # cache already has it
+            self.assertEqual(calls, [])
+            self.assertTrue(c.company_facts(1, latest_accn="k24")["new"])  # new 10-K: download
+            self.assertEqual(len(calls), 1)
+
+    def test_build_universe_offline(self):
+        import build_universe
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp = Path(tmp)
+            cache = tmp / "cache"
+            cache.mkdir()
+            floats = {"AAA": 3e11, "BBB": 9e11, "CCC": 5e11, "DDD": None}
+            tickers = {}
+            for i, (t, v) in enumerate(floats.items()):
+                cik = 200 + i
+                tickers[str(i)] = {"cik_str": cik, "ticker": t, "title": t}
+                rows = [{"val": v, "end": "2024-06-30", "form": "10-K", "filed": "2025-02-01"}] if v else []
+                (cache / f"CIK{cik:010d}.json").write_text(json.dumps({"facts": {"dei": {"EntityPublicFloat": {"units": {"USD": rows}}}}}))
+            (cache / "company_tickers.json").write_text(json.dumps(tickers))
+            cand, comp, out = tmp / "cand.csv", tmp / "companies.csv", tmp / "data"
+            with open(cand, "w", newline="") as f:
+                w = csv.writer(f)
+                w.writerow(["ticker", "name", "sector", "template"])
+                for t in [*floats, "ZZZ"]:
+                    w.writerow([t, t + " Inc", "Tech", "standard"])
+            args = ["--offline", "--candidates", str(cand), "--companies", str(comp), "--cache", str(cache),
+                    "--out", str(out), "--size", "2", "--buffer", "0"]
+            self.assertEqual(build_universe.main(args), 0)
+            with open(comp, newline="") as f:
+                self.assertEqual([r["ticker"] for r in csv.DictReader(f)], ["BBB", "CCC"])
+            u = json.loads((out / "universe.json").read_text())
+            self.assertEqual([r["ticker"] for r in u["ranking"]], ["BBB", "CCC", "AAA"])
+            self.assertEqual(u["joined"], ["BBB", "CCC"])
+            self.assertIn("DDD", u["skipped"])
+            self.assertIn("ZZZ", u["skipped"])
+            # asking for more companies than can be sized leaves companies.csv alone
+            self.assertEqual(build_universe.main(args[:-4] + ["--size", "9", "--buffer", "0"]), 1)
 
 
 class PracticeTests(unittest.TestCase):
