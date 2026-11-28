@@ -1233,5 +1233,336 @@
    "long_term_debt"
   ]
  },
- "source": "SEC EDGAR XBRL companyfacts, CIK 0000019617"
+ "source": "SEC EDGAR XBRL companyfacts, CIK 0000019617",
+ "walkthroughs": {
+  "variance": {
+   "prior_year": 2024,
+   "year": 2025,
+   "threshold": "\u00b110% and at least 2% of revenue (flows) or assets (balances)",
+   "flux": [
+    {
+     "item": "total_assets",
+     "label": "Total assets",
+     "statement": "balance",
+     "prior": 4002814000000,
+     "current": 4424900000000,
+     "delta": 422086000000,
+     "pct": 0.10544731781191931,
+     "flag": true
+    },
+    {
+     "item": "total_liabilities",
+     "label": "Total liabilities",
+     "statement": "balance",
+     "prior": 3658056000000,
+     "current": 4062462000000,
+     "delta": 404406000000,
+     "pct": 0.11055216213201766,
+     "flag": true
+    },
+    {
+     "item": "cff",
+     "label": "Cash from financing",
+     "statement": "cashflow",
+     "prior": 63447000000,
+     "current": 269533000000,
+     "delta": 206086000000,
+     "pct": 3.2481598814758774,
+     "flag": true
+    },
+    {
+     "item": "loans",
+     "label": "Loans, net",
+     "statement": "balance",
+     "prior": 1323643000000,
+     "current": 1467664000000,
+     "delta": 144021000000,
+     "pct": 0.10880652864858575,
+     "flag": true
+    },
+    {
+     "item": "cfo",
+     "label": "Cash from operations",
+     "statement": "cashflow",
+     "prior": -42012000000,
+     "current": -147782000000,
+     "delta": -105770000000,
+     "pct": -2.517614015043321,
+     "flag": true
+    },
+    {
+     "item": "cfi",
+     "label": "Cash from investing",
+     "statement": "cashflow",
+     "prior": -163403000000,
+     "current": -265565000000,
+     "delta": -102162000000,
+     "pct": -0.625214959333672,
+     "flag": true
+    },
+    {
+     "item": "buybacks",
+     "label": "Share repurchases",
+     "statement": "cashflow",
+     "prior": 18830000000,
+     "current": 31591000000,
+     "delta": 12761000000,
+     "pct": 0.6776951672862453,
+     "flag": true
+    },
+    {
+     "item": "deposits",
+     "label": "Deposits",
+     "statement": "balance",
+     "prior": 2406032000000,
+     "current": 2559320000000,
+     "delta": 153288000000,
+     "pct": 0.0637098758453753,
+     "flag": false
+    },
+    {
+     "item": "retained_earnings",
+     "label": "Retained earnings",
+     "statement": "balance",
+     "prior": 376166000000,
+     "current": 416055000000,
+     "delta": 39889000000,
+     "pct": 0.10604095000611433,
+     "flag": false
+    },
+    {
+     "item": "invested_capital",
+     "label": "Invested capital (debt + equity)",
+     "statement": "balance",
+     "prior": 397651000000,
+     "current": 427214000000,
+     "delta": 29563000000,
+     "pct": 0.07434408564293815,
+     "flag": false
+    },
+    {
+     "item": "tangible_equity",
+     "label": "Tangible equity",
+     "statement": "balance",
+     "prior": 290493000000,
+     "current": 308407000000,
+     "delta": 17914000000,
+     "pct": 0.06166757890895822,
+     "flag": false
+    },
+    {
+     "item": "equity",
+     "label": "Shareholders' equity (parent)",
+     "statement": "balance",
+     "prior": 344758000000,
+     "current": 362438000000,
+     "delta": 17680000000,
+     "pct": 0.0512823487779834,
+     "flag": false
+    },
+    {
+     "item": "net_debt",
+     "label": "Net debt",
+     "statement": "balance",
+     "prior": 29521000000,
+     "current": 43034000000,
+     "delta": 13513000000,
+     "pct": 0.45774194641102944,
+     "flag": false
+    },
+    {
+     "item": "short_term_debt",
+     "label": "Short-term borrowings",
+     "statement": "balance",
+     "prior": 52893000000,
+     "current": 64776000000,
+     "delta": 11883000000,
+     "pct": 0.22466110827519709,
+     "flag": false
+    },
+    {
+     "item": "total_debt",
+     "label": "Total debt",
+     "statement": "balance",
+     "prior": 52893000000,
+     "current": 64776000000,
+     "delta": 11883000000,
+     "pct": 0.22466110827519709,
+     "flag": false
+    },
+    {
+     "item": "revenue",
+     "label": "Total net revenue",
+     "statement": "income",
+     "prior": 177556000000,
+     "current": 182447000000,
+     "delta": 4891000000,
+     "pct": 0.027546238933069005,
+     "flag": false
+    },
+    {
+     "item": "noninterest_expense",
+     "label": "Non-interest expense",
+     "statement": "income",
+     "prior": 91797000000,
+     "current": 95640000000,
+     "delta": 3843000000,
+     "pct": 0.04186411320631393,
+     "flag": false
+    },
+    {
+     "item": "provision",
+     "label": "Provision for credit losses",
+     "statement": "income",
+     "prior": 10678000000,
+     "current": 14212000000,
+     "delta": 3534000000,
+     "pct": 0.3309608540925267,
+     "flag": false
+    },
+    {
+     "item": "interest_expense",
+     "label": "Interest expense",
+     "statement": "income",
+     "prior": 101350000000,
+     "current": 97898000000,
+     "delta": -3452000000,
+     "pct": -0.03406018746916625,
+     "flag": false
+    },
+    {
+     "item": "net_interest_income",
+     "label": "Net interest income",
+     "statement": "income",
+     "prior": 92583000000,
+     "current": 95443000000,
+     "delta": 2860000000,
+     "pct": 0.030891200328354018,
+     "flag": false
+    },
+    {
+     "item": "pretax_income",
+     "label": "Pre-tax income",
+     "statement": "income",
+     "prior": 75081000000,
+     "current": 72595000000,
+     "delta": -2486000000,
+     "pct": -0.03311090688722846,
+     "flag": false
+    },
+    {
+     "item": "noninterest_income",
+     "label": "Non-interest income",
+     "statement": "income",
+     "prior": 84973000000,
+     "current": 87004000000,
+     "delta": 2031000000,
+     "pct": 0.02390170995492686,
+     "flag": false
+    },
+    {
+     "item": "dividends_paid",
+     "label": "Dividends paid",
+     "statement": "cashflow",
+     "prior": 14783000000,
+     "current": 16625000000,
+     "delta": 1842000000,
+     "pct": 0.12460258404924575,
+     "flag": false
+    },
+    {
+     "item": "cash",
+     "label": "Cash & equivalents",
+     "statement": "balance",
+     "prior": 23372000000,
+     "current": 21742000000,
+     "delta": -1630000000,
+     "pct": -0.06974157111073079,
+     "flag": false
+    },
+    {
+     "item": "net_income",
+     "label": "Net income (to parent)",
+     "statement": "income",
+     "prior": 58471000000,
+     "current": 57048000000,
+     "delta": -1423000000,
+     "pct": -0.02433685074652392,
+     "flag": false
+    },
+    {
+     "item": "loan_allowance",
+     "label": "Allowance for loan losses",
+     "statement": "balance",
+     "prior": 24345000000,
+     "current": 25765000000,
+     "delta": 1420000000,
+     "pct": 0.0583281988087903,
+     "flag": false
+    },
+    {
+     "item": "income_tax",
+     "label": "Income tax expense",
+     "statement": "income",
+     "prior": 16610000000,
+     "current": 15547000000,
+     "delta": -1063000000,
+     "pct": -0.06399759181216134,
+     "flag": false
+    },
+    {
+     "item": "d_and_a",
+     "label": "Depreciation & amortization",
+     "statement": "cashflow",
+     "prior": 7938000000,
+     "current": 8821000000,
+     "delta": 883000000,
+     "pct": 0.11123708742756362,
+     "flag": false
+    },
+    {
+     "item": "interest_income",
+     "label": "Interest income",
+     "statement": "income",
+     "prior": 193933000000,
+     "current": 193341000000,
+     "delta": -592000000,
+     "pct": -0.0030526006404273643,
+     "flag": false
+    },
+    {
+     "item": "intangibles",
+     "label": "Other intangibles",
+     "statement": "balance",
+     "prior": 1700000000,
+     "current": 1300000000,
+     "delta": -400000000,
+     "pct": -0.23529411764705882,
+     "flag": false
+    },
+    {
+     "item": "goodwill",
+     "label": "Goodwill",
+     "statement": "balance",
+     "prior": 52565000000,
+     "current": 52731000000,
+     "delta": 166000000,
+     "pct": 0.0031579948635023303,
+     "flag": false
+    },
+    {
+     "item": "sbc",
+     "label": "Stock-based compensation",
+     "statement": "cashflow",
+     "prior": 3504000000,
+     "current": 3614000000,
+     "delta": 110000000,
+     "pct": 0.03139269406392694,
+     "flag": false
+    }
+   ],
+   "bridge": null,
+   "splits": []
+  }
+ }
 }

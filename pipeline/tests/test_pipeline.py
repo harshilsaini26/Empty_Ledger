@@ -290,5 +290,29 @@ class PracticeTests(unittest.TestCase):
                                            delta=5, msg=f"{spec['ticker']} {y1} cash flow")
 
 
+class WalkthroughTests(unittest.TestCase):
+    """DCF arithmetic, a balancing projection and a bridge that adds up, on every training company."""
+
+    def test_walkthroughs(self):
+        from finlab.valuation import dcf_value
+        for f in (ROOT / "data" / "practice").glob("[A-Z]*.json"):
+            rec = json.loads(f.read_text())
+            w = rec["walkthroughs"]
+            b = w["variance"]["bridge"]
+            if b:
+                self.assertAlmostEqual(b["start"] + sum(s["value"] for s in b["steps"]), b["end"], delta=1, msg=f.name)
+            if rec["template"] != "standard":
+                continue
+            for v in w["projection"]["rows"]["check"].values():
+                self.assertAlmostEqual(v, 0, delta=1e-3, msg=f"{f.name} balance check")
+        a = {"base_year": 2024, "revenue": 100.0, "fcff_margin": 0.1, "revenue_growth": 0.0, "rf": 0.04, "erp": 0.05,
+             "beta": 1.2, "kd": 0.05, "tax": 0.2, "wd": 0.0, "terminal_growth": 0.0, "net_debt": 10.0, "shares": 2.0}
+        v = dcf_value(a)  # flat 10 a year at 10% forever = 100
+        self.assertAlmostEqual(v["wacc"], 0.10)
+        self.assertAlmostEqual(v["enterprise_value"], 100.0, places=6)
+        self.assertAlmostEqual(v["value_per_share"], 45.0, places=6)
+        self.assertFalse(dcf_value({**a, "terminal_growth": 0.12})["valid"])
+
+
 if __name__ == "__main__":
     unittest.main()

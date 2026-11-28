@@ -73,6 +73,7 @@ How the extraction works (`finlab/extract.py`, `finlab/concepts.py`):
 | Diagnostic | Beneish M-score, Piotroski F-score, Sloan-style accruals ratio, 12 rule-based red flags | `finlab/models.py` |
 | Predictive | Altman Z''-score (distress), next-year revenue (CAGR and linear trend), NI and EPS projection, sustainable growth | `finlab/models.py` |
 | Peers | Sector peer groups (banks and payments split out), median, quartiles, percentile, z-score, rank, category scorecard | `finlab/peers.py` |
+| Walkthroughs | Step-by-step DCF (FCFF, WACC, Gordon terminal value; mirrored in `lib/engine/dcf.ts` for the live sliders), driver-based 3-statement projection with a balance check, and year-over-year variance (flux table, net-income bridge, volume/rate split). Adapted from Anthropic's `dcf-model`, `3-statement-model` and `variance-analysis` skills | `finlab/valuation.py` |
 
 Ratios that divide a flow by a stock use **average** balances, as the CFA curriculum does.
 ROE and the equity multiplier are left blank when average equity is negative

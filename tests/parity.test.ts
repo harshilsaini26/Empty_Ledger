@@ -6,6 +6,7 @@ import { describe, expect, it } from "vitest";
 import Papa from "papaparse";
 import { RATIO_FNS } from "../lib/engine/core";
 import { analyzeStatements } from "../lib/engine/analyze";
+import { dcf } from "../lib/engine/dcf";
 import { parseRows, toStatements } from "../lib/engine/parse";
 import type { CompanyRecord } from "../lib/engine/types";
 import catalog from "../pipeline/data/ratio_catalog.json";
@@ -52,5 +53,11 @@ describe.each(practice)("parity with Python: %s", (file) => {
     const { red_flags: pyFlags, ...pyRest } = py.models;
     close(rest, pyRest, "models");
     expect(red_flags).toEqual(pyFlags);
+  });
+  it.runIf(py.template === "standard")("computes the same DCF", () => {
+    const years = [...parsed.years].sort((a, b) => a - b);
+    const d = dcf(ts.statements, years, ts.fiscal_years)!;
+    expect(py.walkthroughs?.dcf).toBeTruthy();
+    close(d, py.walkthroughs!.dcf, "dcf");
   });
 });

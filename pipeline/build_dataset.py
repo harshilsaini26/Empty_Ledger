@@ -32,6 +32,7 @@ sys.path.insert(0, str(HERE))
 
 from finlab.extract import extract_company, labels, coverage  # noqa: E402
 from finlab.models import run_models  # noqa: E402
+from finlab.valuation import run_walkthroughs  # noqa: E402
 from finlab.peers import build_peers, peer_group  # noqa: E402
 from finlab.ratios import compute_ratios, catalog, RATIOS  # noqa: E402
 from finlab.sec import SecClient, default_user_agent, latest_annual_accession  # noqa: E402
@@ -69,6 +70,7 @@ def build_one(client, cik, row, n_years):
         "period_end": data["period_end"], "units": "USD (per-share in USD, shares in units)",
         "labels": labels(template), "statements": data["statements"], "sources": data["sources"],
         "ratios": ratios, "ratios_used_ending_balance": fallback, "models": models,
+        "walkthroughs": run_walkthroughs(data, template, analysis_years, labels(template)),
         "coverage": {"filled_share": round(cov, 3), "missing_items": missing},
         "source": f"SEC EDGAR XBRL companyfacts, CIK {cik:010d}",
     }

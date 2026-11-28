@@ -9,6 +9,7 @@ import { RatiosTab } from "./Ratios";
 import { DuPontTab } from "./DuPont";
 import { QualityTab } from "./Quality";
 import { ForecastTab } from "./Forecast";
+import { DcfTab, ModelTab, VarianceTab } from "./Walkthroughs";
 import { Segmented } from "../fx";
 
 export interface ReportProps {
@@ -24,6 +25,9 @@ const TABS = [
   { id: "dupont", label: "DuPont" },
   { id: "quality", label: "Quality & risk" },
   { id: "forecast", label: "Forecast" },
+  { id: "dcf", label: "DCF" },
+  { id: "model", label: "3-statement model" },
+  { id: "variance", label: "Variance" },
 ] as const;
 type TabId = (typeof TABS)[number]["id"];
 
@@ -81,6 +85,9 @@ export function CompanyReport(props: ReportProps) {
       {tab === "dupont" && <DuPontTab {...props} />}
       {tab === "quality" && <QualityTab {...props} />}
       {tab === "forecast" && <ForecastTab {...props} />}
+      {tab === "dcf" && <DcfTab key={`${rec.name}-${y1}`} {...props} />}
+      {tab === "model" && <ModelTab {...props} />}
+      {tab === "variance" && <VarianceTab {...props} />}
     </div>
   );
 }

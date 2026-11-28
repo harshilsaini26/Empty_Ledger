@@ -21,8 +21,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from finlab.concepts import TEMPLATES  # noqa: E402
-from finlab.extract import derive  # noqa: E402
+from finlab.extract import derive, labels  # noqa: E402
 from finlab.models import run_models  # noqa: E402
+from finlab.valuation import run_walkthroughs  # noqa: E402
 from finlab.ratios import compute_ratios, RATIOS, CATEGORIES  # noqa: E402
 
 
@@ -112,8 +113,17 @@ def main(argv=None):
             print(f"\nNext-year projection ({fc['target_year']}, CAGR method): "
                   f"revenue {fc['revenue_next_cagr_method']:,}{ni}")
 
+    walk = run_walkthroughs(data, a.template, analysis_years, labels(a.template))
+    if walk.get("dcf"):
+        print("\nDCF walkthrough:")
+        for st in walk["dcf"]["steps"] + walk["dcf"]["valuation"]["steps"]:
+            v = st["value"]
+            shown = "n/a" if v is None else f"{v:.2%}" if st["unit"] == "pct" else f"{v:,.2f}"
+            print(f"  {st['label'][:52]:<52} {st['formula']:<44} {shown}")
+
     if a.json:
-        Path(a.json).write_text(json.dumps({"ratios": ratios, "models": models, "statements": data["statements"]},
+        Path(a.json).write_text(json.dumps({"ratios": ratios, "models": models, "walkthroughs": walk,
+                                            "statements": data["statements"]},
                                            indent=1))
         print(f"\nWrote {a.json}")
 
