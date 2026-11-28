@@ -1478,6 +1478,1142 @@
    }
   }
  },
+ "walkthroughs": {
+  "dcf": {
+   "assumptions": {
+    "base_year": 2025,
+    "revenue": 10250772480.0,
+    "fcff_margin": 0.36756935393286555,
+    "revenue_growth": 0.15,
+    "rf": 0.0425,
+    "erp": 0.05,
+    "beta": 1.0,
+    "kd": 0.035,
+    "tax": 0.1799999998656103,
+    "wd": 0.10473200145742037,
+    "terminal_growth": 0.025,
+    "net_debt": -10700113812.0,
+    "shares": 315000000
+   },
+   "history": {
+    "2021": {
+     "revenue": 5120000000.0,
+     "fcff": 1566937425.0,
+     "margin": 0.3060424658203125
+    },
+    "2022": {
+     "revenue": 6348800000.0,
+     "fcff": 2051355353.0,
+     "margin": 0.32310914708291333
+    },
+    "2023": {
+     "revenue": 7618560000.0,
+     "fcff": 2661277808.0,
+     "margin": 0.3493150684643817
+    },
+    "2024": {
+     "revenue": 8913715200.0,
+     "fcff": 3265058497.989686,
+     "margin": 0.36629603086148477
+    },
+    "2025": {
+     "revenue": 10250772480.0,
+     "fcff": 3968042890.0070553,
+     "margin": 0.3870969624727302
+    }
+   },
+   "steps": [
+    {
+     "id": "fcff",
+     "label": "Free cash flow to the firm, FY2025",
+     "formula": "FCFF = CFO + interest \u00d7 (1 \u2212 t) \u2212 capex",
+     "inputs": {
+      "CFO": 4433966028.0,
+      "interest": 52500000.0,
+      "t": 0.1799999998656103,
+      "capex": 508973138.0
+     },
+     "value": 3968042890.0070553,
+     "unit": "usd"
+    },
+    {
+     "id": "fcff_margin",
+     "label": "FCFF margin (average of the last 3 years)",
+     "formula": "m = avg(FCFF \u00f7 revenue)",
+     "inputs": {
+      "FY2023": 0.3493150684643817,
+      "FY2024": 0.36629603086148477,
+      "FY2025": 0.3870969624727302
+     },
+     "value": 0.36756935393286555,
+     "unit": "pct"
+    },
+    {
+     "id": "revenue_growth",
+     "label": "Revenue growth (CAGR FY2021 to FY2025, capped at \u22125% to 15%)",
+     "formula": "g = (Rev_end \u00f7 Rev_start)^(1/n) \u2212 1",
+     "inputs": {
+      "Rev_start": 5120000000.0,
+      "Rev_end": 10250772480.0,
+      "n": 4
+     },
+     "value": 0.15,
+     "unit": "pct"
+    },
+    {
+     "id": "kd",
+     "label": "Pre-tax cost of debt (capped at 2% to 12%, 5% if unknown)",
+     "formula": "k_d = interest \u00f7 average debt",
+     "inputs": {
+      "interest": 52500000.0,
+      "average debt": 1500000000.0
+     },
+     "value": 0.035,
+     "unit": "pct"
+    },
+    {
+     "id": "wd",
+     "label": "Debt weight (book values, capped at 60%)",
+     "formula": "w_d = D \u00f7 (D + E)",
+     "inputs": {
+      "D": 1500000000.0,
+      "E": 12822269976.0
+     },
+     "value": 0.10473200145742037,
+     "unit": "pct"
+    }
+   ],
+   "valuation": {
+    "wacc": 0.0858180983075092,
+    "rows": [
+     {
+      "year": 2026,
+      "revenue": 11788388352.0,
+      "fcff": 4333050290.454358,
+      "discount_factor": 0.9209645718364099,
+      "pv": 3990585805.4939294
+     },
+     {
+      "year": 2027,
+      "revenue": 13556646604.799997,
+      "fcff": 4983007834.022511,
+      "discount_factor": 0.8481757425778218,
+      "pv": 4226466369.893146
+     },
+     {
+      "year": 2028,
+      "revenue": 15590143595.519997,
+      "fcff": 5730459009.125887,
+      "discount_factor": 0.7811398096052126,
+      "pv": 4476289659.33907
+     },
+     {
+      "year": 2029,
+      "revenue": 17928665134.847996,
+      "fcff": 6590027860.49477,
+      "discount_factor": 0.7194020902974393,
+      "pv": 4740879817.9583
+     },
+     {
+      "year": 2030,
+      "revenue": 20617964905.075195,
+      "fcff": 7578532039.568985,
+      "discount_factor": 0.6625438380689995,
+      "pv": 5021109704.424918
+     }
+    ],
+    "enterprise_value": 107078783754.66791,
+    "equity_value": 117778897566.66791,
+    "value_per_share": 373.90126211640603,
+    "terminal_share": 0.7902914978138191,
+    "valid": true,
+    "steps": [
+     {
+      "id": "ke",
+      "label": "Cost of equity (CAPM)",
+      "formula": "k_e = r_f + \u03b2 \u00d7 ERP",
+      "inputs": {
+       "r_f": 0.0425,
+       "\u03b2": 1.0,
+       "ERP": 0.05
+      },
+      "value": 0.0925,
+      "unit": "pct"
+     },
+     {
+      "id": "kd_at",
+      "label": "After-tax cost of debt",
+      "formula": "k_d \u00d7 (1 \u2212 t)",
+      "inputs": {
+       "k_d": 0.035,
+       "t": 0.1799999998656103
+      },
+      "value": 0.02870000000470364,
+      "unit": "pct"
+     },
+     {
+      "id": "wacc",
+      "label": "Weighted average cost of capital",
+      "formula": "WACC = w_d \u00d7 k_d(1 \u2212 t) + (1 \u2212 w_d) \u00d7 k_e",
+      "inputs": {
+       "w_d": 0.10473200145742037,
+       "k_d(1 \u2212 t)": 0.02870000000470364,
+       "k_e": 0.0925
+      },
+      "value": 0.0858180983075092,
+      "unit": "pct"
+     },
+     {
+      "id": "pv_fcff",
+      "label": "Present value of FCFF, FY2026 to FY2030",
+      "formula": "\u03a3 FCFF_t \u00f7 (1 + WACC)^t",
+      "inputs": {
+       "FY2026": 3990585805.4939294,
+       "FY2027": 4226466369.893146,
+       "FY2028": 4476289659.33907,
+       "FY2029": 4740879817.9583,
+       "FY2030": 5021109704.424918
+      },
+      "value": 22455331357.109367,
+      "unit": "usd"
+     },
+     {
+      "id": "tv",
+      "label": "Terminal value at FY2030 (Gordon growth)",
+      "formula": "TV = FCFF_n \u00d7 (1 + g) \u00f7 (WACC \u2212 g)",
+      "inputs": {
+       "FCFF_n": 7578532039.568985,
+       "g": 0.025,
+       "WACC": 0.0858180983075092
+      },
+      "value": 127725061400.00594,
+      "unit": "usd"
+     },
+     {
+      "id": "pv_tv",
+      "label": "Present value of the terminal value",
+      "formula": "TV \u00f7 (1 + WACC)^n",
+      "inputs": {
+       "TV": 127725061400.00594,
+       "discount factor": 0.6625438380689995
+      },
+      "value": 84623452397.55855,
+      "unit": "usd"
+     },
+     {
+      "id": "ev",
+      "label": "Enterprise value",
+      "formula": "EV = PV(FCFF) + PV(TV)",
+      "inputs": {
+       "PV(FCFF)": 22455331357.109367,
+       "PV(TV)": 84623452397.55855
+      },
+      "value": 107078783754.66791,
+      "unit": "usd"
+     },
+     {
+      "id": "equity",
+      "label": "Equity value",
+      "formula": "Equity = EV \u2212 net debt",
+      "inputs": {
+       "EV": 107078783754.66791,
+       "net debt": -10700113812.0
+      },
+      "value": 117778897566.66791,
+      "unit": "usd"
+     },
+     {
+      "id": "per_share",
+      "label": "Intrinsic value per share",
+      "formula": "Equity \u00f7 diluted shares",
+      "inputs": {
+       "Equity": 117778897566.66791,
+       "shares": 315000000
+      },
+      "value": 373.90126211640603,
+      "unit": "usd_share"
+     }
+    ]
+   }
+  },
+  "projection": {
+   "base_year": 2025,
+   "years": [
+    2026,
+    2027,
+    2028
+   ],
+   "drivers": [
+    {
+     "id": "growth",
+     "label": "Revenue growth",
+     "formula": "avg(Rev_t \u00f7 Rev_t\u22121 \u2212 1), capped \u221210% to 20%",
+     "history": {
+      "2023": 0.19999999999999996,
+      "2024": 0.16999999999999993,
+      "2025": 0.1499999999999999
+     },
+     "value": 0.17333333333333326
+    },
+    {
+     "id": "ebit_margin",
+     "label": "EBIT margin",
+     "formula": "avg(EBIT \u00f7 revenue)",
+     "history": {
+      "2023": 0.24,
+      "2024": 0.28,
+      "2025": 0.3100000000195107
+     },
+     "value": 0.27666666667317025
+    },
+    {
+     "id": "tax_rate",
+     "label": "Tax rate",
+     "formula": "avg(tax \u00f7 pre-tax income), capped 0% to 40%",
+     "history": {
+      "2023": 0.15,
+      "2024": 0.17000000019645237,
+      "2025": 0.1799999998656103
+     },
+     "value": 0.16666666668735422
+    },
+    {
+     "id": "da_pct",
+     "label": "D&A % of revenue",
+     "formula": "avg(D&A \u00f7 revenue)",
+     "history": {
+      "2023": 0.04,
+      "2024": 0.04,
+      "2025": 0.039999999980489274
+     },
+     "value": 0.039999999993496425
+    },
+    {
+     "id": "capex_pct",
+     "label": "Capex % of revenue",
+     "formula": "avg(capex \u00f7 revenue)",
+     "history": {
+      "2023": 0.054,
+      "2024": 0.05143589745833477,
+      "2025": 0.04965217392084777
+     },
+     "value": 0.05169602379306085
+    },
+    {
+     "id": "rec_pct",
+     "label": "Receivables % of revenue",
+     "formula": "avg(receivables \u00f7 revenue)",
+     "history": {
+      "2023": 0.15890410956926243,
+      "2024": 0.1589041095905779,
+      "2025": 0.15890410963447704
+     },
+     "value": 0.15890410959810577
+    },
+    {
+     "id": "inv_pct",
+     "label": "Inventory % of revenue",
+     "formula": "avg(inventory \u00f7 revenue)",
+     "history": {
+      "2023": 0.0,
+      "2024": 0.0,
+      "2025": 0.0
+     },
+     "value": 0
+    },
+    {
+     "id": "ap_pct",
+     "label": "Payables % of revenue",
+     "formula": "avg(payables \u00f7 revenue)",
+     "history": {
+      "2023": 0.01890410956926243,
+      "2024": 0.018082191811557992,
+      "2025": 0.01726027393010678
+     },
+     "value": 0.018082191770309067
+    },
+    {
+     "id": "payout",
+     "label": "Dividend payout",
+     "formula": "avg(dividends \u00f7 net income), capped 0% to 100%",
+     "history": {
+      "2023": 0.0,
+      "2024": 0.0,
+      "2025": 0.0
+     },
+     "value": 0
+    }
+   ],
+   "lines": [
+    [
+     "revenue",
+     "Revenue",
+     "income"
+    ],
+    [
+     "ebit",
+     "EBIT",
+     "income"
+    ],
+    [
+     "interest",
+     "Interest expense",
+     "income"
+    ],
+    [
+     "pretax",
+     "Pre-tax income",
+     "income"
+    ],
+    [
+     "tax",
+     "Income tax",
+     "income"
+    ],
+    [
+     "net_income",
+     "Net income",
+     "income"
+    ],
+    [
+     "cash",
+     "Cash & short-term investments",
+     "balance"
+    ],
+    [
+     "receivables",
+     "Receivables",
+     "balance"
+    ],
+    [
+     "inventory",
+     "Inventory",
+     "balance"
+    ],
+    [
+     "ppe",
+     "PP&E (net)",
+     "balance"
+    ],
+    [
+     "other_assets",
+     "Other assets (held flat)",
+     "balance"
+    ],
+    [
+     "total_assets",
+     "Total assets",
+     "balance"
+    ],
+    [
+     "accounts_payable",
+     "Accounts payable",
+     "balance"
+    ],
+    [
+     "debt",
+     "Debt (held flat)",
+     "balance"
+    ],
+    [
+     "other_liabilities",
+     "Other liabilities (held flat)",
+     "balance"
+    ],
+    [
+     "total_liabilities",
+     "Total liabilities",
+     "balance"
+    ],
+    [
+     "equity",
+     "Equity",
+     "balance"
+    ],
+    [
+     "check",
+     "Check: assets \u2212 liabilities \u2212 equity",
+     "balance"
+    ],
+    [
+     "da",
+     "D&A",
+     "cashflow"
+    ],
+    [
+     "change_nwc",
+     "Increase in working capital",
+     "cashflow"
+    ],
+    [
+     "cfo",
+     "Cash from operations",
+     "cashflow"
+    ],
+    [
+     "capex",
+     "Capex",
+     "cashflow"
+    ],
+    [
+     "dividends",
+     "Dividends",
+     "cashflow"
+    ],
+    [
+     "change_cash",
+     "Change in cash",
+     "cashflow"
+    ]
+   ],
+   "rows": {
+    "revenue": {
+     "2026": 12027573043.2,
+     "2027": 14112352370.688002,
+     "2028": 16558493448.273922
+    },
+    "ebit": {
+     "2026": 3327628542.0302224,
+     "2027": 3904417489.315461,
+     "2028": 4581183187.463474
+    },
+    "interest": {
+     "2026": 52500000.0,
+     "2027": 52500000.0,
+     "2028": 52500000.0
+    },
+    "pretax": {
+     "2026": 3275128542.0302224,
+     "2027": 3851917489.315461,
+     "2028": 4528683187.463474
+    },
+    "tax": {
+     "2026": 545854757.0727915,
+     "2027": 641986248.2989303,
+     "2028": 754780531.3375998
+    },
+    "net_income": {
+     "2026": 2729273784.957431,
+     "2027": 3209931241.016531,
+     "2028": 3773902656.1258745
+    },
+    "cash": {
+     "2026": 14546925646.63583,
+     "2027": 17298215855.31235,
+     "2028": 20533979700.15928
+    },
+    "receivables": {
+     "2026": 1911230785.0558755,
+     "2027": 2242510787.798894,
+     "2028": 2631212657.684036
+    },
+    "inventory": {
+     "2026": 0.0,
+     "2027": 0.0,
+     "2028": 0.0
+    },
+    "ppe": {
+     "2026": 1370767478.5642667,
+     "2027": 1535825887.759673,
+     "2028": 1729494421.2156167
+    },
+    "other_assets": {
+     "2026": 4230573474.0,
+     "2027": 4230573474.0,
+     "2028": 4230573474.0
+    },
+    "total_assets": {
+     "2026": 22059497384.255974,
+     "2027": 25307126004.87092,
+     "2028": 29125260253.058933
+    },
+    "accounts_payable": {
+     "2026": 217484882.29854223,
+     "2027": 255182261.89695624,
+     "2028": 299413853.9590953
+    },
+    "debt": {
+     "2026": 1500000000.0,
+     "2027": 1500000000.0,
+     "2028": 1500000000.0
+    },
+    "other_liabilities": {
+     "2026": 4790468741.0,
+     "2027": 4790468741.0,
+     "2028": 4790468741.0
+    },
+    "total_liabilities": {
+     "2026": 6507953623.298542,
+     "2027": 6545651002.896956,
+     "2028": 6589882594.959095
+    },
+    "equity": {
+     "2026": 15551543760.957432,
+     "2027": 18761475001.97396,
+     "2028": 22535377658.099834
+    },
+    "check": {
+     "2026": 0.0,
+     "2027": 0.0,
+     "2028": 3.814697265625e-06
+    },
+    "da": {
+     "2026": 481102921.6497778,
+     "2027": 564494094.7357394,
+     "2028": 662339737.8232675
+    },
+    "change_nwc": {
+     "2026": 241787169.75733328,
+     "2027": 293582623.14460444,
+     "2028": 344470277.8230026
+    },
+    "cfo": {
+     "2026": 2968589536.8498755,
+     "2027": 3480842712.607666,
+     "2028": 4091772116.1261396
+    },
+    "capex": {
+     "2026": 621777702.2140445,
+     "2027": 729552503.9311455,
+     "2028": 856008271.2792108
+    },
+    "dividends": {
+     "2026": 0.0,
+     "2027": 0.0,
+     "2028": 0.0
+    },
+    "change_cash": {
+     "2026": 2346811834.635831,
+     "2027": 2751290208.6765203,
+     "2028": 3235763844.8469286
+    }
+   },
+   "notes": "Debt, interest and other balances are held flat; cash is the plug; no buybacks or new equity."
+  },
+  "variance": {
+   "prior_year": 2024,
+   "year": 2025,
+   "threshold": "\u00b110% and at least 2% of revenue (flows) or assets (balances)",
+   "flux": [
+    {
+     "item": "total_assets",
+     "label": "Total assets",
+     "statement": "balance",
+     "prior": 16313972618.0,
+     "current": 19289669858.0,
+     "delta": 2975697240.0,
+     "pct": 0.1824017552117728,
+     "flag": true
+    },
+    {
+     "item": "current_assets",
+     "label": "Total current assets",
+     "statement": "balance",
+     "prior": 13766647486.0,
+     "current": 16576549623.0,
+     "delta": 2809902137.0,
+     "pct": 0.20410939844704615,
+     "flag": true
+    },
+    {
+     "item": "retained_earnings",
+     "label": "Retained earnings",
+     "statement": "balance",
+     "prior": 4714086452.0,
+     "current": 7276782817.0,
+     "delta": 2562696365.0,
+     "pct": 0.5436252370621565,
+     "flag": true
+    },
+    {
+     "item": "working_capital",
+     "label": "Working capital",
+     "statement": "balance",
+     "prior": 10574804810.0,
+     "current": 12914355838.0,
+     "delta": 2339551028.0,
+     "pct": 0.2212382233086343,
+     "flag": true
+    },
+    {
+     "item": "net_debt",
+     "label": "Net debt",
+     "statement": "balance",
+     "prior": -8569008377.0,
+     "current": -10700113812.0,
+     "delta": -2131105435.0,
+     "pct": -0.2486991891290574,
+     "flag": true
+    },
+    {
+     "item": "tangible_equity",
+     "label": "Tangible equity",
+     "statement": "balance",
+     "prior": 9791374820.0,
+     "current": 11851781062.0,
+     "delta": 2060406242.0,
+     "pct": 0.21043073928610978,
+     "flag": true
+    },
+    {
+     "item": "equity",
+     "label": "Shareholders' equity (parent)",
+     "statement": "balance",
+     "prior": 10823368369.0,
+     "current": 12822269976.0,
+     "delta": 1998901607.0,
+     "pct": 0.18468387463603292,
+     "flag": true
+    },
+    {
+     "item": "invested_capital",
+     "label": "Invested capital (debt + equity)",
+     "statement": "balance",
+     "prior": 12323368369.0,
+     "current": 14322269976.0,
+     "delta": 1998901607.0,
+     "pct": 0.16220415937807467,
+     "flag": true
+    },
+    {
+     "item": "cash",
+     "label": "Cash & equivalents",
+     "statement": "balance",
+     "prior": 8055206702.0,
+     "current": 9760091050.0,
+     "delta": 1704884348.0,
+     "pct": 0.21164998131912618,
+     "flag": true
+    },
+    {
+     "item": "revenue",
+     "label": "Revenue",
+     "statement": "income",
+     "prior": 8913715200.0,
+     "current": 10250772480.0,
+     "delta": 1337057280.0,
+     "pct": 0.15,
+     "flag": true
+    },
+    {
+     "item": "gross_profit",
+     "label": "Gross profit",
+     "statement": "income",
+     "prior": 6952697856.0,
+     "current": 8098110259.0,
+     "delta": 1145412403.0,
+     "pct": 0.16474358971482392,
+     "flag": true
+    },
+    {
+     "item": "total_liabilities",
+     "label": "Total liabilities",
+     "statement": "balance",
+     "prior": 5490604249.0,
+     "current": 6467399882.0,
+     "delta": 976795633.0,
+     "pct": 0.17790312116884097,
+     "flag": true
+    },
+    {
+     "item": "cfo",
+     "label": "Cash from operations",
+     "statement": "cashflow",
+     "prior": 3679968439.0,
+     "current": 4433966028.0,
+     "delta": 753997589.0,
+     "pct": 0.20489240641555403,
+     "flag": true
+    },
+    {
+     "item": "ebitda",
+     "label": "EBITDA",
+     "statement": "income",
+     "prior": 2852388864.0,
+     "current": 3587770368.0,
+     "delta": 735381504.0,
+     "pct": 0.2578125,
+     "flag": true
+    },
+    {
+     "item": "fcf",
+     "label": "Free cash flow (CFO - capex)",
+     "statement": "cashflow",
+     "prior": 3221483498.0,
+     "current": 3924992890.0,
+     "delta": 703509392.0,
+     "pct": 0.21838056672857742,
+     "flag": true
+    },
+    {
+     "item": "operating_income",
+     "label": "Operating income (EBIT)",
+     "statement": "income",
+     "prior": 2495840256.0,
+     "current": 3177739469.0,
+     "delta": 681899213.0,
+     "pct": 0.27321428579441903,
+     "flag": true
+    },
+    {
+     "item": "pretax_income",
+     "label": "Pre-tax income",
+     "statement": "income",
+     "prior": 2443340256.0,
+     "current": 3125239469.0,
+     "delta": 681899213.0,
+     "pct": 0.27908483532962347,
+     "flag": true
+    },
+    {
+     "item": "cff",
+     "label": "Cash from financing",
+     "statement": "cashflow",
+     "prior": -1216783447.0,
+     "current": -1793887455.0,
+     "delta": -577104008.0,
+     "pct": -0.4742865375288098,
+     "flag": true
+    },
+    {
+     "item": "buybacks",
+     "label": "Share repurchases",
+     "statement": "cashflow",
+     "prior": 1216783447.0,
+     "current": 1793887455.0,
+     "delta": 577104008.0,
+     "pct": 0.4742865375288098,
+     "flag": true
+    },
+    {
+     "item": "net_income",
+     "label": "Net income (to parent)",
+     "statement": "income",
+     "prior": 2027972412.0,
+     "current": 2562696364.0,
+     "delta": 534723952.0,
+     "pct": 0.2636741746761001,
+     "flag": true
+    },
+    {
+     "item": "current_liabilities",
+     "label": "Total current liabilities",
+     "statement": "balance",
+     "prior": 3191842676.0,
+     "current": 3662193785.0,
+     "delta": 470351109.0,
+     "pct": 0.14736036726892865,
+     "flag": true
+    },
+    {
+     "item": "short_term_investments",
+     "label": "Short-term investments",
+     "statement": "balance",
+     "prior": 2013801675.0,
+     "current": 2440022762.0,
+     "delta": 426221087.0,
+     "pct": 0.21164998137167604,
+     "flag": true
+    },
+    {
+     "item": "sga",
+     "label": "SG&A expense",
+     "statement": "income",
+     "prior": 2674114560.0,
+     "current": 2972724019.0,
+     "delta": 298609459.0,
+     "pct": 0.11166666659187556,
+     "flag": true
+    },
+    {
+     "item": "receivables",
+     "label": "Accounts receivable",
+     "statement": "balance",
+     "prior": 1416425977.0,
+     "current": 1628889874.0,
+     "delta": 212463897.0,
+     "pct": 0.15000000031770103,
+     "flag": false
+    },
+    {
+     "item": "cost_of_revenue",
+     "label": "Cost of revenue",
+     "statement": "income",
+     "prior": 1961017344.0,
+     "current": 2152662221.0,
+     "delta": 191644877.0,
+     "pct": 0.09772727282926061,
+     "flag": false
+    },
+    {
+     "item": "rnd",
+     "label": "R&D expense",
+     "statement": "income",
+     "prior": 1782743040.0,
+     "current": 1947646771.0,
+     "delta": 164903731.0,
+     "pct": 0.09249999988781334,
+     "flag": false
+    },
+    {
+     "item": "ppe",
+     "label": "PP&E, net",
+     "statement": "balance",
+     "prior": 1069645824.0,
+     "current": 1230092698.0,
+     "delta": 160446874.0,
+     "pct": 0.15000000037395556,
+     "flag": false
+    },
+    {
+     "item": "sbc",
+     "label": "Stock-based compensation",
+     "statement": "cashflow",
+     "prior": 1069645824.0,
+     "current": 1230092698.0,
+     "delta": 160446874.0,
+     "pct": 0.15000000037395556,
+     "flag": false
+    },
+    {
+     "item": "income_tax",
+     "label": "Income tax expense",
+     "statement": "income",
+     "prior": 415367844.0,
+     "current": 562543104.0,
+     "delta": 147175260.0,
+     "pct": 0.3543251171845647,
+     "flag": false
+    },
+    {
+     "item": "intangibles",
+     "label": "Other intangibles",
+     "statement": "balance",
+     "prior": 131993549.0,
+     "current": 70488914.0,
+     "delta": -61504635.0,
+     "pct": -0.4659669769164249,
+     "flag": false
+    },
+    {
+     "item": "d_and_a",
+     "label": "Depreciation & amortization",
+     "statement": "cashflow",
+     "prior": 356548608.0,
+     "current": 410030899.0,
+     "delta": 53482291.0,
+     "pct": 0.14999999943906667,
+     "flag": false
+    },
+    {
+     "item": "capex",
+     "label": "Capital expenditure",
+     "statement": "cashflow",
+     "prior": 458484941.0,
+     "current": 508973138.0,
+     "delta": 50488197.0,
+     "pct": 0.11011964076700177,
+     "flag": false
+    },
+    {
+     "item": "cfi",
+     "label": "Cash from investing",
+     "statement": "cashflow",
+     "prior": -458484941.0,
+     "current": -508973138.0,
+     "delta": -50488197.0,
+     "pct": -0.11011964076700177,
+     "flag": false
+    },
+    {
+     "item": "accounts_payable",
+     "label": "Accounts payable",
+     "statement": "balance",
+     "prior": 161179508.0,
+     "current": 176931141.0,
+     "delta": 15751633.0,
+     "pct": 0.09772726815867933,
+     "flag": false
+    },
+    {
+     "item": "interest_expense",
+     "label": "Interest expense",
+     "statement": "income",
+     "prior": 52500000.0,
+     "current": 52500000.0,
+     "delta": 0.0,
+     "pct": 0.0,
+     "flag": false
+    },
+    {
+     "item": "inventory",
+     "label": "Inventory",
+     "statement": "balance",
+     "prior": 0.0,
+     "current": 0.0,
+     "delta": 0.0,
+     "pct": null,
+     "flag": false
+    },
+    {
+     "item": "goodwill",
+     "label": "Goodwill",
+     "statement": "balance",
+     "prior": 900000000.0,
+     "current": 900000000.0,
+     "delta": 0.0,
+     "pct": 0.0,
+     "flag": false
+    },
+    {
+     "item": "short_term_debt",
+     "label": "Short-term debt",
+     "statement": "balance",
+     "prior": 0.0,
+     "current": 0.0,
+     "delta": 0.0,
+     "pct": null,
+     "flag": false
+    },
+    {
+     "item": "long_term_debt",
+     "label": "Long-term debt",
+     "statement": "balance",
+     "prior": 1500000000.0,
+     "current": 1500000000.0,
+     "delta": 0.0,
+     "pct": 0.0,
+     "flag": false
+    },
+    {
+     "item": "total_debt",
+     "label": "Total debt",
+     "statement": "balance",
+     "prior": 1500000000.0,
+     "current": 1500000000.0,
+     "delta": 0.0,
+     "pct": 0.0,
+     "flag": false
+    },
+    {
+     "item": "dividends_paid",
+     "label": "Dividends paid",
+     "statement": "cashflow",
+     "prior": 0.0,
+     "current": 0.0,
+     "delta": 0.0,
+     "pct": null,
+     "flag": false
+    }
+   ],
+   "bridge": {
+    "start": 2027972412.0,
+    "end": 2562696364.0,
+    "steps": [
+     {
+      "id": "revenue",
+      "label": "Revenue",
+      "value": 1337057280.0
+     },
+     {
+      "id": "cost_of_revenue",
+      "label": "Cost of revenue",
+      "value": -191644877.0
+     },
+     {
+      "id": "sga",
+      "label": "SG&A",
+      "value": -298609459.0
+     },
+     {
+      "id": "rnd",
+      "label": "R&D",
+      "value": -164903731.0
+     },
+     {
+      "id": "other_opex",
+      "label": "Other operating items",
+      "value": 0.0
+     },
+     {
+      "id": "non_operating",
+      "label": "Interest & other non-operating",
+      "value": 0.0
+     },
+     {
+      "id": "tax",
+      "label": "Income tax",
+      "value": -147175260.0
+     },
+     {
+      "id": "other",
+      "label": "Other (minority interest, discontinued ops)",
+      "value": -1.0
+     }
+    ]
+   },
+   "splits": [
+    {
+     "item": "gross_profit",
+     "label": "Gross profit",
+     "delta": 1145412403.0,
+     "steps": [
+      {
+       "id": "volume",
+       "label": "Volume effect (more or less revenue at last year's margin)",
+       "formula": "\u0394Revenue \u00d7 margin_prior",
+       "inputs": {
+        "\u0394Revenue": 1337057280.0,
+        "margin_prior": 0.78
+       },
+       "value": 1042904678.4,
+       "unit": "usd"
+      },
+      {
+       "id": "rate",
+       "label": "Rate effect (margin change on this year's revenue)",
+       "formula": "Revenue_current \u00d7 \u0394margin",
+       "inputs": {
+        "Revenue_current": 10250772480.0,
+        "\u0394margin": 0.009999999980489283
+       },
+       "value": 102507724.60000007,
+       "unit": "usd"
+      }
+     ]
+    },
+    {
+     "item": "ebit",
+     "label": "EBIT",
+     "delta": 681899213.0,
+     "steps": [
+      {
+       "id": "volume",
+       "label": "Volume effect (more or less revenue at last year's margin)",
+       "formula": "\u0394Revenue \u00d7 margin_prior",
+       "inputs": {
+        "\u0394Revenue": 1337057280.0,
+        "margin_prior": 0.28
+       },
+       "value": 374376038.40000004,
+       "unit": "usd"
+      },
+      {
+       "id": "rate",
+       "label": "Rate effect (margin change on this year's revenue)",
+       "formula": "Revenue_current \u00d7 \u0394margin",
+       "inputs": {
+        "Revenue_current": 10250772480.0,
+        "\u0394margin": 0.030000000019510698
+       },
+       "value": 307523174.5999997,
+       "unit": "usd"
+      }
+     ]
+    }
+   ]
+  }
+ },
  "coverage": {
   "filled_share": 0.974,
   "missing_items": [

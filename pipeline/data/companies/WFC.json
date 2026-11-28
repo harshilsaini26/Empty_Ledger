@@ -1214,5 +1214,326 @@
   "filled_share": 0.927,
   "missing_items": []
  },
- "source": "SEC EDGAR XBRL companyfacts, CIK 0000072971"
+ "source": "SEC EDGAR XBRL companyfacts, CIK 0000072971",
+ "walkthroughs": {
+  "variance": {
+   "prior_year": 2024,
+   "year": 2025,
+   "threshold": "\u00b110% and at least 2% of revenue (flows) or assets (balances)",
+   "flux": [
+    {
+     "item": "total_assets",
+     "label": "Total assets",
+     "statement": "balance",
+     "prior": 1929845000000,
+     "current": 2148631000000,
+     "delta": 218786000000,
+     "pct": 0.11336972658425935,
+     "flag": true
+    },
+    {
+     "item": "total_liabilities",
+     "label": "Total liabilities",
+     "statement": "balance",
+     "prior": 1748779000000,
+     "current": 1965593000000,
+     "delta": 216814000000,
+     "pct": 0.12398021705429903,
+     "flag": true
+    },
+    {
+     "item": "cff",
+     "label": "Cash from financing",
+     "statement": "cashflow",
+     "prior": -21534000000,
+     "current": 177587000000,
+     "delta": 199121000000,
+     "pct": 9.246818983932386,
+     "flag": true
+    },
+    {
+     "item": "cfi",
+     "label": "Cash from investing",
+     "statement": "cashflow",
+     "prior": -15651000000,
+     "current": -187895000000,
+     "delta": -172244000000,
+     "pct": -11.005303175515941,
+     "flag": true
+    },
+    {
+     "item": "cfo",
+     "label": "Cash from operations",
+     "statement": "cashflow",
+     "prior": 3035000000,
+     "current": -19001000000,
+     "delta": -22036000000,
+     "pct": -7.260626029654036,
+     "flag": true
+    },
+    {
+     "item": "deposits",
+     "label": "Deposits",
+     "statement": "balance",
+     "prior": 1371804000000,
+     "current": 1426207000000,
+     "delta": 54403000000,
+     "pct": 0.039657997789771714,
+     "flag": false
+    },
+    {
+     "item": "invested_capital",
+     "label": "Invested capital (debt + equity)",
+     "statement": "balance",
+     "prior": 354902000000,
+     "current": 374152000000,
+     "delta": 19250000000,
+     "pct": 0.054240325498306576,
+     "flag": false
+    },
+    {
+     "item": "total_debt",
+     "label": "Total debt",
+     "statement": "balance",
+     "prior": 175782000000,
+     "current": 193035000000,
+     "delta": 17253000000,
+     "pct": 0.09814998122674677,
+     "flag": false
+    },
+    {
+     "item": "short_term_debt",
+     "label": "Short-term borrowings",
+     "statement": "balance",
+     "prior": 2704000000,
+     "current": 18323000000,
+     "delta": 15619000000,
+     "pct": 5.776257396449704,
+     "flag": false
+    },
+    {
+     "item": "net_debt",
+     "label": "Net debt",
+     "statement": "balance",
+     "prior": 138702000000,
+     "current": 153853000000,
+     "delta": 15151000000,
+     "pct": 0.10923418552003576,
+     "flag": false
+    },
+    {
+     "item": "retained_earnings",
+     "label": "Retained earnings",
+     "statement": "balance",
+     "prior": 214198000000,
+     "current": 228873000000,
+     "delta": 14675000000,
+     "pct": 0.06851137732378454,
+     "flag": false
+    },
+    {
+     "item": "interest_income",
+     "label": "Interest income",
+     "statement": "income",
+     "prior": 90777000000,
+     "current": 87314000000,
+     "delta": -3463000000,
+     "pct": -0.03814842966830805,
+     "flag": false
+    },
+    {
+     "item": "interest_expense",
+     "label": "Interest expense",
+     "statement": "income",
+     "prior": 43101000000,
+     "current": 39830000000,
+     "delta": -3271000000,
+     "pct": -0.07589151063780422,
+     "flag": false
+    },
+    {
+     "item": "tangible_equity",
+     "label": "Tangible equity",
+     "statement": "balance",
+     "prior": 153953000000,
+     "current": 156150000000,
+     "delta": 2197000000,
+     "pct": 0.014270589075886797,
+     "flag": false
+    },
+    {
+     "item": "cash",
+     "label": "Cash & equivalents",
+     "statement": "balance",
+     "prior": 37080000000,
+     "current": 39182000000,
+     "delta": 2102000000,
+     "pct": 0.05668824163969795,
+     "flag": false
+    },
+    {
+     "item": "equity",
+     "label": "Shareholders' equity (parent)",
+     "statement": "balance",
+     "prior": 179120000000,
+     "current": 181117000000,
+     "delta": 1997000000,
+     "pct": 0.011148950424296561,
+     "flag": false
+    },
+    {
+     "item": "equity_incl_nci",
+     "label": "Total equity incl. NCI",
+     "statement": "balance",
+     "prior": 181066000000,
+     "current": 183038000000,
+     "delta": 1972000000,
+     "pct": 0.010891056299912738,
+     "flag": false
+    },
+    {
+     "item": "buybacks",
+     "label": "Share repurchases",
+     "statement": "cashflow",
+     "prior": 19448000000,
+     "current": 17516000000,
+     "delta": -1932000000,
+     "pct": -0.09934183463595228,
+     "flag": false
+    },
+    {
+     "item": "pretax_income",
+     "label": "Pre-tax income",
+     "statement": "income",
+     "prior": 23364000000,
+     "current": 25199000000,
+     "delta": 1835000000,
+     "pct": 0.07853963362437939,
+     "flag": false
+    },
+    {
+     "item": "long_term_debt",
+     "label": "Long-term debt",
+     "statement": "balance",
+     "prior": 173078000000,
+     "current": 174712000000,
+     "delta": 1634000000,
+     "pct": 0.009440830145945758,
+     "flag": false
+    },
+    {
+     "item": "net_income",
+     "label": "Net income (to parent)",
+     "statement": "income",
+     "prior": 19722000000,
+     "current": 21338000000,
+     "delta": 1616000000,
+     "pct": 0.08193895142480478,
+     "flag": false
+    },
+    {
+     "item": "noninterest_income",
+     "label": "Non-interest income",
+     "statement": "income",
+     "prior": 34620000000,
+     "current": 36215000000,
+     "delta": 1595000000,
+     "pct": 0.04607163489312536,
+     "flag": false
+    },
+    {
+     "item": "revenue",
+     "label": "Total net revenue",
+     "statement": "income",
+     "prior": 82296000000,
+     "current": 83699000000,
+     "delta": 1403000000,
+     "pct": 0.01704821619519782,
+     "flag": false
+    },
+    {
+     "item": "provision",
+     "label": "Provision for credit losses",
+     "statement": "income",
+     "prior": 4334000000,
+     "current": 3658000000,
+     "delta": -676000000,
+     "pct": -0.15597600369173972,
+     "flag": false
+    },
+    {
+     "item": "income_tax",
+     "label": "Income tax expense",
+     "statement": "income",
+     "prior": 3399000000,
+     "current": 3841000000,
+     "delta": 442000000,
+     "pct": 0.13003824654310092,
+     "flag": false
+    },
+    {
+     "item": "dividends_paid",
+     "label": "Dividends paid",
+     "statement": "cashflow",
+     "prior": 5133000000,
+     "current": 5434000000,
+     "delta": 301000000,
+     "pct": 0.058640171439703875,
+     "flag": false
+    },
+    {
+     "item": "d_and_a",
+     "label": "Depreciation & amortization",
+     "statement": "cashflow",
+     "prior": 1400000000,
+     "current": 1700000000,
+     "delta": 300000000,
+     "pct": 0.21428571428571427,
+     "flag": false
+    },
+    {
+     "item": "noninterest_expense",
+     "label": "Non-interest expense",
+     "statement": "income",
+     "prior": 54598000000,
+     "current": 54842000000,
+     "delta": 244000000,
+     "pct": 0.004469028169530019,
+     "flag": false
+    },
+    {
+     "item": "goodwill",
+     "label": "Goodwill",
+     "statement": "balance",
+     "prior": 25167000000,
+     "current": 24967000000,
+     "delta": -200000000,
+     "pct": -0.007946914610402511,
+     "flag": false
+    },
+    {
+     "item": "sbc",
+     "label": "Stock-based compensation",
+     "statement": "cashflow",
+     "prior": 1281000000,
+     "current": 1476000000,
+     "delta": 195000000,
+     "pct": 0.1522248243559719,
+     "flag": false
+    },
+    {
+     "item": "net_interest_income",
+     "label": "Net interest income",
+     "statement": "income",
+     "prior": 47676000000,
+     "current": 47484000000,
+     "delta": -192000000,
+     "pct": -0.004027183488547697,
+     "flag": false
+    }
+   ],
+   "bridge": null,
+   "splits": []
+  }
+ }
 }

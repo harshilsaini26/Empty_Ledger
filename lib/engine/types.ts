@@ -92,6 +92,8 @@ export interface CompanyRecord {
   ratios: Record<string, Series>;
   ratios_used_ending_balance: number[];
   models: Models;
+  /** Step-by-step analyses from pipeline/finlab/valuation.py (not computed for uploads). */
+  walkthroughs?: Walkthroughs;
   coverage: { filled_share: number; missing_items: string[] };
   source: string;
 }
@@ -158,4 +160,43 @@ export interface ConceptDef {
   key: string;
   statement: Section;
   label: string;
+}
+
+export interface Driver {
+  id: string;
+  label: string;
+  formula: string;
+  history: Record<string, number | null>;
+  value: number | null;
+}
+export interface Projection {
+  base_year: number;
+  years: number[];
+  drivers: Driver[];
+  lines: [string, string, Section][];
+  rows: Record<string, Series>;
+  notes: string;
+}
+export interface FluxRow {
+  item: string;
+  label: string;
+  statement: Section;
+  prior: number;
+  current: number;
+  delta: number;
+  pct: number | null;
+  flag: boolean;
+}
+export interface Variance {
+  prior_year: number;
+  year: number;
+  threshold: string;
+  flux: FluxRow[];
+  bridge: { start: number; end: number; steps: { id: string; label: string; value: number }[] } | null;
+  splits: { item: string; label: string; delta: number; steps: import("./dcf").Step[] }[];
+}
+export interface Walkthroughs {
+  dcf?: import("./dcf").Dcf | null;
+  projection?: Projection | null;
+  variance?: Variance | null;
 }
